@@ -1,24 +1,21 @@
 import React from 'react';
-import { ChakraProvider, Box, Grid, Text } from '@chakra-ui/react';
+import { ChakraProvider } from '@chakra-ui/react';
 import theme from './theme';
+import { Routes, Route, Navigate } from 'react-router-dom';
 
-import Header from './components/header/header.component';
-import Sidebar from './components/sidebar/sidebar.component';
+import Header from './routes/header/header.component';
+import Docs from './routes/docs/docs.component';
 
 function App() {
   return (
     <ChakraProvider theme={theme}>
-      <Box>
-        <Header />
+      <Header />
 
-        <Grid minH="100vh" templateColumns="250px 1fr" maxWidth="1400px" m="auto">
-          <Sidebar />
-
-          <Box as="main" p="32px" fontSize="md">
-            <Text>Main Content</Text>
-          </Box>
-        </Grid>
-      </Box>
+      <Routes>
+        <Route path="docs/*" index element={<Docs />} />
+        <Route path="docs" index element={<Navigate to="introduction" />} />
+        <Route path="*" index element={<Navigate to="docs/introduction" />} />
+      </Routes>
     </ChakraProvider>
   );
 }

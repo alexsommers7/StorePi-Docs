@@ -1,6 +1,6 @@
 import { ColorModeSwitcher } from '../../ColorModeSwitcher';
 import { Flex, Text, Box } from '@chakra-ui/react';
-import { BorderColor } from '../../utils/color-mode-values/colorModeValues.utils';
+import { BorderColor } from '../../utils/color/colorModeValues.utils';
 
 const Header = () => {
   return (
