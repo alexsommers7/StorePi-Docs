@@ -1,6 +1,6 @@
 import { Grid } from '@chakra-ui/react';
 import DocSidebar from '../../components/doc-sidebar/sidebar.component';
-import DocContent from '../../components/doc-content/doc-content.component';
+import DocContent from '../../components/doc-sections/doc-content.component';
 import { DocsProvider } from '../../contexts/docs.context';
 
 const Docs = () => {
