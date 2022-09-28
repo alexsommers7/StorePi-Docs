@@ -1,5 +1,6 @@
-import React from 'react';
-import { ChakraProvider } from '@chakra-ui/react';
+import React, { useContext } from 'react';
+import { DocsContext } from './contexts/docs.context';
+import { ChakraProvider, Box } from '@chakra-ui/react';
 import theme from './theme';
 import { Routes, Route, Navigate } from 'react-router-dom';
 
@@ -7,15 +8,18 @@ import Header from './routes/header/header.component';
 import Docs from './routes/docs/docs.component';
 
 function App() {
+  const { activeAnchor } = useContext(DocsContext);
+
   return (
     <ChakraProvider theme={theme}>
       <Header />
 
-      <Routes>
-        <Route path="docs/*" index element={<Docs />} />
-        <Route path="docs" index element={<Navigate to="introduction" />} />
-        <Route path="*" index element={<Navigate to="docs/introduction" />} />
-      </Routes>
+      <Box as="main" pt="57px">
+        <Routes>
+          <Route path="docs" index element={<Docs />} />
+          <Route path="*" element={<Navigate to="docs" />} />
+        </Routes>
+      </Box>
     </ChakraProvider>
   );
 }

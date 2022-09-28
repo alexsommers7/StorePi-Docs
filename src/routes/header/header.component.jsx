@@ -4,14 +4,21 @@ import { BorderColor } from '../../utils/color/colorModeValues.utils';
 
 const Header = () => {
   return (
-    <Box as="header" borderBottom="1px solid transparent" borderColor={BorderColor}>
+    <Box as="header">
       <Flex
         p="8px 32px"
         alignItems="center"
         justifyContent="space-between"
-        maxWidth="1400px"
+        maxWidth="1366px"
         m="auto"
         fontSize="2xl"
+        position="fixed"
+        top="0"
+        left="0"
+        width="100%"
+        borderBottom="1px solid transparent"
+        borderColor={BorderColor}
+        backgroundColor="var(--chakra-colors-chakra-body-bg)"
       >
         <Text>StorePi</Text>
         <ColorModeSwitcher justifySelf="flex-end" />

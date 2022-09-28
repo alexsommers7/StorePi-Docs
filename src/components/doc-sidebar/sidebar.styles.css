@@ -1,0 +1,4 @@
+.scrollbar-y-thin { overscroll-behavior: contain; }
+.scrollbar-y-thin::-webkit-scrollbar { background-color: transparent; width: 2px !important; border-radius: 5px }
+.scrollbar-y-thin::-webkit-scrollbar-thumb { background-color: transparent; }
+.scrollbar-y-thin:hover::-webkit-scrollbar-thumb { background-color: #fff; }
