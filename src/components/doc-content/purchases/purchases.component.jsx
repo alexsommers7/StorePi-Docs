@@ -1,5 +1,11 @@
+import { Text } from '@chakra-ui/react';
+
 const Purchases = () => {
-  return <h1>Purchases Content</h1>;
+  return (
+    <Text as="h1" fontSize="xl" minH="80vh">
+      Purchases Content
+    </Text>
+  );
 };
 
 export default Purchases;

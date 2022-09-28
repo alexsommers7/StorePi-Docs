@@ -1,5 +1,11 @@
+import { Text } from '@chakra-ui/react';
+
 const Products = () => {
-  return <h1>Products Content</h1>;
+  return (
+    <Text as="h1" fontSize="xl" minH="80vh">
+      Products Content
+    </Text>
+  );
 };
 
 export default Products;

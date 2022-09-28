@@ -1,5 +1,11 @@
-const Cart = () => {
-  return <h1>Carts Content</h1>;
+import { Text } from '@chakra-ui/react';
+
+const Carts = () => {
+  return (
+    <Text as="h1" fontSize="xl" minH="80vh">
+      Carts Content
+    </Text>
+  );
 };
 
-export default Cart;
+export default Carts;

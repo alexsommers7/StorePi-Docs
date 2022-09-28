@@ -1,11 +1,11 @@
 import { Text } from '@chakra-ui/react';
 
-const Authentication = () => {
+const GettingStarted = () => {
   return (
     <Text as="h1" fontSize="xl" minH="80vh">
-      Authentication Content
+      Getting Started Content
     </Text>
   );
 };
 
-export default Authentication;
+export default GettingStarted;

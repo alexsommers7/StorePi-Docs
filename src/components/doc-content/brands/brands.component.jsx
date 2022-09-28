@@ -1,5 +1,11 @@
+import { Text } from '@chakra-ui/react';
+
 const Brands = () => {
-  return <h1>Brands Content</h1>;
+  return (
+    <Text as="h1" fontSize="xl" minH="80vh">
+      Brands Content
+    </Text>
+  );
 };
 
 export default Brands;
