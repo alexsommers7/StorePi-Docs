@@ -6,8 +6,9 @@ const theme = extendTheme({
   },
   colors: {
     brand: {
-      // 100: "#f7fafc",
-      // 900: "#1a202c",
+      100: '#64CEC9',
+      200: '#38B2AC',
+      300: '#2C8C87',
     },
   },
 });
