@@ -12,15 +12,23 @@ import Authentication from './authentication/authentication.component';
 
 const DocContent = () => {
   return (
-    <Box p="48px" fontSize="md">
+    <Box p="48px" fontSize="md" paddingLeft={['0', '0', '320px']}>
       <GettingStarted />
+      <hr />
       <Products />
+      <hr />
       <Reviews />
+      <hr />
       <Brands />
+      <hr />
       <Categories />
+      <hr />
       <Carts />
+      <hr />
       <Purchases />
+      <hr />
       <Users />
+      <hr />
       <Authentication />
     </Box>
   );

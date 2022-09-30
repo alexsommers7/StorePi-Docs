@@ -14,9 +14,10 @@ const DocSidebar = () => {
       p="8px 32px 24px"
       borderRight="1px solid transparent"
       borderColor={BorderColor}
-      position={['fixed', 'fixed', 'sticky']}
+      position="fixed"
       top="57px"
       left={['-100%', '-100%', '0']}
+      width="270px"
       height={['100vh', '100vh', 'calc(100vh - 57px)']}
       overflowY="auto"
       className="scrollbar-y-thin"

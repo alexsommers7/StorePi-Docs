@@ -1,30 +1,37 @@
-import { useContext } from 'react';
+import { useState, useContext } from 'react';
 import { DocsContext } from '../../contexts/docs.context';
 import { ListItem, useColorModeValue } from '@chakra-ui/react';
 import { HashLink } from 'react-router-hash-link';
 
 const DocSidebarLink = ({ item }) => {
+  const [isHovered, setIsHovered] = useState(false);
   const { label, anchor } = item;
   const { activeAnchor, setActiveAnchor } = useContext(DocsContext);
+  const isActive = anchor === activeAnchor;
+  const defaultColor = useColorModeValue('blackAlpha.100', 'rgba(235, 235, 235, .5)');
 
   const inactiveStyle = {
-    color: useColorModeValue('blackAlpha.100', 'rgba(235, 235, 235, .6)'),
+    transition: 'all .2s ease',
+    color: isHovered ? 'var(--chakra-colors-brand-200)' : defaultColor,
+    textShadow: isHovered ? '.25px 0px .1px,-.25px 0px .1px' : 'none',
   };
 
   const activeStyle = {
     textShadow: '.25px 0px .1px,-.25px 0px .1px',
-    color: '#38B2AC',
+    color: 'var(--chakra-colors-brand-200)',
   };
 
   const scrollWithOffset = el => {
     const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
-    const yOffset = -80;
+    const yOffset = -75;
     window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' });
   };
 
-  const isActive = anchor === activeAnchor;
+  const handleMouseEnter = () => setIsHovered(true);
 
-  const linkClickHandler = event => {
+  const handleMouseLeave = () => setIsHovered(false);
+
+  const handleLinkClick = event => {
     const { href } = event.target;
     const anchor = href.split('#')[1] || '';
     setActiveAnchor(anchor);
@@ -36,7 +43,9 @@ const DocSidebarLink = ({ item }) => {
         to={`#${anchor}`}
         style={isActive ? activeStyle : inactiveStyle}
         scroll={el => scrollWithOffset(el)}
-        onClick={linkClickHandler}
+        onClick={handleLinkClick}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
         smooth
       >
         {label}

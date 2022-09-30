@@ -1,10 +1,15 @@
-import { Text } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
+import DocSectionHeading from '../../doc-section-heading/doc-section-heading.component';
+import DocAnchor from '../../doc-anchor/doc-anchor.component';
 
 const Products = () => {
   return (
-    <Text as="h1" fontSize="xl" minH="80vh">
-      Products Content
-    </Text>
+    <Box as="section" mb="60px" pt="40px">
+      <DocSectionHeading text="Products" />
+
+      <DocAnchor text="Get All Products" anchorId="get-products" />
+      <DocAnchor text="Get Product" anchorId="get-product" />
+    </Box>
   );
 };
 

@@ -1,19 +1,17 @@
-import { Grid } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 import DocSidebar from '../../components/doc-sidebar/sidebar.component';
 import DocContent from '../../components/doc-sections/doc-content.component';
 import { DocsProvider } from '../../contexts/docs.context';
 
+import './docs.styles.scss';
+
 const Docs = () => {
   return (
     <DocsProvider>
-      <Grid
-        templateColumns={['1fr', '1fr', 'clamp(200px, 250px, 280px) 1fr']}
-        maxWidth="1366px"
-        m="auto"
-      >
+      <Box maxWidth="1366px" m="auto" pb="50px" zIndex="base" className="docs">
         <DocSidebar />
         <DocContent />
-      </Grid>
+      </Box>
     </DocsProvider>
   );
 };
