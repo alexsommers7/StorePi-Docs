@@ -1,5 +1,7 @@
-import { Box } from '@chakra-ui/react';
+import { Box, Divider } from '@chakra-ui/react';
+import { BorderColor } from '../../utils/color/colorModeValues.utils';
 
+import { docsSidebarWidth } from '../../utils/sizing/sizing.utils';
 import GettingStarted from './getting-started/getting-started.component';
 import Products from './products/products.component';
 import Reviews from './reviews/reviews.component';
@@ -12,23 +14,23 @@ import Authentication from './authentication/authentication.component';
 
 const DocContent = () => {
   return (
-    <Box p="48px" fontSize="md" paddingLeft={['0', '0', '320px']}>
+    <Box p="48px" fontSize="md" paddingLeft={['0', '0', `calc(${docsSidebarWidth} + 50px)`]}>
       <GettingStarted />
-      <hr />
+      <Divider borderColor={BorderColor} />
       <Products />
-      <hr />
+      <Divider borderColor={BorderColor} />
       <Reviews />
-      <hr />
+      <Divider borderColor={BorderColor} />
       <Brands />
-      <hr />
+      <Divider borderColor={BorderColor} />
       <Categories />
-      <hr />
+      <Divider borderColor={BorderColor} />
       <Carts />
-      <hr />
+      <Divider borderColor={BorderColor} />
       <Purchases />
-      <hr />
+      <Divider borderColor={BorderColor} />
       <Users />
-      <hr />
+      <Divider borderColor={BorderColor} />
       <Authentication />
     </Box>
   );

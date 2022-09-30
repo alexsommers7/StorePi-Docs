@@ -1,8 +1,11 @@
 import { Flex, UnorderedList, Box } from '@chakra-ui/react';
+
 import { BorderColor } from '../../utils/color/colorModeValues.utils';
 import { DocSidebarItems } from '../../utils/content/doc-sidebar.utils';
 import DocSidebarLink from '../doc-sidebar-link/doc-sidebar-link.component';
 import DocSidebarHeading from '../doc-sidebar-heading/doc-sidebar-heading.component';
+import { docsSidebarWidth } from '../../utils/sizing/sizing.utils';
+import { navHeight } from '../../utils/sizing/sizing.utils';
 import './sidebar.styles.css';
 
 const DocSidebar = () => {
@@ -15,10 +18,10 @@ const DocSidebar = () => {
       borderRight="1px solid transparent"
       borderColor={BorderColor}
       position="fixed"
-      top="57px"
+      top={navHeight}
       left={['-100%', '-100%', '0']}
-      width="270px"
-      height={['100vh', '100vh', 'calc(100vh - 57px)']}
+      width={docsSidebarWidth}
+      height={['100vh', '100vh', `calc(100vh - ${navHeight})`]}
       overflowY="auto"
       className="scrollbar-y-thin"
     >

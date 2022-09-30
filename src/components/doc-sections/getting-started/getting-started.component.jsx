@@ -45,7 +45,7 @@ const GettingStarted = () => {
       </Heading>
       <Text mb={textMarginBottom}>
         In order to provide a variety in the data, there are 19 user accounts available. You may log
-        in as any of the 19 users. The structure of each user's email address is
+        in as any of the 19 users. The structure of each user's email address is{' '}
         <Code>[firstName]@example.com</Code>, and each user's password is simply{' '}
         <Code>password</Code>. You may log in as any of the following users: Dorothy, Jodi, Shari,
         Jimmy, Daisy, Amy, Candace, Marco, Dustin, Casey, Jean, Cody, Kelly, Phil, Aubrey, Bennie,
