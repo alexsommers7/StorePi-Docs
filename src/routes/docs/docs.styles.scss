@@ -1,0 +1,40 @@
+.docs {
+  .text-anchor-link {
+    color: var(--chakra-colors-brand-200);
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: var(--chakra-colors-brand-100);
+    }
+  }
+
+  .anchor {
+    &-copy {
+      opacity: 0;
+      color: var(--chakra-colors-brand-200);
+      font-size: 17px;
+      line-height: 1;
+      position: absolute;
+      padding: 6px;
+      top: -2px;
+      left: -30px;
+      transition: opacity 0.3s ease, color 0.3s ease;
+
+      &:hover,
+      &:focus-visible {
+        opacity: 1;
+        color: var(--chakra-colors-brand-100);
+      }
+    }
+
+    &-heading {
+      margin-bottom: 20px;
+
+      &:hover {
+        & ~ .anchor-copy {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
