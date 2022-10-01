@@ -46,7 +46,7 @@ const Products = () => {
         <Text>
           If filtering by a category, you must pass in the ID of the category, not the name. The
           category IDs can be obtained via the{' '}
-          <AnchorLink anchor="get-categories" label="categories"></AnchorLink> endpoint
+          <AnchorLink anchor="get-categories">categories</AnchorLink> endpoint
         </Text>
       </Box>
 

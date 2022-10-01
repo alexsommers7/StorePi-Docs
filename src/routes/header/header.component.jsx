@@ -20,7 +20,7 @@ const Header = () => {
       p="8px 32px"
     >
       <Flex alignItems="center" justifyContent="space-between">
-        <Text>StorePi</Text>
+        <Text mb="0">StorePi</Text>
         <ColorModeSwitcher justifySelf="flex-end" />
       </Flex>
     </Box>

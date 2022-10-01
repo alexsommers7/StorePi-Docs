@@ -21,8 +21,8 @@ const AnchorHeading = ({ anchorId, children }) => {
   const toast = useToast();
 
   return (
-    <Box position="relative" mt="40px">
-      <Heading id={anchorId} className="anchor-heading" size="md">
+    <Box position="relative" mt="40px" mb="15px">
+      <Heading id={anchorId} className="anchor-heading" size="md" mb="20px">
         {children}
       </Heading>
 

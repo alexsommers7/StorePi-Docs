@@ -4,7 +4,7 @@ import { HashLink } from 'react-router-hash-link';
 
 import { scrollWithOffset } from '../../utils/anchor/anchor.utils';
 
-const AnchorLink = ({ anchor, label }) => {
+const AnchorLink = ({ anchor, children }) => {
   const { setActiveAnchor } = useContext(DocsContext);
 
   const handleLinkClick = ({ target }) => {
@@ -15,13 +15,13 @@ const AnchorLink = ({ anchor, label }) => {
 
   return (
     <HashLink
-      className="text-anchor-link"
+      className="link"
       to={`#${anchor}`}
       onClick={handleLinkClick}
       scroll={el => scrollWithOffset(el)}
       smooth
     >
-      {label}
+      {children}
     </HashLink>
   );
 };
