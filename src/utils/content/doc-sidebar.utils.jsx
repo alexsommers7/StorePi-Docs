@@ -6,8 +6,13 @@ export const DocSidebarItems = [
   {
     label: 'Products',
     subitems: [
+      { label: 'Create New Product', anchor: 'create-product' },
       { label: 'Get All Products', anchor: 'get-products' },
       { label: 'Get Product', anchor: 'get-product' },
+      { label: 'Get 10 Cheapest Products', anchor: 'get-cheapest-products' },
+      { label: 'Get 10 Highest Rated Products', anchor: 'get-rated-products' },
+      { label: 'Update Product', anchor: 'update-product' },
+      { label: 'Delete Product', anchor: 'delete-product' },
     ],
   },
   {
