@@ -41,15 +41,12 @@ const Products = () => {
         </UnorderedList>
 
         <Text mb="12px">
-          If filtering by a brand with multiple words, separate the words with a dash (-).
+          If filtering by a brand with multiple words, separate the words with a <Code>-</Code>
         </Text>
         <Text>
-          If filtering by a category, you must pass in the id of the category, not the name. The
-          category ids can be obtained via the{' '}
-          <AnchorLink anchor="#get-categories" label="">
-            categories
-          </AnchorLink>{' '}
-          endpoint
+          If filtering by a category, you must pass in the ID of the category, not the name. The
+          category IDs can be obtained via the{' '}
+          <AnchorLink anchor="get-categories" label="categories"></AnchorLink> endpoint
         </Text>
       </Box>
 

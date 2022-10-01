@@ -1,7 +1,7 @@
 import { Box, Heading, useToast } from '@chakra-ui/react';
 import { FaAnchor, FaClipboard } from 'react-icons/fa';
 
-const Anchor = ({ text, anchorId }) => {
+const AnchorHeading = ({ anchorId, children }) => {
   const handleAnchorCopy = () => {
     navigator.clipboard.writeText(`${window.location.href.split('#')[0]}#${anchorId}`);
 
@@ -23,7 +23,7 @@ const Anchor = ({ text, anchorId }) => {
   return (
     <Box position="relative" mt="40px">
       <Heading id={anchorId} className="anchor-heading" size="md">
-        {text}
+        {children}
       </Heading>
 
       <button className="anchor-copy" aria-label="Copy skip link" onClick={handleAnchorCopy}>
@@ -33,4 +33,4 @@ const Anchor = ({ text, anchorId }) => {
   );
 };
 
-export default Anchor;
+export default AnchorHeading;

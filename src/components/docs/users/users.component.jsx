@@ -1,6 +1,6 @@
 import { Box, Text } from '@chakra-ui/react';
 import SectionHeading from '../../section-heading/section-heading.component';
-import Anchor from '../../anchor-heading/anchor-heading.component';
+import AnchorHeading from '../../anchor-heading/anchor-heading.component';
 
 const Users = () => {
   return (
@@ -12,8 +12,8 @@ const Users = () => {
         on, update, or delete the currently-authenticated user.
       </Text>
 
-      <Anchor text="Get All Users" anchorId="get-users" />
-      <Anchor text="Get User" anchorId="get-user" />
+      <AnchorHeading anchorId="get-users">Get All Users</AnchorHeading>
+      <AnchorHeading anchorId="get-user">Get User</AnchorHeading>
     </Box>
   );
 };

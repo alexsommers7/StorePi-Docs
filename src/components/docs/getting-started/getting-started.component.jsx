@@ -1,6 +1,7 @@
-import { Box, Text, Code, Heading } from '@chakra-ui/react';
+import { Box, Text, Code } from '@chakra-ui/react';
 import { HashLink } from 'react-router-hash-link';
 import SectionHeading from '../../section-heading/section-heading.component';
+import AnchorHeading from '../../anchor-heading/anchor-heading.component';
 
 const GettingStarted = () => {
   const textMarginBottom = '35px';
@@ -15,34 +16,34 @@ const GettingStarted = () => {
         Front-End Developer talent evaluations, and anything else you can think of.
       </Text>
 
-      <Heading size="md" mb={subheadingMarginBottom}>
+      <AnchorHeading anchorId="database-interaction-intro" mb={subheadingMarginBottom}>
         Database Interaction
-      </Heading>
+      </AnchorHeading>
       <Text mb={textMarginBottom}>
         All endpoints act as real-world endpoints, but without actually writing anything to the
         database. In the event that you are creating or updating a resource, the response will
         contain the updated data without persisting it.
       </Text>
 
-      <Heading size="md" mb={subheadingMarginBottom}>
+      <AnchorHeading anchorId="cors-intro" mb={subheadingMarginBottom}>
         CORS
-      </Heading>
+      </AnchorHeading>
       <Text mb={textMarginBottom}>
         Cross-origin resource sharing is enabled for all incoming requests.
       </Text>
 
-      <Heading size="md" mb={subheadingMarginBottom}>
+      <AnchorHeading anchorId="rate-limiting-intro" mb={subheadingMarginBottom}>
         Rate Limiting
-      </Heading>
+      </AnchorHeading>
       <Text mb={textMarginBottom}>
         The rate limit for a given IP address is 300 requests per hour. The number of requests you
         have remaining can be viewed in the <Code>X-Ratelimit-Remaining</Code> response header of
         any request.
       </Text>
 
-      <Heading size="md" mb={subheadingMarginBottom}>
+      <AnchorHeading anchorId="authentication-intro" mb={subheadingMarginBottom}>
         Authentication
-      </Heading>
+      </AnchorHeading>
       <Text mb={textMarginBottom}>
         In order to provide a variety in the data, there are 19 user accounts available. You may log
         in as any of the 19 users. The structure of each user's email address is{' '}
@@ -55,6 +56,21 @@ const GettingStarted = () => {
         </HashLink>{' '}
         section for details.
       </Text>
+
+      <AnchorHeading anchorId="filtering-intro" mb={subheadingMarginBottom}>
+        Filtering
+      </AnchorHeading>
+      <Text mb={textMarginBottom}>Filtering details</Text>
+
+      <AnchorHeading anchorId="sorting-intro" mb={subheadingMarginBottom}>
+        Sorting
+      </AnchorHeading>
+      <Text mb={textMarginBottom}>Sorting details</Text>
+
+      <AnchorHeading anchorId="pagination-intro" mb={subheadingMarginBottom}>
+        Pagination
+      </AnchorHeading>
+      <Text mb={textMarginBottom}>Pagination details</Text>
     </Box>
   );
 };
