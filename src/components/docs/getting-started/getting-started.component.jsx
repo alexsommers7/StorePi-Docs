@@ -38,7 +38,7 @@ const GettingStarted = () => {
         <Code>password</Code>. You may log in as any of the following users: Dorothy, Jodi, Shari,
         Jimmy, Daisy, Amy, Candace, Marco, Dustin, Casey, Jean, Cody, Kelly, Phil, Aubrey, Bennie,
         Ramone, Perry, or Tracy. See the{' '}
-        <AnchorLink href="#authentication">authentication</AnchorLink> section for details.
+        <AnchorLink anchor="authentication">authentication</AnchorLink> section for details.
       </Text>
 
       <AnchorHeading anchorId="filtering-intro">Filtering</AnchorHeading>
