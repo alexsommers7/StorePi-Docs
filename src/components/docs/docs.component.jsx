@@ -11,7 +11,6 @@ import Carts from './carts/carts.component';
 import Purchases from './purchases/purchases.component';
 import Users from './users/users.component';
 import Authentication from './authentication/authentication.component';
-import Attribution from '../attribution/attribution.component';
 
 const Docs = () => {
   return (
@@ -33,7 +32,6 @@ const Docs = () => {
       <Users />
       <Divider borderColor={BorderColor} />
       <Authentication />
-      <Attribution />
     </Box>
   );
 };

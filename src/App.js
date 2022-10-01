@@ -6,6 +6,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { navHeight } from './utils/sizing/sizing.utils';
 import Header from './routes/header/header.component';
 import Docs from './routes/docs/docs.component';
+import Footer from './routes/footer/footer.component';
 
 function App() {
   // const { activeAnchor } = useContext(DocsContext);
@@ -20,6 +21,8 @@ function App() {
           <Route path="*" element={<Navigate to="docs" />} />
         </Routes>
       </Box>
+
+      <Footer />
     </ChakraProvider>
   );
 }
