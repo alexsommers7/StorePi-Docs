@@ -6,8 +6,9 @@ import AnchorLink from '../../anchor-link/anchor-link.component';
 const GettingStarted = () => {
   return (
     <Box as="section" pb="15px">
-      <SectionHeading text="Introduction" anchorId="introduction" />
+      <SectionHeading>Getting Started</SectionHeading>
 
+      <AnchorHeading anchorId="introduction">Introduction</AnchorHeading>
       <Text>
         StorePI is a free, open-source REST API that was created for use in e-commerce prototyping,
         Front-End Developer talent evaluations, and anything else you can think of.

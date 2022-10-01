@@ -5,7 +5,7 @@ import AnchorHeading from '../../anchor-heading/anchor-heading.component';
 const Users = () => {
   return (
     <Box as="section" mb="60px" pt="40px">
-      <SectionHeading text="Users" />
+      <SectionHeading>Users</SectionHeading>
 
       <Text mb="20px">
         Retrieve all users, get a specific user, edit, and delete users. You can also retrieve data

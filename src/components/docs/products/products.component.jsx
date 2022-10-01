@@ -8,7 +8,7 @@ import { apiOrigin } from '../../../utils/content/doc-content.utils';
 const Products = () => {
   return (
     <Box as="section" mb="60px" pt="40px">
-      <SectionHeading text="Products" />
+      <SectionHeading>Products</SectionHeading>
 
       <Anchor text="Create New Product" anchorId="create-product" />
 

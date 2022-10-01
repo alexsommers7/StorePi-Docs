@@ -5,7 +5,7 @@ import AnchorHeading from '../../anchor-heading/anchor-heading.component';
 const Carts = () => {
   return (
     <Box as="section" mb="60px" pt="40px">
-      <SectionHeading text="Carts" />
+      <SectionHeading>Carts</SectionHeading>
 
       <AnchorHeading anchorId="get-carts">Get All Carts</AnchorHeading>
       <AnchorHeading anchorId="get-cart">Get Cart</AnchorHeading>
