@@ -2,7 +2,7 @@ import { Box, Code, UnorderedList, ListItem, Text } from '@chakra-ui/react';
 
 import AnchorLink from '../../anchor-link/anchor-link.component';
 import SectionHeading from '../../section-heading/section-heading.component';
-import Anchor from '../../anchor-heading/anchor-heading.component';
+import AnchorHeading from '../../anchor-heading/anchor-heading.component';
 import { apiOrigin } from '../../../utils/content/doc-content.utils';
 
 const Products = () => {
@@ -10,9 +10,9 @@ const Products = () => {
     <Box as="section" mb="60px" pt="40px">
       <SectionHeading>Products</SectionHeading>
 
-      <Anchor text="Create New Product" anchorId="create-product" />
+      <AnchorHeading anchorId="create-product">Create New Product</AnchorHeading>
 
-      <Anchor text="Get All Products" anchorId="get-products" />
+      <AnchorHeading anchorId="get-products">Get All Products</AnchorHeading>
       <Box mb="30px">
         <Code mb="12px">{apiOrigin}?limit=25</Code>
         <Text>
@@ -50,11 +50,11 @@ const Products = () => {
         </Text>
       </Box>
 
-      <Anchor text="Get Product" anchorId="get-product" />
-      <Anchor text="Get 10 Cheapest Products" anchorId="get-cheapest-products" />
-      <Anchor text="Get 10 Highest Rated Products" anchorId="get-rated-products" />
-      <Anchor text="Update Product" anchorId="update-product" />
-      <Anchor text="Delete Product" anchorId="delete-product" />
+      <AnchorHeading anchorId="get-product">Get Product</AnchorHeading>
+      <AnchorHeading anchorId="get-cheapest-products">Get 10 Cheapest Products</AnchorHeading>
+      <AnchorHeading anchorId="get-rated-products">Get 10 Highest Rated Products</AnchorHeading>
+      <AnchorHeading anchorId="update-product">Update Product</AnchorHeading>
+      <AnchorHeading anchorId="delete-product">Delete Product</AnchorHeading>
     </Box>
   );
 };
