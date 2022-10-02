@@ -1,8 +1,11 @@
+import { Flex, Text, Box, IconButton, useMediaQuery } from '@chakra-ui/react';
+import { FaBars } from 'react-icons/fa';
 import { ColorModeSwitcher } from '../../ColorModeSwitcher';
-import { Flex, Text, Box } from '@chakra-ui/react';
 import { BorderColor } from '../../utils/color/colorModeValues.utils';
 
 const Header = () => {
+  const [isMobile] = useMediaQuery('(max-width: 47.935em)');
+
   return (
     <Box
       as="header"
@@ -21,7 +24,10 @@ const Header = () => {
     >
       <Flex alignItems="center" justifyContent="space-between">
         <Text mb={0}>StorePi</Text>
-        <ColorModeSwitcher justifySelf="flex-end" />
+        <Box>
+          <ColorModeSwitcher justifySelf="flex-end" />
+          {isMobile && <IconButton aria-label="Open menu" icon={<FaBars />} ml={3} />}
+        </Box>
       </Flex>
     </Box>
   );
