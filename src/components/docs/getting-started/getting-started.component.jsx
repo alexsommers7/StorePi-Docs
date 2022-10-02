@@ -1,4 +1,4 @@
-import { Box, Text, Code } from '@chakra-ui/react';
+import { Box, Text, Code, UnorderedList, ListItem } from '@chakra-ui/react';
 import SectionHeading from '../../section-heading/section-heading.component';
 import AnchorHeading from '../../anchor-heading/anchor-heading.component';
 import AnchorLink from '../../anchor-link/anchor-link.component';
@@ -38,12 +38,41 @@ const GettingStarted = () => {
         <Code>[firstName]@example.com</Code>, and each user's password is simply{' '}
         <Code>password</Code>. You may log in as any of the following users: Dorothy, Jodi, Shari,
         Jimmy, Daisy, Amy, Candace, Marco, Dustin, Casey, Jean, Cody, Kelly, Phil, Aubrey, Bennie,
-        Ramone, Perry, or Tracy. See the{' '}
-        <AnchorLink anchor="authentication">authentication</AnchorLink> section for details.
+        Ramone, Perry, or Tracy. See the <AnchorLink anchor="log-in">authentication</AnchorLink>{' '}
+        section for details.
       </Text>
 
       <AnchorHeading anchorId="filtering-intro">Filtering</AnchorHeading>
-      <Text>Filtering details</Text>
+      <Text mb={3}>
+        If filtering by a brand with multiple words, separate the words with a <Code>-</Code>
+      </Text>
+      <Text mb={3}>
+        If filtering by a category, you must pass in the ID of the category, not the name. The
+        category IDs can be obtained via the{' '}
+        <AnchorLink anchor="get-categories">categories</AnchorLink> endpoint
+      </Text>
+
+      <Text mb={0}>The following parameters are duplicatable:</Text>
+      <UnorderedList pl="20px" pt="10px" mb="10px">
+        <ListItem>
+          <Code>reviews_average</Code>
+        </ListItem>
+        <ListItem>
+          <Code>reviews_quantity</Code>
+        </ListItem>
+        <ListItem>
+          <Code>regular_price</Code>
+        </ListItem>
+        <ListItem>
+          <Code>sale_price</Code>
+        </ListItem>
+        <ListItem>
+          <Code>brand</Code>
+        </ListItem>
+        <ListItem>
+          <Code>category</Code>
+        </ListItem>
+      </UnorderedList>
 
       <AnchorHeading anchorId="sorting-intro">Sorting</AnchorHeading>
       <Text>Sorting details</Text>

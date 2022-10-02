@@ -14,40 +14,8 @@ const Products = () => {
 
       <AnchorHeading anchorId="get-products">Get All Products</AnchorHeading>
       <Box mb="30px">
-        <Code mb="12px">{apiOrigin}?limit=25</Code>
-        <Text>
-          Use this endpoint to retrieve a list of all products. The following parameters are
-          duplicatable:
-        </Text>
-        <UnorderedList pl="20px" pt="10px" mb="10px">
-          <ListItem>
-            <Code>reviews_average</Code>
-          </ListItem>
-          <ListItem>
-            <Code>reviews_quantity</Code>
-          </ListItem>
-          <ListItem>
-            <Code>regular_price</Code>
-          </ListItem>
-          <ListItem>
-            <Code>sale_price</Code>
-          </ListItem>
-          <ListItem>
-            <Code>brand</Code>
-          </ListItem>
-          <ListItem>
-            <Code>category</Code>
-          </ListItem>
-        </UnorderedList>
-
-        <Text mb="12px">
-          If filtering by a brand with multiple words, separate the words with a <Code>-</Code>
-        </Text>
-        <Text>
-          If filtering by a category, you must pass in the ID of the category, not the name. The
-          category IDs can be obtained via the{' '}
-          <AnchorLink anchor="get-categories">categories</AnchorLink> endpoint
-        </Text>
+        <Code mb={3}>{apiOrigin}?limit=25</Code>
+        <Text mb={0}>Use this endpoint to retrieve a list of all products</Text>
       </Box>
 
       <AnchorHeading anchorId="get-product">Get Product</AnchorHeading>

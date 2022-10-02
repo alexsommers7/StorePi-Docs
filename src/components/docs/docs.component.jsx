@@ -14,7 +14,11 @@ import Authentication from './authentication/authentication.component';
 
 const Docs = () => {
   return (
-    <Box p="48px" fontSize="md" paddingLeft={['0', '0', `calc(${docsSidebarWidth} + 50px)`]}>
+    <Box
+      p="48px"
+      fontSize="md"
+      padding={['32px', '32px', `0 0 0 calc(${docsSidebarWidth} + 50px)`]}
+    >
       <GettingStarted />
       <Divider borderColor={BorderColor} />
       <Products />
