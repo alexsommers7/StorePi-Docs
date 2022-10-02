@@ -1,10 +1,10 @@
-import SectionWrapper from '../section-wrapper/section-wrapper.component';
+import SectionWrapper from '../../section-wrapper/section-wrapper.component';
 import SectionHeading from '../../section-heading/section-heading.component';
 import AnchorHeading from '../../anchor-heading/anchor-heading.component';
 
 const Authentication = () => {
   return (
-    <SectionWrapper>
+    <SectionWrapper useBottomBorder="false">
       <SectionHeading>Authentication</SectionHeading>
 
       <AnchorHeading anchorId="sign-up">Sign Up</AnchorHeading>

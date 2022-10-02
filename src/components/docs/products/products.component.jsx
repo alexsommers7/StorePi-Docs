@@ -1,5 +1,5 @@
 import { Box, Code, Text } from '@chakra-ui/react';
-import SectionWrapper from '../section-wrapper/section-wrapper.component';
+import SectionWrapper from '../../section-wrapper/section-wrapper.component';
 import SectionHeading from '../../section-heading/section-heading.component';
 import AnchorHeading from '../../anchor-heading/anchor-heading.component';
 import { apiOrigin } from '../../../utils/content/doc-content.utils';
