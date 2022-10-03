@@ -14,16 +14,16 @@ const Sidebar = () => {
 
   // transform on wrapper is to make fixed position relative to wrapper, not viewport
   return (
-    <Box as="aside" transform="translateX(0)">
+    <Box as="aside">
       <Flex
         direction="column"
         fontSize="13px"
         p="8px 32px 24px"
         borderRight="1px solid transparent"
         borderColor={BorderColor}
+        backgroundColor="var(--chakra-colors-chakra-body-bg)"
         position="fixed"
-        top="0"
-        left={['-100%', '-100%', `${isLargerThanMaxContent ? '-32px' : '0'}`]}
+        transform={`${isLargerThanMaxContent ? 'translate(-32px, -16px)' : 'translate(0, -16px)'}`}
         width={docsSidebarWidth.string}
         height={['100vh', '100vh', `calc(100vh - ${navHeight.string})`]}
         overflowY="auto"

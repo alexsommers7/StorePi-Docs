@@ -2,10 +2,10 @@ import { Flex, Text, Box, IconButton, useMediaQuery } from '@chakra-ui/react';
 import { FaBars } from 'react-icons/fa';
 import { ColorModeSwitcher } from '../../ColorModeSwitcher';
 import { BorderColor } from '../../utils/color/colorModeValues.utils';
-import { contentMaxWidth } from '../../utils/sizing/sizing.utils';
+import { contentMaxWidth, mobileMax } from '../../utils/sizing/sizing.utils';
 
 const Header = () => {
-  const [isMobile] = useMediaQuery('(max-width: 47.935em)');
+  const [isMobile] = useMediaQuery(`(max-width: ${mobileMax})`);
 
   return (
     <Box

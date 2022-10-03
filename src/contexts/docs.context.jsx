@@ -28,18 +28,6 @@ const docsReducer = (state = initialState, action) => {
   }
 };
 
-export const addCartItem = (cartItems, productToAdd) => {
-  const existingCartItem = cartItems.find(cartItem => cartItem.id === productToAdd.id);
-
-  if (existingCartItem) {
-    return cartItems.map(cartItem =>
-      cartItem.id === productToAdd.id ? { ...cartItem, quantity: cartItem.quantity + 1 } : cartItem
-    );
-  }
-
-  return [...cartItems, { ...productToAdd, quantity: 1 }];
-};
-
 export const DocsProvider = ({ children }) => {
   const [state, dispatch] = useReducer(docsReducer, initialState);
   const { activeAnchor } = state;
