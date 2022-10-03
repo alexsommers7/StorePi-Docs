@@ -6,7 +6,6 @@ export const DocSidebarItems = [
       { label: 'Database Interaction', anchor: 'database-interaction-intro' },
       { label: 'CORS', anchor: 'cors-intro' },
       { label: 'Rate Limiting', anchor: 'rate-limiting-intro' },
-      { label: 'Authentication', anchor: 'authentication-intro' },
       { label: 'Filtering', anchor: 'filtering-intro' },
       { label: 'Sorting', anchor: 'sorting-intro' },
       { label: 'Pagination', anchor: 'pagination-intro' },

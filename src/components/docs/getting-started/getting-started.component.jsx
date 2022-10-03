@@ -31,17 +31,6 @@ const GettingStarted = () => {
         any request.
       </Text>
 
-      <AnchorHeading anchorId="authentication-intro">Authentication</AnchorHeading>
-      <Text>
-        In order to provide a variety in the data, there are 19 user accounts available. You may log
-        in as any of the 19 users. The structure of each user's email address is{' '}
-        <Code>[firstName]@example.com</Code>, and each user's password is simply{' '}
-        <Code>password</Code>. You may log in as any of the following users: Dorothy, Jodi, Shari,
-        Jimmy, Daisy, Amy, Candace, Marco, Dustin, Casey, Jean, Cody, Kelly, Phil, Aubrey, Bennie,
-        Ramone, Perry, or Tracy. See the <AnchorLink anchor="log-in">authentication</AnchorLink>{' '}
-        section for details.
-      </Text>
-
       <AnchorHeading anchorId="filtering-intro">Filtering</AnchorHeading>
       <Text mb={3}>
         If filtering by a brand with multiple words, separate the words with a <Code>-</Code>

@@ -31,6 +31,7 @@ const SidebarLink = ({ item }) => {
     const { href } = event.target;
     const anchor = href.split('#')[1] || '';
     setActiveAnchor(anchor);
+    console.log({ anchor });
   };
 
   return (
