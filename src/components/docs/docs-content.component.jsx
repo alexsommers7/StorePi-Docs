@@ -1,4 +1,4 @@
-import { Box, Divider } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 
 import { docsSidebarWidth } from '../../utils/sizing/sizing.utils';
 import GettingStarted from './getting-started/getting-started.component';
@@ -14,9 +14,9 @@ import Authentication from './authentication/authentication.component';
 const Docs = () => {
   return (
     <Box
-      p="48px"
+      mt={5}
       fontSize="md"
-      padding={['32px', '32px', `32px 32px 32px calc(${docsSidebarWidth} + 50px)`]}
+      padding={['32px', '32px', `32px 32px 32px calc(${docsSidebarWidth.string} + 50px)`]}
     >
       <GettingStarted />
       <Products />
