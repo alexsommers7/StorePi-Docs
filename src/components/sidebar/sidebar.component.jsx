@@ -25,7 +25,7 @@ const Sidebar = () => {
         top="0"
         left={['-100%', '-100%', `${isLargerThanMaxContent ? '-32px' : '0'}`]}
         width={docsSidebarWidth.string}
-        height={['100vh', '100vh', `calc(100vh - ${navHeight})`]}
+        height={['100vh', '100vh', `calc(100vh - ${navHeight.string})`]}
         overflowY="auto"
         className="scrollbar-y-thin"
       >

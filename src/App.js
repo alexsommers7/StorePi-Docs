@@ -15,7 +15,7 @@ function App() {
     <ChakraProvider theme={theme}>
       <Header />
 
-      <Box as="main" pt={navHeight}>
+      <Box as="main" pt={navHeight.string}>
         <Routes>
           <Route path="docs" index element={<Docs />} />
           <Route path="*" element={<Navigate to="docs" />} />
