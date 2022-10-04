@@ -26,7 +26,12 @@ const AnchorHeading = ({ anchorId, children }) => {
         {children}
       </Heading>
 
-      <button className="anchor-copy" aria-label="Copy skip link" onClick={handleAnchorCopy}>
+      <button
+        className="anchor-copy"
+        aria-label="Copy skip link"
+        title="Copy skip link"
+        onClick={handleAnchorCopy}
+      >
         <FaAnchor className="anchor-icon" />
       </button>
     </Box>
