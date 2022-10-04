@@ -12,7 +12,7 @@ const Products = () => {
       <AnchorHeading anchorId="create-product">Create New Product</AnchorHeading>
 
       <AnchorHeading anchorId="get-products">Get All Products</AnchorHeading>
-      <Box mb="30px">
+      <Box mb="1.875rem">
         <Code mb={3}>{apiOrigin}?limit=25</Code>
         <Text mb={0}>Use this endpoint to retrieve a list of all products</Text>
       </Box>

@@ -7,22 +7,25 @@ import { navHeight } from './utils/sizing/sizing.utils';
 import Header from './routes/header/header.component';
 import Docs from './routes/docs/docs.component';
 import Footer from './routes/footer/footer.component';
+import { DocsProvider } from './contexts/docs.context';
 
 function App() {
   // const { activeAnchor } = useContext(DocsContext);
 
   return (
     <ChakraProvider theme={theme}>
-      <Header />
+      <DocsProvider>
+        <Header />
 
-      <Box as="main" pt={navHeight.string}>
-        <Routes>
-          <Route path="docs" index element={<Docs />} />
-          <Route path="*" element={<Navigate to="docs" />} />
-        </Routes>
-      </Box>
+        <Box as="main" pt={navHeight.string}>
+          <Routes>
+            <Route path="docs" index element={<Docs />} />
+            <Route path="*" element={<Navigate to="docs" />} />
+          </Routes>
+        </Box>
 
-      <Footer />
+        <Footer />
+      </DocsProvider>
     </ChakraProvider>
   );
 }

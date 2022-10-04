@@ -38,7 +38,7 @@ const theme = extendTheme({
     },
     Text: {
       baseStyle: {
-        marginBottom: '35px',
+        marginBottom: '2.1875rem',
       },
     },
   },

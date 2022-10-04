@@ -1,3 +1,5 @@
+import { useContext } from 'react';
+import { DocsContext } from '../../contexts/docs.context';
 import { Flex, Text, Box, IconButton, useMediaQuery } from '@chakra-ui/react';
 import { FaBars } from 'react-icons/fa';
 import { ColorModeSwitcher } from '../../ColorModeSwitcher';
@@ -6,6 +8,9 @@ import { contentMaxWidth, mobileMax } from '../../utils/sizing/sizing.utils';
 
 const Header = () => {
   const [isMobile] = useMediaQuery(`(max-width: ${mobileMax})`);
+  const { isSidebarOpen, setIsSidebarOpen } = useContext(DocsContext);
+
+  const handleSidebarToggle = () => setIsSidebarOpen(!isSidebarOpen);
 
   return (
     <Box
@@ -19,7 +24,7 @@ const Header = () => {
       borderBottom="1px solid transparent"
       borderColor={BorderColor}
       backgroundColor="var(--chakra-colors-chakra-body-bg)"
-      p="8px 32px"
+      p={['.5rem 1.5rem', '.5rem 1.5rem ', '.5rem 1.5rem']}
     >
       <Flex
         alignItems="center"
@@ -30,7 +35,14 @@ const Header = () => {
         <Text mb={0}>StorePi</Text>
         <Box>
           <ColorModeSwitcher justifySelf="flex-end" />
-          {isMobile && <IconButton aria-label="Open menu" icon={<FaBars />} ml={3} />}
+          {isMobile && (
+            <IconButton
+              onClick={handleSidebarToggle}
+              aria-label="Open menu"
+              icon={<FaBars />}
+              ml={3}
+            />
+          )}
         </Box>
       </Flex>
     </Box>

@@ -12,13 +12,18 @@
   &-copy {
     opacity: 0;
     color: var(--chakra-colors-brand-200);
-    font-size: 17px;
+    font-size: 1.0625rem;
     line-height: 1;
     position: absolute;
-    padding: 6px;
-    top: -2px;
-    left: -30px;
+    padding: 0.5rem;
+    top: -4px;
+    left: -2rem;
     transition: opacity 0.3s ease, color 0.3s ease;
+
+    @media all and (max-width: 48em) {
+      left: unset;
+      right: -2rem;
+    }
 
     &:hover,
     &:focus-visible {

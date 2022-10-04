@@ -8,7 +8,7 @@ const Users = () => {
     <SectionWrapper>
       <SectionHeading>Users</SectionHeading>
 
-      <Text mb="20px">
+      <Text mb="1.25rem">
         Retrieve all users, get a specific user, edit, and delete users. You can also retrieve data
         on, update, or delete the currently-authenticated user.
       </Text>
