@@ -12,7 +12,13 @@ import './sidebar.styles.css';
 const Sidebar = () => {
   const [isLargerThanMaxContent] = useMediaQuery(`(min-width: ${contentMaxWidth.num + 55}px)`);
 
-  // transform on wrapper is to make fixed position relative to wrapper, not viewport
+  /*
+		these are the necessary styles for active mobile nav:
+		left: 0;
+		width: 100%;
+	*/
+
+  // using transform instead of top/left so it remains fixed to container, not viewport
   return (
     <Box as="aside">
       <Flex
@@ -23,7 +29,11 @@ const Sidebar = () => {
         borderColor={BorderColor}
         backgroundColor="var(--chakra-colors-chakra-body-bg)"
         position="fixed"
-        transform={`${isLargerThanMaxContent ? 'translate(-32px, -16px)' : 'translate(0, -16px)'}`}
+        transform={[
+          'translateX(-100%)',
+          'translateX(-100%)',
+          `${isLargerThanMaxContent ? 'translate(-32px, -16px)' : 'translate(0, -16px)'}`,
+        ]}
         width={docsSidebarWidth.string}
         height={['100vh', '100vh', `calc(100vh - ${navHeight.string})`]}
         overflowY="auto"
@@ -50,5 +60,3 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
-
-// max content width + ((100vw - max content width ) / 2)

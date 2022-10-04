@@ -1,11 +1,11 @@
 import { Box, Divider } from '@chakra-ui/react';
 import { BorderColor } from '../../utils/color/colorModeValues.utils';
 
-const SectionWrapper = ({ children, useBottomBorder = true }) => {
+const SectionWrapper = ({ children, useBottomBorder = true, useBottomMargin = true }) => {
   return (
-    <Box as="section" mb="60px" pt="40px">
+    <Box as="section" mb={useBottomMargin && '60px'}>
       {children}
-      <Divider borderColor={useBottomBorder ? BorderColor : 'transparent'} pt="40px" />
+      <Divider borderColor={useBottomBorder ? BorderColor : 'transparent'} pt="50px" />
     </Box>
   );
 };

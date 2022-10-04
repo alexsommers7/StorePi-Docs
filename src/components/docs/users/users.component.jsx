@@ -1,10 +1,11 @@
-import { Box, Text } from '@chakra-ui/react';
+import { Text } from '@chakra-ui/react';
+import SectionWrapper from '../../section-wrapper/section-wrapper.component';
 import SectionHeading from '../../section-heading/section-heading.component';
 import AnchorHeading from '../../anchor-heading/anchor-heading.component';
 
 const Users = () => {
   return (
-    <Box as="section" mb="60px" pt="40px">
+    <SectionWrapper>
       <SectionHeading>Users</SectionHeading>
 
       <Text mb="20px">
@@ -14,7 +15,7 @@ const Users = () => {
 
       <AnchorHeading anchorId="get-users">Get All Users</AnchorHeading>
       <AnchorHeading anchorId="get-user">Get User</AnchorHeading>
-    </Box>
+    </SectionWrapper>
   );
 };
 

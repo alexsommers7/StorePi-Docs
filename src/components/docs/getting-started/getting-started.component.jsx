@@ -1,11 +1,12 @@
-import { Box, Text, Code, UnorderedList, ListItem } from '@chakra-ui/react';
+import { Text, Code, UnorderedList, ListItem } from '@chakra-ui/react';
+import SectionWrapper from '../../section-wrapper/section-wrapper.component';
 import SectionHeading from '../../section-heading/section-heading.component';
 import AnchorHeading from '../../anchor-heading/anchor-heading.component';
 import AnchorLink from '../../anchor-link/anchor-link.component';
 
 const GettingStarted = () => {
   return (
-    <Box as="section" pb="15px">
+    <SectionWrapper>
       <SectionHeading>Getting Started</SectionHeading>
 
       <AnchorHeading anchorId="introduction">Introduction</AnchorHeading>
@@ -68,7 +69,7 @@ const GettingStarted = () => {
 
       <AnchorHeading anchorId="pagination-intro">Pagination</AnchorHeading>
       <Text>Pagination details</Text>
-    </Box>
+    </SectionWrapper>
   );
 };
 

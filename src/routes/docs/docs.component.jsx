@@ -8,7 +8,7 @@ import './docs.styles.scss';
 const Docs = () => {
   return (
     <DocsProvider>
-      <Box maxWidth={contentMaxWidth.string} m="auto" pb="50px" zIndex="base">
+      <Box maxWidth={contentMaxWidth.string} m="auto" zIndex="base">
         <Sidebar />
         <DocContent />
       </Box>
