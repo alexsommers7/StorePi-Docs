@@ -1,6 +1,6 @@
 import { Box, Text } from '@chakra-ui/react';
 import { docsSidebarWidth } from '../../utils/sizing/sizing.utils';
-import ExternalLink from '../../components/external-link/external-link.component';
+import ExternalLink from '../../components/links/external/external-link.component';
 
 const Footer = () => {
   return (

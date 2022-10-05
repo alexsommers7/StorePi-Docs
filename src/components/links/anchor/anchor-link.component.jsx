@@ -1,8 +1,8 @@
 import { useContext } from 'react';
-import { DocsContext } from '../../contexts/docs.context';
+import { DocsContext } from '../../../contexts/docs.context';
 import { HashLink } from 'react-router-hash-link';
 
-import { scrollWithOffset } from '../../utils/anchor/anchor.utils';
+import { scrollWithOffset } from '../../../utils/anchor/anchor.utils';
 
 const AnchorLink = ({ anchor, children }) => {
   const { setActiveAnchor } = useContext(DocsContext);

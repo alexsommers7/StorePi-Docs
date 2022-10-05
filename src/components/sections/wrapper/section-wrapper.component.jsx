@@ -1,5 +1,5 @@
 import { Box, Divider } from '@chakra-ui/react';
-import { BorderColor } from '../../utils/color/colorModeValues.utils';
+import { BorderColor } from '../../../utils/color/colorModeValues.utils';
 
 const SectionWrapper = ({ children, useBottomBorder = true, useBottomMargin = true }) => {
   return (

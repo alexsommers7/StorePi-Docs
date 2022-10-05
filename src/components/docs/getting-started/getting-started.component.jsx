@@ -1,8 +1,8 @@
 import { Text, Code, UnorderedList, ListItem } from '@chakra-ui/react';
-import SectionWrapper from '../../section-wrapper/section-wrapper.component';
-import SectionHeading from '../../section-heading/section-heading.component';
+import SectionWrapper from '../../sections/wrapper/section-wrapper.component';
+import SectionHeading from '../../sections/heading/section-heading.component';
 import AnchorHeading from '../../anchor-heading/anchor-heading.component';
-import AnchorLink from '../../anchor-link/anchor-link.component';
+import AnchorLink from '../../links/anchor/anchor-link.component';
 
 const GettingStarted = () => {
   return (
