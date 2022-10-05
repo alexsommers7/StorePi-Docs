@@ -3,9 +3,9 @@ import { BorderColor } from '../../utils/color/colorModeValues.utils';
 
 const SectionWrapper = ({ children, useBottomBorder = true, useBottomMargin = true }) => {
   return (
-    <Box as="section" mb={useBottomMargin && '3.75'}>
+    <Box as="section" mb={useBottomMargin && '3.75rem'}>
       {children}
-      <Divider borderColor={useBottomBorder ? BorderColor : 'transparent'} pt="3.125" />
+      <Divider borderColor={useBottomBorder ? BorderColor : 'transparent'} pt="3.75rem" />
     </Box>
   );
 };

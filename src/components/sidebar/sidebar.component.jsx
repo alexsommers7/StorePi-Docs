@@ -50,7 +50,7 @@ const Sidebar = () => {
               const { label, subitems } = item;
 
               return (
-                <Box key={label} mb="1.875">
+                <Box key={label} mb="1.875rem">
                   <SidebarHeading label={label} />
                   {subitems?.length &&
                     subitems.map(subitem => <SidebarLink item={subitem} key={subitem.anchor} />)}
