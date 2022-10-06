@@ -8,13 +8,14 @@ const SidebarBackdrop = () => {
   const [isMobile] = useMediaQuery(`(max-width: ${mobileMax})`);
 
   const activeStyle = {
-    height: '100vh',
-    width: '100vw',
+    height: '100%',
+    width: '100%',
     position: 'fixed',
     top: 0,
     left: 0,
     backgroundColor: 'rgba(0,0,0,.33)',
     backdropFilter: 'blur(2px)',
+    zIndex: '10',
   };
 
   const handleBackdropClick = () => setIsSidebarOpen(false);

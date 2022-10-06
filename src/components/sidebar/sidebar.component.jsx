@@ -5,7 +5,7 @@ import { Flex, UnorderedList, Box, useMediaQuery } from '@chakra-ui/react';
 import { BorderColor } from '../../utils/color/colorModeValues.utils';
 import { DocSidebarItems } from '../../utils/content/doc-sidebar.utils';
 import SidebarLink from './link/sidebar-link.component';
-import SidebarHeading from './sidebar-heading/sidebar-heading.component';
+import SidebarHeading from './heading/sidebar-heading.component';
 import { docsSidebarWidth } from '../../utils/sizing/sizing.utils';
 import { navHeight } from '../../utils/sizing/sizing.utils';
 import { contentMaxWidth } from '../../utils/sizing/sizing.utils';
@@ -16,7 +16,7 @@ const Sidebar = () => {
   const { isSidebarOpen } = useContext(DocsContext);
 
   const openStyle = {
-    width: '80%',
+    width: 'min(80%, 250px)',
     transform: 'translateY(-1.25rem)',
   };
 
@@ -38,7 +38,7 @@ const Sidebar = () => {
         ]}
         transition="transform .5s cubic-bezier(.19,1,.22,1)"
         width={docsSidebarWidth.string}
-        height={['100vh', '100vh', `calc(100vh - ${navHeight.string})`]}
+        height={['100%', '100%', `calc(100% - ${navHeight.string})`]}
         overflowY="auto"
         className="scrollbar-y-thin"
         zIndex="popover"
