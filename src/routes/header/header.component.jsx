@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { DocsContext } from '../../contexts/docs.context';
 import { Flex, Text, Box, IconButton, useMediaQuery } from '@chakra-ui/react';
-import { FaBars } from 'react-icons/fa';
+import { FaBars, FaTimes } from 'react-icons/fa';
 import { ColorModeSwitcher } from '../../ColorModeSwitcher';
 import { BorderColor } from '../../utils/color/colorModeValues.utils';
 import { contentMaxWidth, mobileMax } from '../../utils/sizing/sizing.utils';
@@ -33,17 +33,18 @@ const Header = () => {
         m="auto"
       >
         <Text mb={0}>StorePi</Text>
-        <Box>
+        <Flex>
           <ColorModeSwitcher justifySelf="flex-end" />
           {isMobile && (
             <IconButton
               onClick={handleSidebarToggle}
-              aria-label="Open menu"
-              icon={<FaBars />}
+              aria-label={`${isSidebarOpen ? 'Close' : 'Open'} menu`}
+              icon={isSidebarOpen ? <FaTimes /> : <FaBars />}
               ml={3}
+              variant="solid"
             />
           )}
-        </Box>
+        </Flex>
       </Flex>
     </Box>
   );

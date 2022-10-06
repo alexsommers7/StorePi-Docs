@@ -1,16 +1,17 @@
 import { useState, useContext } from 'react';
 import { DocsContext } from '../../../contexts/docs.context';
-import { ListItem, useColorModeValue } from '@chakra-ui/react';
+import { ListItem, useColorModeValue, useMediaQuery } from '@chakra-ui/react';
 import { HashLink } from 'react-router-hash-link';
-
 import { scrollWithOffset } from '../../../utils/anchor/anchor.utils';
+import { mobileMax } from '../../../utils/sizing/sizing.utils';
 
 const SidebarLink = ({ item }) => {
   const [isHovered, setIsHovered] = useState(false);
   const { label, anchor } = item;
-  const { activeAnchor, setActiveAnchor } = useContext(DocsContext);
+  const { activeAnchor, setActiveAnchor, setIsSidebarOpen } = useContext(DocsContext);
   const isActive = anchor === activeAnchor;
   const defaultColor = useColorModeValue('blackAlpha.100', 'rgba(235, 235, 235, .5)');
+  const [isMobile] = useMediaQuery(`(max-width: ${mobileMax})`);
 
   const inactiveStyle = {
     transition: 'all .2s ease',
@@ -31,7 +32,7 @@ const SidebarLink = ({ item }) => {
     const { href } = event.target;
     const anchor = href.split('#')[1] || '';
     setActiveAnchor(anchor);
-    console.log({ anchor });
+    if (isMobile) setIsSidebarOpen(false);
   };
 
   return (

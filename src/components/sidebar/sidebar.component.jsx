@@ -4,7 +4,7 @@ import { Flex, UnorderedList, Box, useMediaQuery } from '@chakra-ui/react';
 
 import { BorderColor } from '../../utils/color/colorModeValues.utils';
 import { DocSidebarItems } from '../../utils/content/doc-sidebar.utils';
-import SidebarLink from './sidebar-link/sidebar-link.component';
+import SidebarLink from './link/sidebar-link.component';
 import SidebarHeading from './sidebar-heading/sidebar-heading.component';
 import { docsSidebarWidth } from '../../utils/sizing/sizing.utils';
 import { navHeight } from '../../utils/sizing/sizing.utils';
@@ -17,7 +17,7 @@ const Sidebar = () => {
 
   const openStyle = {
     width: '80%',
-    transform: 'translateY(-1.125rem)',
+    transform: 'translateY(-1.25rem)',
   };
 
   // using transform instead of top/left so it remains fixed to container, not viewport
@@ -32,8 +32,8 @@ const Sidebar = () => {
         backgroundColor="var(--chakra-colors-chakra-body-bg)"
         position="fixed"
         transform={[
-          'translate(-100%, -1.125rem)',
-          'translate(-100%, -1.125rem)',
+          'translate(-100%, -1.25rem)',
+          'translate(-100%, -1.25rem)',
           `${isLargerThanMaxContent ? 'translate(-2rem, -1rem)' : 'translate(0, -1rem)'}`,
         ]}
         transition="transform .5s cubic-bezier(.19,1,.22,1)"
