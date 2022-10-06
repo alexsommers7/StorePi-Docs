@@ -19,7 +19,7 @@ const Docs = () => {
       padding={[
         '1rem 1.5rem',
         '1rem 1.5rem',
-        `2rem 2rem 2rem calc(${docsSidebarWidth.string} + 3.125rem)`,
+        `2rem 2rem 0 calc(${docsSidebarWidth.string} + 3.125rem)`,
       ]}
     >
       <GettingStarted />

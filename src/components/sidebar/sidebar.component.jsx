@@ -34,7 +34,7 @@ const Sidebar = () => {
         transform={[
           'translate(-100%, -1.25rem)',
           'translate(-100%, -1.25rem)',
-          `${isLargerThanMaxContent ? 'translate(-2rem, -1rem)' : 'translate(0, -1rem)'}`,
+          `${isLargerThanMaxContent ? 'translate(-1.5rem, -1rem)' : 'translate(0, -1rem)'}`,
         ]}
         transition="transform .5s cubic-bezier(.19,1,.22,1)"
         width={docsSidebarWidth.string}
