@@ -36,11 +36,6 @@ const theme = extendTheme({
         _hover: { textDecoration: 'none', color: 'brand.100' },
       },
     },
-    Text: {
-      baseStyle: {
-        marginBottom: '2.1875rem',
-      },
-    },
   },
 });
 

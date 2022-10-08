@@ -43,7 +43,7 @@ const GettingStarted = () => {
       </Text>
 
       <Text mb={0}>The following parameters are duplicatable:</Text>
-      <UnorderedList pl="1.25rem" pt="1.6rem" mb="1.6rem">
+      <UnorderedList pl={5} pt={6} mb={6}>
         <ListItem>
           <Code>reviews_average</Code>
         </ListItem>

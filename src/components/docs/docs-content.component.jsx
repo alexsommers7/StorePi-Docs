@@ -16,11 +16,7 @@ const Docs = () => {
     <Box
       mt={5}
       fontSize="md"
-      padding={[
-        '1rem 1.5rem',
-        '1rem 1.5rem',
-        `2rem 2rem 0 calc(${docsSidebarWidth.string} + 3.125rem)`,
-      ]}
+      padding={[6, 6, `2rem 2rem 0 calc(${docsSidebarWidth.string} + 3.125rem)`]}
     >
       <GettingStarted />
       <Products />

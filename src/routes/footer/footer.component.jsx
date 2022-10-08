@@ -5,7 +5,7 @@ import ExternalLink from '../../components/links/external/external-link.componen
 const Footer = () => {
   return (
     <Box pl={['0', '0', docsSidebarWidth.string]}>
-      <Box pt="1.25rem" pb="1.25rem" textAlign="center">
+      <Box pt={5} pb={5} textAlign="center">
         <Text>
           Created by <ExternalLink href="https://AlexSommers.com">Alex Sommers</ExternalLink>
         </Text>

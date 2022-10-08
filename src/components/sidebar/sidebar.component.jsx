@@ -25,8 +25,10 @@ const Sidebar = () => {
     <Box as="aside">
       <Flex
         direction="column"
-        fontSize=".8125"
-        p=".5rem 1.5rem 6.25rem"
+        fontSize="sm"
+        pt={2}
+        px={6}
+        pb={24}
         borderRight="1px solid transparent"
         borderColor={BorderColor}
         backgroundColor="var(--chakra-colors-chakra-body-bg)"
@@ -50,7 +52,7 @@ const Sidebar = () => {
               const { label, subitems } = item;
 
               return (
-                <Box key={label} mb="1.875rem">
+                <Box key={label} mb={7}>
                   <SidebarHeading label={label} />
                   {subitems?.length &&
                     subitems.map(subitem => <SidebarLink item={subitem} key={subitem.anchor} />)}

@@ -36,7 +36,7 @@ const SidebarLink = ({ item }) => {
   };
 
   return (
-    <ListItem mb=".5rem">
+    <ListItem mb={2}>
       <HashLink
         to={`#${anchor}`}
         style={isActive ? activeStyle : inactiveStyle}

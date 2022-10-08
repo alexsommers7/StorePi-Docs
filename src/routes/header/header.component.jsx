@@ -24,7 +24,8 @@ const Header = () => {
       borderBottom="1px solid transparent"
       borderColor={BorderColor}
       backgroundColor="var(--chakra-colors-chakra-body-bg)"
-      p={['.5rem 1.5rem', '.5rem 1.5rem ', '.5rem 1.5rem']}
+      px={6}
+      py={2}
     >
       <Flex
         alignItems="center"
