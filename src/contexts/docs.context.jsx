@@ -39,8 +39,10 @@ export const DocsProvider = ({ children }) => {
   const [state, dispatch] = useReducer(docsReducer, initialState);
   const { activeAnchor, isSidebarOpen } = state;
 
-  const setActiveAnchor = anchor =>
+  const setActiveAnchor = anchor => {
+    console.log(`setting active anchor ... ${anchor}`);
     dispatch({ type: docsActionTypes.setActiveAnchor, payload: anchor });
+  };
 
   const setIsSidebarOpen = bool =>
     dispatch({ type: docsActionTypes.setIsSidebarOpen, payload: bool });
