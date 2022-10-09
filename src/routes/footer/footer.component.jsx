@@ -9,6 +9,11 @@ const Footer = () => {
         <Text>
           Created by <ExternalLink href="https://AlexSommers.com">Alex Sommers</ExternalLink>
         </Text>
+        <Text fontSize={12}>
+          <ExternalLink href="https://documenter.getpostman.com/view/12907395/UyxjF694">
+            Run in Postman
+          </ExternalLink>
+        </Text>
       </Box>
     </Box>
   );

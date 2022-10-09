@@ -36,7 +36,7 @@ const theme = extendTheme({
       },
       variants: {
         text: {
-          _hover: { color: 'brand.100' },
+          _hover: { textDecoration: 'none', color: 'brand.100' },
           color: 'brand.200',
         },
       },
