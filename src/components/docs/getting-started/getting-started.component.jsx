@@ -43,32 +43,26 @@ const GettingStarted = () => {
       </Text>
 
       <Text mb={0}>The following parameters are duplicatable:</Text>
-      <UnorderedList pl={5} pt={6} mb={6}>
-        <ListItem>
-          <Code>reviews_average</Code>
-        </ListItem>
-        <ListItem>
-          <Code>reviews_quantity</Code>
-        </ListItem>
-        <ListItem>
-          <Code>regular_price</Code>
-        </ListItem>
-        <ListItem>
-          <Code>sale_price</Code>
-        </ListItem>
-        <ListItem>
-          <Code>brand</Code>
-        </ListItem>
-        <ListItem>
-          <Code>category</Code>
-        </ListItem>
+      <UnorderedList pl={5} pt={4} mb={6}>
+        {[
+          'reviews_average',
+          'reviews_quantity',
+          'regular_price',
+          'sale_price',
+          'brand',
+          'category',
+        ].map(item => (
+          <ListItem>
+            <Code>{item}</Code>
+          </ListItem>
+        ))}
       </UnorderedList>
 
       <AnchorHeading anchorId="sorting-intro">Sorting</AnchorHeading>
-      <Text>Sorting details</Text>
+      <Text>-reviews_average,sale_price</Text>
 
       <AnchorHeading anchorId="pagination-intro">Pagination</AnchorHeading>
-      <Text>Pagination details</Text>
+      <Text>Page Param and Limit Param</Text>
     </SectionWrapper>
   );
 };

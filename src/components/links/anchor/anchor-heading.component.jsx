@@ -1,5 +1,5 @@
 import { Box, Heading, useToast } from '@chakra-ui/react';
-import { FaAnchor, FaClipboard } from 'react-icons/fa';
+import { FaAnchor } from 'react-icons/fa';
 
 const AnchorHeading = ({ anchorId, children }) => {
   const handleAnchorCopy = () => {
