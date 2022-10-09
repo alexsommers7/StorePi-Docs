@@ -5,7 +5,7 @@ const SectionWrapper = ({ children, useBottomBorder = true, useBottomMargin = tr
   return (
     <Box as="section" mb={useBottomMargin && 14}>
       {children}
-      <Divider borderColor={useBottomBorder ? BorderColor : 'transparent'} pt={9} />
+      <Divider borderColor={useBottomBorder ? BorderColor : 'transparent'} pt={14} />
     </Box>
   );
 };

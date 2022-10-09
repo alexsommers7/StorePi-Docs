@@ -10,7 +10,6 @@ const AnchorHeading = ({ anchorId, children }) => {
       toast({
         title: 'Link Copied to Clipboard',
         status: 'success',
-        icon: <FaClipboard fontSize={5} />,
         duration: 5000,
         isClosable: true,
         id: toastId,

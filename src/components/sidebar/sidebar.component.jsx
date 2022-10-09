@@ -28,7 +28,7 @@ const Sidebar = () => {
         fontSize="sm"
         pt={2}
         px={6}
-        pb={24}
+        pb={16}
         borderRight="1px solid transparent"
         borderColor={BorderColor}
         backgroundColor="var(--chakra-colors-chakra-body-bg)"

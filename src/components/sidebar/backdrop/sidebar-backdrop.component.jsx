@@ -14,7 +14,7 @@ const SidebarBackdrop = () => {
     top: 0,
     left: 0,
     backgroundColor: 'rgba(0,0,0,.33)',
-    backdropFilter: 'blur(2px)',
+    backdropFilter: 'blur(1px)',
     zIndex: '10',
   };
 
