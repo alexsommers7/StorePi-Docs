@@ -1,9 +1,8 @@
 import { createContext, useReducer } from 'react';
-// import { DocSidebarItems } from '../utils/content/doc-sidebar.utils';
+import { DocSidebarItems } from '../utils/content/doc-sidebar.utils';
 
 const initialState = {
-  // activeAnchor: DocSidebarItems.filter(item => item.subitems.length)[0].subitems[0].anchor,
-  activeAnchor: '',
+  activeAnchor: DocSidebarItems.filter(item => item.subitems.length)[0].subitems[0].anchor,
   setActiveAnchor: () => {},
   isSidebarOpen: false,
   setIsSidebarOpen: () => {},
