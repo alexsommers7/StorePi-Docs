@@ -5,7 +5,7 @@ import AnchorHeading from '../../links/anchor/anchor-heading.component';
 
 const Authentication = () => {
   return (
-    <SectionWrapper useBottomBorder="false" useBottomMargin="false">
+    <SectionWrapper useBottomMargin={false}>
       <SectionHeading>Authentication</SectionHeading>
 
       <Text>
