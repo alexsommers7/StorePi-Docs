@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { DocsContext } from '../../contexts/docs.context';
-import { Flex, Text, Box, IconButton, useMediaQuery } from '@chakra-ui/react';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { Flex, Text, Box, IconButton, useMediaQuery, Link } from '@chakra-ui/react';
+import { FaBars, FaTimes, FaGithub } from 'react-icons/fa';
 import { ColorModeSwitcher } from '../../ColorModeSwitcher';
 import { BorderColor } from '../../utils/color/colorModeValues.utils';
 import { contentMaxWidth, mobileMax } from '../../utils/sizing/sizing.utils';
@@ -34,14 +34,23 @@ const Header = () => {
         m="auto"
       >
         <Text mb={0}>StorePi</Text>
-        <Flex>
-          <ColorModeSwitcher justifySelf="flex-end" />
+        <Flex alignItems="center">
+          <Link
+            href="https://github.com/alexsommers7/StorePi-Docs"
+            aria-label="View project repository on GitHub"
+            isExternal
+          >
+            <FaGithub fontSize={20} />
+          </Link>
+
+          <ColorModeSwitcher ml={3} justifySelf="flex-end" />
+
           {isMobile && (
             <IconButton
               onClick={handleSidebarToggle}
               aria-label={`${isSidebarOpen ? 'Close' : 'Open'} menu`}
               icon={isSidebarOpen ? <FaTimes /> : <FaBars />}
-              ml={3}
+              ml={2}
               variant="solid"
             />
           )}

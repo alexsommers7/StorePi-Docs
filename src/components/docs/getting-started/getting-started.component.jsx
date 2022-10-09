@@ -52,7 +52,7 @@ const GettingStarted = () => {
           'brand',
           'category',
         ].map(item => (
-          <ListItem>
+          <ListItem key={item}>
             <Code>{item}</Code>
           </ListItem>
         ))}

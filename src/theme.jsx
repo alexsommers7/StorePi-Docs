@@ -32,8 +32,12 @@ const theme = extendTheme({
     Link: {
       baseStyle: {
         textDecoration: 'none',
-        color: 'brand.200',
-        _hover: { textDecoration: 'none', color: 'brand.100' },
+      },
+      variants: {
+        text: {
+          _hover: { color: 'brand.100' },
+          color: 'brand.200',
+        },
       },
     },
   },
