@@ -7,7 +7,7 @@ const SidebarHeading = ({ label }) => {
 
   return (
     <ListItem mb={3} mt={3}>
-      <Heading size="sm" style={style}>
+      <Heading size="md" style={style}>
         {label}
       </Heading>
     </ListItem>
