@@ -8,14 +8,14 @@ import {
   AccordionPanel,
 } from '@chakra-ui/react';
 
-const CollapsibleCode = ({ code }) => {
+const CollapsibleCode = ({ label = 'View sample response', code, isOpen = false }) => {
   return (
-    <Accordion allowToggle>
+    <Accordion allowToggle defaultIndex={isOpen ? 0 : null}>
       <AccordionItem>
         <h2>
           <AccordionButton style={{ outline: 'none !important' }}>
             <Box flex="1" textAlign="left">
-              View sample response
+              {label}
             </Box>
             <AccordionIcon />
           </AccordionButton>
