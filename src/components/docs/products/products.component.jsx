@@ -1,14 +1,14 @@
-import { Box, Code, Text } from '@chakra-ui/react';
+import { Text } from '@chakra-ui/react';
 import Endpoint from '../../endpoint/endpoint.component';
 import SectionWrapper from '../../sections/wrapper/section-wrapper.component';
 import SectionHeading from '../../sections/heading/section-heading.component';
 import AnchorHeading from '../../links/anchor/anchor-heading.component';
-import CodeSnippet from '../../code-snippet/code-snippet.component';
-import { apiOrigin } from '../../../utils/content/doc-content.utils';
 import {
   getAllProductsResponse,
   getProductResponse,
+  createNewProductResponse,
 } from '../../../utils/content/doc-sample-responses.utils';
+import { createNewProductBody } from '../../../utils/content/doc-sample-bodies.utils';
 
 const Products = () => {
   return (
@@ -23,19 +23,24 @@ const Products = () => {
         anchorId="get-products"
         headingText="Get All Products"
         subdirectory="products"
-        code={getAllProductsResponse}
+        response={getAllProductsResponse}
       />
 
       <Endpoint
         anchorId="get-product"
         headingText="Get Product"
-        subdirectory="products/{'{id}'}"
-        code={getProductResponse}
+        subdirectory="products/{id}"
+        response={getProductResponse}
       />
 
-      <AnchorHeading anchorId="create-product" httpMethod="POST">
-        Create New Product
-      </AnchorHeading>
+      <Endpoint
+        anchorId="create-product"
+        httpMethod="POST"
+        headingText="Create New Product"
+        subdirectory="products"
+        requestBody={createNewProductBody}
+        response={createNewProductResponse}
+      />
 
       <AnchorHeading anchorId="update-product" httpMethod="PATCH">
         Update Product

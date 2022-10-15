@@ -1,6 +1,6 @@
-import { Box, Code } from '@chakra-ui/react';
+import { Box, Code, Text } from '@chakra-ui/react';
 import AnchorHeading from '../links/anchor/anchor-heading.component';
-import CodeSnippet from '../code-snippet/code-snippet.component';
+import CollapsibleCode from '../collapsible-code/collapsible-code.component';
 import { apiOrigin } from '../../utils/content/doc-content.utils';
 
 const Endpoint = ({
@@ -8,7 +8,8 @@ const Endpoint = ({
   httpMethod = 'GET',
   headingText,
   subdirectory,
-  code,
+  requestBody,
+  response,
   requiresAuth = false,
 }) => {
   return (
@@ -20,7 +21,17 @@ const Endpoint = ({
         <Code mb={7}>
           {apiOrigin}/{subdirectory}
         </Code>
-        <CodeSnippet code={code} />
+
+        {requestBody && (
+          <Box mb={7}>
+            <Text mb={2}>Sample request body:</Text>
+            <pre>
+              <Code>{requestBody}</Code>
+            </pre>
+          </Box>
+        )}
+
+        <CollapsibleCode code={response} />
       </Box>
     </Box>
   );
