@@ -1,27 +1,49 @@
 import { Box, Code, Text } from '@chakra-ui/react';
+import Endpoint from '../../endpoint/endpoint.component';
 import SectionWrapper from '../../sections/wrapper/section-wrapper.component';
 import SectionHeading from '../../sections/heading/section-heading.component';
 import AnchorHeading from '../../links/anchor/anchor-heading.component';
+import CodeSnippet from '../../code-snippet/code-snippet.component';
 import { apiOrigin } from '../../../utils/content/doc-content.utils';
+import {
+  getAllProductsResponse,
+  getProductResponse,
+} from '../../../utils/content/doc-sample-responses.utils';
 
 const Products = () => {
   return (
     <SectionWrapper>
       <SectionHeading>Products</SectionHeading>
+      <Text>
+        A total of 54 products exist in the database. Each product contains properties such as
+        pricing, review data, specs, and more.
+      </Text>
 
-      <AnchorHeading anchorId="create-product">Create New Product</AnchorHeading>
+      <Endpoint
+        anchorId="get-products"
+        headingText="Get All Products"
+        subdirectory="products"
+        code={getAllProductsResponse}
+      />
 
-      <AnchorHeading anchorId="get-products">Get All Products</AnchorHeading>
-      <Box mb={7}>
-        <Code mb={3}>{apiOrigin}?limit=25</Code>
-        <Text mb={0}>Use this endpoint to retrieve a list of all products</Text>
-      </Box>
+      <Endpoint
+        anchorId="get-product"
+        headingText="Get Product"
+        subdirectory="products/{'{id}'}"
+        code={getProductResponse}
+      />
 
-      <AnchorHeading anchorId="get-product">Get Product</AnchorHeading>
-      <AnchorHeading anchorId="get-cheapest-products">Get 10 Cheapest Products</AnchorHeading>
-      <AnchorHeading anchorId="get-rated-products">Get 10 Highest Rated Products</AnchorHeading>
-      <AnchorHeading anchorId="update-product">Update Product</AnchorHeading>
-      <AnchorHeading anchorId="delete-product">Delete Product</AnchorHeading>
+      <AnchorHeading anchorId="create-product" httpMethod="POST">
+        Create New Product
+      </AnchorHeading>
+
+      <AnchorHeading anchorId="update-product" httpMethod="PATCH">
+        Update Product
+      </AnchorHeading>
+
+      <AnchorHeading anchorId="delete-product" httpMethod="DELETE">
+        Delete Product
+      </AnchorHeading>
     </SectionWrapper>
   );
 };

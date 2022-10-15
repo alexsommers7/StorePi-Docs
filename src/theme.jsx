@@ -41,6 +41,32 @@ const theme = extendTheme({
         },
       },
     },
+    Badge: {
+      baseStyle: {
+        fontSize: 'md',
+        lineHeight: '1.2',
+        paddingLeft: '0',
+      },
+      variants: {
+        GET: {
+          color: 'rgb(12, 187, 82)',
+        },
+        POST: {
+          color: 'rgb(255, 180, 0)',
+        },
+        PATCH: {
+          color: 'rgb(151, 151, 151)',
+        },
+        DELETE: {
+          color: 'rgb(235, 32, 19)',
+        },
+      },
+    },
+    Code: {
+      baseStyle: {
+        tabSize: '2',
+      },
+    },
   },
 });
 
