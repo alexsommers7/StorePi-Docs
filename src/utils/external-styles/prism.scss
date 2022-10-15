@@ -25,10 +25,6 @@ pre[class*='language-'] {
   margin: 0.5em 0;
   overflow: auto;
 }
-:not(pre) > code[class*='language-'],
-pre[class*='language-'] {
-  background: rgba(226, 232, 240, 0.06);
-}
 :not(pre) > code[class*='language-'] {
   padding: 0.1em;
   border-radius: 0.3em;
@@ -62,7 +58,7 @@ pre[class*='language-'] {
 .token.constant,
 .token.property,
 .token.symbol {
-  color: #f8c555;
+  color: #fdc94d;
 }
 .token.atrule,
 .token.builtin,
@@ -76,7 +72,7 @@ pre[class*='language-'] {
 .token.regex,
 .token.string,
 .token.variable {
-  color: #7ec699;
+  color: #48bf75;
 }
 .token.entity,
 .token.operator,
@@ -95,4 +91,20 @@ pre[class*='language-'] {
 }
 .token.inserted {
   color: green;
+}
+
+// customizations for light theme
+.chakra-ui-light {
+  :not(pre) > code[class*='language-'],
+  pre[class*='language-'] {
+    background: #1c1c1c;
+  }
+}
+
+// customizations for dark theme
+.chakra-ui-dark {
+  :not(pre) > code[class*='language-'],
+  pre[class*='language-'] {
+    background: rgba(226, 232, 240, 0.06);
+  }
 }
