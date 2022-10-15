@@ -1,8 +1,21 @@
-import { Text, Code, UnorderedList, ListItem } from '@chakra-ui/react';
+import {
+  Text,
+  Code,
+  UnorderedList,
+  ListItem,
+  Table,
+  Thead,
+  Tbody,
+  Tr,
+  Th,
+  Td,
+  TableContainer,
+} from '@chakra-ui/react';
 import SectionWrapper from '../../sections/wrapper/section-wrapper.component';
 import SectionHeading from '../../sections/heading/section-heading.component';
 import AnchorHeading from '../../links/anchor/anchor-heading.component';
 import AnchorLink from '../../links/anchor/anchor-link.component';
+import { FaLock } from 'react-icons/fa';
 
 const GettingStarted = () => {
   return (
@@ -32,18 +45,101 @@ const GettingStarted = () => {
         any request.
       </Text>
 
-      <AnchorHeading anchorId="filtering-intro">Filtering</AnchorHeading>
+      <AnchorHeading anchorId="authorization">Authorization</AnchorHeading>
       <Text mb={3}>
-        If filtering by a brand with multiple words, separate the words with a <Code>-</Code>
+        Certain requests require a JWT for authorization. As a general rule, any request that is
+        creating, updating, or deleting a resource or accessing a <em>current user's</em> resources
+        will require the bearer token. Requests that do require the token are indicated as such by
+        the{' '}
+        <FaLock
+          style={{ display: 'inline-block', transform: 'translateY(1px)' }}
+          color="rgb(141, 141, 141)"
+          size="12"
+        />{' '}
+        icon.
       </Text>
-      <Text mb={3}>
-        If filtering by a category, you must pass in the ID of the category, not the name. The
-        category IDs can be obtained via the{' '}
-        <AnchorLink anchor="get-categories">categories</AnchorLink> endpoint
+      <Text>
+        {' '}
+        A token can be obtained via the <AnchorLink anchor="log-in">log in</AnchorLink> endpoint,
+        where it will be stored as an http-only cookie.
       </Text>
 
-      <Text mb={0}>The following parameters are duplicatable:</Text>
-      <UnorderedList pl={5} pt={4} mb={6}>
+      <AnchorHeading anchorId="request-parameters">Request Parameters</AnchorHeading>
+      <Text mb={3}>The following query parameters can optionally be appended to all requests:</Text>
+      <TableContainer className="scrollbar-x-thin">
+        <Table variant="simple" mb={2}>
+          <Thead>
+            <Tr>
+              <Th>Parameter</Th>
+              <Th>Description</Th>
+              <Th>Example</Th>
+            </Tr>
+          </Thead>
+          <Tbody>
+            <Tr>
+              <Td>
+                <Code>sort</Code>
+              </Td>
+              <Td>
+                <Text mb={2}>Sort the query results by one or more fields (comma-delimited).</Text>{' '}
+                Use <Code>-</Code> to indicate descending order.
+              </Td>
+              <Td>
+                <Code>?sort=-reviews_average,sale_price</Code>
+              </Td>
+            </Tr>
+
+            <Tr>
+              <Td>
+                <Code>fields</Code>
+              </Td>
+              <Td>
+                <Text mb={2}>Filter the query results to specific fields (comma-delimited).</Text>
+                Use <Code>-</Code> to indicate exclusion.
+              </Td>
+              <Td>
+                <Code>?fields=-user</Code>
+              </Td>
+            </Tr>
+
+            <Tr>
+              <Td>
+                <Code>limit</Code>
+              </Td>
+              <Td>
+                <Text>Limit the query results.</Text>
+              </Td>
+              <Td>
+                <Code>?limit=10</Code>
+              </Td>
+            </Tr>
+
+            <Tr>
+              <Td>
+                <Code>page</Code>
+              </Td>
+              <Td>
+                <Text>Paginate the query results.</Text>
+              </Td>
+              <Td>
+                <Code>?page=2</Code>
+              </Td>
+            </Tr>
+          </Tbody>
+        </Table>
+      </TableContainer>
+
+      <AnchorHeading anchorId="filtering-intro">Filtering</AnchorHeading>
+      <Text mb={3}>Any property of a resource is valid for applying filters to a query.</Text>
+
+      <Text mb={3}>
+        If you're filtering by a brand with multiple words, you'll need to separate the words with a{' '}
+        <Code>-</Code> e.g. <Code>?brand=brand-name-here</Code>. Supports gte, lte, gt, and lt
+        operators e.g. <Code>?sale_price[lte]=100</Code>.
+      </Text>
+
+      <Text mb={0}>The following parameters are whitelisted for duplication:</Text>
+      <UnorderedList pl={5} pt={4} mb={4}>
         {[
           'reviews_average',
           'reviews_quantity',
@@ -57,12 +153,6 @@ const GettingStarted = () => {
           </ListItem>
         ))}
       </UnorderedList>
-
-      <AnchorHeading anchorId="sorting-intro">Sorting</AnchorHeading>
-      <Text>-reviews_average,sale_price</Text>
-
-      <AnchorHeading anchorId="pagination-intro">Pagination</AnchorHeading>
-      <Text>Page Param and Limit Param</Text>
     </SectionWrapper>
   );
 };

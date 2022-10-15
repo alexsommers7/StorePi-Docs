@@ -9,7 +9,6 @@ import SidebarHeading from './heading/sidebar-heading.component';
 import { docsSidebarWidth } from '../../utils/sizing/sizing.utils';
 import { navHeight } from '../../utils/sizing/sizing.utils';
 import { contentMaxWidth } from '../../utils/sizing/sizing.utils';
-import './sidebar.styles.css';
 
 const Sidebar = () => {
   const [isLargerThanMaxContent] = useMediaQuery(`(min-width: ${contentMaxWidth.num + 55}px)`);

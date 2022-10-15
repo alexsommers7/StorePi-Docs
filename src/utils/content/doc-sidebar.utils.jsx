@@ -9,8 +9,6 @@ export const DocSidebarItems = [
       { label: 'Authorization', anchor: 'authorization' },
       { label: 'Request Parameters', anchor: 'request-parameters' },
       { label: 'Filtering', anchor: 'filtering-intro' },
-      { label: 'Sorting', anchor: 'sorting-intro' },
-      { label: 'Pagination', anchor: 'pagination-intro' },
     ],
   },
   {
@@ -19,8 +17,6 @@ export const DocSidebarItems = [
       { label: 'Create New Product', anchor: 'create-product' },
       { label: 'Get All Products', anchor: 'get-products' },
       { label: 'Get Product', anchor: 'get-product' },
-      { label: 'Get 10 Cheapest Products', anchor: 'get-cheapest-products' },
-      { label: 'Get 10 Highest Rated Products', anchor: 'get-rated-products' },
       { label: 'Update Product', anchor: 'update-product' },
       { label: 'Delete Product', anchor: 'delete-product' },
     ],

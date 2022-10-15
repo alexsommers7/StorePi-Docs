@@ -1,7 +1,7 @@
-import { Box, Heading, useToast } from '@chakra-ui/react';
-import { FaAnchor } from 'react-icons/fa';
+import { Box, Heading, useToast, Flex, Badge } from '@chakra-ui/react';
+import { FaAnchor, FaLock } from 'react-icons/fa';
 
-const AnchorHeading = ({ anchorId, children }) => {
+const AnchorHeading = ({ anchorId, httpMethod, requiresAuth = false, children }) => {
   const handleAnchorCopy = () => {
     navigator.clipboard.writeText(`${window.location.href.split('#')[0]}#${anchorId}`);
 
@@ -20,10 +20,28 @@ const AnchorHeading = ({ anchorId, children }) => {
   const toast = useToast();
 
   return (
-    <Box position="relative" mt={10} mb={4} width="max-content">
-      <Heading id={anchorId} className="anchor-heading" size="md" mb={5}>
-        {children}
-      </Heading>
+    <Box className="anchor-heading" position="relative" mt={14} mb={6} width="max-content">
+      <Flex alignItems="center" mb={4}>
+        {httpMethod && (
+          <Badge variant={httpMethod} mr={1.5}>
+            {httpMethod}
+          </Badge>
+        )}
+
+        <Heading id={anchorId} size="md" mb={0} mr={2}>
+          {children}
+        </Heading>
+
+        {requiresAuth && (
+          <FaLock
+            color="rgb(141, 141, 141)"
+            style={{ display: 'inline-block', transform: 'translateY(1px)' }}
+            title="Requires authorization"
+            aria-label="Requires authorization"
+            size="12"
+          />
+        )}
+      </Flex>
 
       <button
         className="anchor-copy"

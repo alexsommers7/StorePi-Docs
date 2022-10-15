@@ -1,3 +1,26 @@
+@mixin customScrollbar {
+  &::-webkit-scrollbar {
+    background-color: transparent;
+    width: 3px !important;
+    height: 3px;
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 10px;
+  }
+  &:hover::-webkit-scrollbar-thumb {
+    background-color: #fff;
+  }
+}
+
+// customk
+.scrollbar-y-thin,
+.scrollbar-x-thin {
+  overscroll-behavior: contain;
+  @include customScrollbar;
+}
+
 // used for imported HashLink component
 .link {
   color: var(--chakra-colors-brand-200);
@@ -34,9 +57,19 @@
 
   &-heading {
     &:hover {
-      & ~ .anchor-copy {
+      .anchor-copy {
         opacity: 1;
       }
     }
+  }
+}
+
+pre {
+  max-width: 100%;
+
+  & * {
+    max-width: 100%;
+    overflow-x: auto;
+    @include customScrollbar;
   }
 }
