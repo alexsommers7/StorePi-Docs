@@ -13,12 +13,12 @@ const Endpoint = ({
   requiresAuth = false,
 }) => {
   return (
-    <Box>
+    <Box mb={20}>
       <AnchorHeading anchorId={anchorId} httpMethod={httpMethod} requiresAuth={requiresAuth}>
         {headingText}
       </AnchorHeading>
       <Box mb={7}>
-        <Code mb={7}>
+        <Code mt={4} mb={7}>
           {apiOrigin}/{subdirectory}
         </Code>
 

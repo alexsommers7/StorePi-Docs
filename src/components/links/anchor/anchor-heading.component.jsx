@@ -20,8 +20,8 @@ const AnchorHeading = ({ anchorId, httpMethod, requiresAuth = false, children })
   const toast = useToast();
 
   return (
-    <Box className="anchor-heading" position="relative" mt={14} mb={6} width="max-content">
-      <Flex alignItems="center" mb={4}>
+    <Box className="anchor-heading" position="relative" mt={8} mb={2} width="max-content">
+      <Flex alignItems="center">
         {httpMethod && (
           <Badge variant={httpMethod} mr={1.5}>
             {httpMethod}

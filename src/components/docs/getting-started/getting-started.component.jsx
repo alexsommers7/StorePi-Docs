@@ -23,23 +23,30 @@ const GettingStarted = () => {
       <SectionHeading>Getting Started</SectionHeading>
 
       <AnchorHeading anchorId="introduction">Introduction</AnchorHeading>
-      <Text>
+      <Text mb={3}>
         StorePI is a free, open-source REST API that was created for use in e-commerce prototyping,
-        Front-End Developer talent evaluations, and anything else you can think of.
+        Front-End Developer talent evaluations, and anything else you can think of. The API was
+        built with <Code>MongoDB</Code>, <Code>Mongoose</Code>, <Code>Node</Code>, and{' '}
+        <Code>Express</Code>.
+      </Text>
+      <Text mb={10}>
+        It provides resources such as <Code>products</Code>, <Code>review</Code>, <Code>users</Code>
+        , <Code>carts</Code>, <Code>purchases</Code>, and more.
       </Text>
 
       <AnchorHeading anchorId="database-interaction-intro">Database Interaction</AnchorHeading>
-      <Text>
+      <Text mb={10}>
         All endpoints act as real-world endpoints, but without actually writing anything to the
         database. In the event that you are creating or updating a resource, the response will
-        contain the updated data without persisting it.
+        contain the updated data without persisting it. Deleting a data will simply return a success
+        boolean.
       </Text>
 
       <AnchorHeading anchorId="cors-intro">CORS</AnchorHeading>
-      <Text>Cross-origin resource sharing is enabled for all incoming requests.</Text>
+      <Text mb={10}>Cross-origin resource sharing is enabled for all incoming requests.</Text>
 
       <AnchorHeading anchorId="rate-limiting-intro">Rate Limiting</AnchorHeading>
-      <Text>
+      <Text mb={10}>
         The rate limit for a given IP address is 300 requests per hour. The number of requests you
         have remaining can be viewed in the <Code>X-Ratelimit-Remaining</Code> response header of
         any request.
@@ -48,9 +55,8 @@ const GettingStarted = () => {
       <AnchorHeading anchorId="authorization">Authorization</AnchorHeading>
       <Text mb={3}>
         Certain requests require a JWT for authorization. As a general rule, any request that is
-        creating, updating, or deleting a resource or accessing a <em>current user's</em> resources
-        will require the bearer token. Requests that do require the token are indicated as such by
-        the{' '}
+        reading or writing to a <em>current user's</em> resources will require the bearer token.
+        Requests that do require the token are indicated as such by the{' '}
         <FaLock
           style={{ display: 'inline-block', transform: 'translateY(1px)' }}
           color="rgb(141, 141, 141)"
@@ -58,7 +64,7 @@ const GettingStarted = () => {
         />{' '}
         icon.
       </Text>
-      <Text>
+      <Text mb={10}>
         {' '}
         A token can be obtained via the <AnchorLink anchor="log-in">log in</AnchorLink> endpoint,
         where it will be stored as an http-only cookie.
@@ -66,7 +72,7 @@ const GettingStarted = () => {
 
       <AnchorHeading anchorId="request-parameters">Request Parameters</AnchorHeading>
       <Text mb={3}>The following query parameters can optionally be appended to all requests:</Text>
-      <TableContainer className="scrollbar-x-thin">
+      <TableContainer className="scrollbar-x-thin" mb={10}>
         <Table variant="simple" mb={2}>
           <Thead>
             <Tr>
