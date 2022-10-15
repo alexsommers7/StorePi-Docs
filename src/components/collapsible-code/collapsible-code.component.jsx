@@ -8,7 +8,7 @@ import {
   AccordionPanel,
 } from '@chakra-ui/react';
 
-const CodeSnippet = ({ code }) => {
+const CollapsibleCode = ({ code }) => {
   return (
     <Accordion allowToggle>
       <AccordionItem>
@@ -30,4 +30,4 @@ const CodeSnippet = ({ code }) => {
   );
 };
 
-export default CodeSnippet;
+export default CollapsibleCode;
