@@ -2,13 +2,15 @@ import { Text } from '@chakra-ui/react';
 import Endpoint from '../../endpoint/endpoint.component';
 import SectionWrapper from '../../sections/wrapper/section-wrapper.component';
 import SectionHeading from '../../sections/heading/section-heading.component';
-import AnchorHeading from '../../links/anchor/anchor-heading.component';
 import {
   getAllProductsResponse,
   getProductResponse,
   createNewProductResponse,
 } from '../../../utils/content/doc-sample-responses.utils';
-import { createNewProductBody } from '../../../utils/content/doc-sample-bodies.utils';
+import {
+  createNewProductBody,
+  updateProductBody,
+} from '../../../utils/content/doc-sample-bodies.utils';
 
 const Products = () => {
   return (
@@ -42,13 +44,21 @@ const Products = () => {
         response={createNewProductResponse}
       />
 
-      <AnchorHeading anchorId="update-product" httpMethod="PATCH">
-        Update Product
-      </AnchorHeading>
+      <Endpoint
+        anchorId="update-product"
+        httpMethod="PATCH"
+        headingText="Update Product"
+        subdirectory="products/{id}"
+        requestBody={updateProductBody}
+        response={createNewProductResponse}
+      />
 
-      <AnchorHeading anchorId="delete-product" httpMethod="DELETE">
-        Delete Product
-      </AnchorHeading>
+      <Endpoint
+        anchorId="delete-product"
+        httpMethod="DELETE"
+        headingText="Delete Product"
+        subdirectory="products/{id}"
+      />
     </SectionWrapper>
   );
 };

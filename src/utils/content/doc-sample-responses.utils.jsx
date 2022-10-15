@@ -123,3 +123,33 @@ export const createNewProductResponse = `{
 		"id": "634a49847857d50016d56ae1"
 	}
 }`;
+
+export const updateProductResponse = `{
+	"status": "success",
+	"data": {
+			"reviews_average": 4.63,
+			"reviews_quantity": 8,
+			"best_seller": true,
+			"in_stock": true,
+			"features": [
+					"3-sided micro-edge display",
+					"Low blue light mode",
+					"Ultra-wide 178 degree horizontal and vertical viewing angles"
+			],
+			"images": [...],
+			"_id": "6213d55cf8b9765ec0fbbcaa",
+			"sku": 1,
+			"name": "HP 24 in. LED Monitor IPS Micro-edge HDMI VGA 60Hz 5ms - 24m",
+			"category": {
+					"_id": "6213d49cb7f67e0d64774e92",
+					"name": "Electronics"
+			},
+			"brand": "HP",
+			"regular_price": 149.95,
+			"sale_price": 139.95,
+			"description": "Enjoy more desk space than you ever thought possible with this ultra-slim HP display. The attractive, micro-edge design adds stylish beauty to any environment, and provides for a seamless multi-monitor setup.",
+			"specs": [...],
+			"image_main": "https://storepi-media.s3.us-west-1.amazonaws.com/img/products/electronics/1a.jpg",
+			"id": "6213d55cf8b9765ec0fbbcaa"
+	}
+}`;

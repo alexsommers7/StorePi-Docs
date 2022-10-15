@@ -8,3 +8,7 @@ export const createNewProductBody = `{
 	"sale_price": 79.95,
 	"description": "..."
 }`;
+
+export const updateProductBody = `{
+	"sale_price": 139.95
+}`;

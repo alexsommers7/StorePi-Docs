@@ -12,8 +12,10 @@ const Endpoint = ({
   response,
   requiresAuth = false,
 }) => {
+  const isDelete = httpMethod === 'DELETE';
+
   return (
-    <Box mb={20}>
+    <Box mb={isDelete ? 6 : 20}>
       <AnchorHeading anchorId={anchorId} httpMethod={httpMethod} requiresAuth={requiresAuth}>
         {headingText}
       </AnchorHeading>
@@ -21,6 +23,12 @@ const Endpoint = ({
         <Code mt={4} mb={7}>
           {apiOrigin}/{subdirectory}
         </Code>
+
+        {isDelete && (
+          <Text>
+            Returns <Code>204</Code> No Content
+          </Text>
+        )}
 
         {requestBody && (
           <Box mb={7}>
@@ -31,7 +39,7 @@ const Endpoint = ({
           </Box>
         )}
 
-        <CollapsibleCode code={response} />
+        {response && <CollapsibleCode code={response} />}
       </Box>
     </Box>
   );
