@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import {
   Code,
   Box,
@@ -7,8 +8,13 @@ import {
   AccordionButton,
   AccordionPanel,
 } from '@chakra-ui/react';
+import Prism from 'prismjs';
 
 const CollapsibleCode = ({ label = 'View sample response', code, isOpen = false }) => {
+  useEffect(() => {
+    Prism.highlightAll();
+  });
+
   return (
     <Accordion allowToggle defaultIndex={isOpen ? 0 : null}>
       <AccordionItem>
@@ -22,7 +28,7 @@ const CollapsibleCode = ({ label = 'View sample response', code, isOpen = false 
         </h2>
         <AccordionPanel pb={4}>
           <pre>
-            <Code>{code}</Code>
+            <Code className="language-javascript">{code}</Code>
           </pre>
         </AccordionPanel>
       </AccordionItem>

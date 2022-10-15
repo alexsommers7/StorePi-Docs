@@ -8,6 +8,7 @@ import DocContent from '../../components/docs/docs-content.component';
 import { contentMaxWidth } from '../../utils/sizing/sizing.utils';
 import { yOffset } from '../../utils/anchor/anchor.utils';
 import './docs.styles.scss';
+import '../../utils/external-styles/prism.scss';
 
 const Docs = () => {
   const { setActiveAnchor } = useContext(DocsContext);
