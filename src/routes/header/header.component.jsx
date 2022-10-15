@@ -43,14 +43,14 @@ const Header = () => {
             <FaGithub fontSize={20} />
           </Link>
 
-          <ColorModeSwitcher ml={3} justifySelf="flex-end" />
+          <ColorModeSwitcher ml={4} justifySelf="flex-end" />
 
           {isMobile && (
             <IconButton
               onClick={handleSidebarToggle}
               aria-label={`${isSidebarOpen ? 'Close' : 'Open'} menu`}
               icon={isSidebarOpen ? <FaTimes /> : <FaBars />}
-              ml={2}
+              ml={3}
               variant="solid"
             />
           )}
