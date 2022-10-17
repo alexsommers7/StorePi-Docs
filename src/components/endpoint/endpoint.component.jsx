@@ -27,7 +27,7 @@ const Endpoint = ({
       </AnchorHeading>
       <Box mb={7}>
         <Box overflowX="auto" className="no-scrollbar">
-          <Code mt={4} mb={4}>
+          <Code mt={3} mb={5}>
             {apiOrigin}/{subdirectory}
           </Code>
         </Box>
