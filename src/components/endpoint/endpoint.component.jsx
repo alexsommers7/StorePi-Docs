@@ -26,9 +26,11 @@ const Endpoint = ({
         {headingText}
       </AnchorHeading>
       <Box mb={7}>
-        <Code mt={4} mb={6}>
-          {apiOrigin}/{subdirectory}
-        </Code>
+        <Box overflowX="auto" className="no-scrollbar">
+          <Code mt={4} mb={4}>
+            {apiOrigin}/{subdirectory}
+          </Code>
+        </Box>
 
         {isDelete && (
           <Text>

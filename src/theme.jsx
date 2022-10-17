@@ -64,7 +64,6 @@ const theme = extendTheme({
     },
     Code: {
       baseStyle: {
-        fontSize: 'sm',
         tabSize: '2',
       },
     },
