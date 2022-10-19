@@ -58,7 +58,7 @@ const theme = extendTheme({
           color: 'rgb(151, 151, 151)',
         },
         DELETE: {
-          color: 'rgb(235, 32, 19)',
+          color: 'rgb(255, 59, 46)',
         },
       },
     },
