@@ -13,6 +13,7 @@ const Endpoint = ({
   requestBody,
   response,
   requiresAuth = false,
+  note,
 }) => {
   useEffect(() => {
     Prism.highlightAll();
@@ -32,6 +33,8 @@ const Endpoint = ({
           </Code>
         </Box>
 
+        {note && <Text mb={4}>{note}</Text>}
+
         {isDelete && (
           <Text>
             Returns <Code>204 No Content</Code>
@@ -40,7 +43,7 @@ const Endpoint = ({
 
         {requestBody && (
           <Box mb={7}>
-            <Text mb={3}>Sample request body:</Text>
+            <Text mb={1}>Sample request body:</Text>
             <pre>
               <Code className="language-javascript">{requestBody}</Code>
             </pre>

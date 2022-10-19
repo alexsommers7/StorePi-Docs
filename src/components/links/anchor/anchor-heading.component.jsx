@@ -38,7 +38,7 @@ const AnchorHeading = ({ anchorId, httpMethod, requiresAuth = false, children })
             style={{ display: 'inline-block', transform: 'translateY(1px)' }}
             title="Requires authorization"
             aria-label="Requires authorization"
-            size="12"
+            size="14"
           />
         )}
       </Flex>
@@ -49,7 +49,7 @@ const AnchorHeading = ({ anchorId, httpMethod, requiresAuth = false, children })
         title="Copy skip link"
         onClick={handleAnchorCopy}
       >
-        <FaAnchor className="anchor-icon" />
+        <FaAnchor />
       </button>
     </Box>
   );

@@ -11,3 +11,8 @@ export const createNewProductBody = `// all fields are required
 export const updateProductBody = `"regular_price": 159.95
 "sale_price": 139.95
 `;
+
+export const createOrUpdateReviewBody = `// all fields are required
+"review": "...",
+"rating": 5
+`;

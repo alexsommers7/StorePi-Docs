@@ -6,7 +6,7 @@ const SidebarHeading = ({ label, isFirst }) => {
   };
 
   return (
-    <ListItem mb={3} mt={isFirst ? 4 : 10}>
+    <ListItem mb={3} mt={isFirst ? 4 : 8}>
       <Heading size="md" style={style}>
         {label}
       </Heading>

@@ -5,6 +5,7 @@ import SectionHeading from '../../sections/heading/section-heading.component';
 import {
   getAllProductsResponse,
   getProductResponse,
+  updateProductResponse,
   createNewProductResponse,
 } from '../../../utils/content/doc-sample-responses.utils';
 import {
@@ -50,7 +51,7 @@ const Products = () => {
         headingText="Update Product"
         subdirectory="products/{id}"
         requestBody={updateProductBody}
-        response={createNewProductResponse}
+        response={updateProductResponse}
       />
 
       <Endpoint

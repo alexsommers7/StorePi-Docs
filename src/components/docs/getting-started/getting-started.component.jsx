@@ -60,14 +60,14 @@ const GettingStarted = () => {
         <FaLock
           style={{ display: 'inline-block', transform: 'translateY(1px)' }}
           color="rgb(141, 141, 141)"
-          size="12"
+          size="14"
         />{' '}
         icon.
       </Text>
       <Text mb={10}>
         {' '}
         A token can be obtained via the <AnchorLink anchor="log-in">log in</AnchorLink> endpoint,
-        where it will be stored as an http-only cookie.
+        where it will be stored as an HttpOnly cookie.
       </Text>
 
       <AnchorHeading anchorId="request-parameters">Request Parameters</AnchorHeading>
