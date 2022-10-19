@@ -1,5 +1,7 @@
 import { Box, Heading, useToast, Flex, Badge } from '@chakra-ui/react';
 import { FaAnchor, FaLock } from 'react-icons/fa';
+import { HashLink } from 'react-router-hash-link';
+import { scrollWithOffset } from '../../../utils/anchor/anchor.utils';
 
 const AnchorHeading = ({ anchorId, httpMethod, requiresAuth = false, children }) => {
   const handleAnchorCopy = () => {
@@ -43,14 +45,17 @@ const AnchorHeading = ({ anchorId, httpMethod, requiresAuth = false, children })
         )}
       </Flex>
 
-      <button
+      <HashLink
         className="anchor-copy"
         aria-label="Copy skip link"
         title="Copy skip link"
         onClick={handleAnchorCopy}
+        to={`#${anchorId}`}
+        scroll={el => scrollWithOffset(el)}
+        smooth
       >
         <FaAnchor />
-      </button>
+      </HashLink>
     </Box>
   );
 };

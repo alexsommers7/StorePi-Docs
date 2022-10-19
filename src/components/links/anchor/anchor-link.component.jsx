@@ -6,12 +6,7 @@ import { scrollWithOffset } from '../../../utils/anchor/anchor.utils';
 
 const AnchorLink = ({ anchor, children }) => {
   const { setActiveAnchor } = useContext(DocsContext);
-
-  const handleLinkClick = ({ target }) => {
-    const { href } = target;
-    const anchor = href.split('#')[1] || '';
-    setActiveAnchor(anchor);
-  };
+  const handleLinkClick = () => setActiveAnchor(anchor);
 
   return (
     <HashLink
