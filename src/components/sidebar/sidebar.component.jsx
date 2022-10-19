@@ -46,19 +46,22 @@ const Sidebar = () => {
         style={isSidebarOpen ? openStyle : {}}
       >
         <nav>
-          <UnorderedList styleType="none" style={{ marginInlineStart: '2px' }}>
-            {DocSidebarItems.map((item, i) => {
-              const { label, subitems } = item;
+          {DocSidebarItems.map((item, i) => {
+            const { label, subitems } = item;
 
-              return (
-                <Box key={label} mb={7}>
-                  <SidebarHeading label={label} isFirst={i === 0} />
-                  {subitems?.length &&
-                    subitems.map(subitem => <SidebarLink item={subitem} key={subitem.anchor} />)}
-                </Box>
-              );
-            })}
-          </UnorderedList>
+            return (
+              <UnorderedList
+                styleType="none"
+                style={{ marginInlineStart: '2px' }}
+                key={label}
+                mb={7}
+              >
+                <SidebarHeading label={label} isFirst={i === 0} />
+                {subitems?.length &&
+                  subitems.map(subitem => <SidebarLink item={subitem} key={subitem.anchor} />)}
+              </UnorderedList>
+            );
+          })}
         </nav>
       </Flex>
     </Box>
