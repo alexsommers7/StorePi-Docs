@@ -1,14 +1,21 @@
+import { Text } from '@chakra-ui/react';
 import SectionWrapper from '../../sections/wrapper/section-wrapper.component';
 import SectionHeading from '../../sections/heading/section-heading.component';
-import AnchorHeading from '../../links/anchor/anchor-heading.component';
+import Endpoint from '../../endpoint/endpoint.component';
+import { getAllBrandsResponse } from '../../../utils/content/doc-sample-responses.utils';
 
 const Brands = () => {
   return (
     <SectionWrapper>
       <SectionHeading>Brands</SectionHeading>
+      <Text>A total of 47 brands exist in the database.</Text>
 
-      <AnchorHeading anchorId="get-brands">Get All Brands</AnchorHeading>
-      <AnchorHeading anchorId="get-brand">Get Brand</AnchorHeading>
+      <Endpoint
+        anchorId="get-brands"
+        headingText="Get All Brands"
+        subdirectory="brands"
+        response={getAllBrandsResponse}
+      />
     </SectionWrapper>
   );
 };

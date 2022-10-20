@@ -370,3 +370,15 @@ export const createOrUpdateReviewResponse = `"status": "success",
 	"id": "634f83e48eb7ac0016e8cd4f"
 }
 `;
+
+export const getAllBrandsResponse = `"status": "success",
+"results": 47,
+"data": [
+	"Abystyle",
+	"Acer",
+	"Adidas",
+	"Amazfit",
+	"Brooklyn Steel Co",
+	...
+]
+`;

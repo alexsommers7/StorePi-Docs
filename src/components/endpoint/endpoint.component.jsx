@@ -22,7 +22,7 @@ const Endpoint = ({
   const isDelete = httpMethod === 'DELETE';
 
   return (
-    <Box mt={16} mb={isDelete ? 6 : 20}>
+    <Box mt={14} mb={isDelete ? 6 : 20}>
       <AnchorHeading anchorId={anchorId} httpMethod={httpMethod} requiresAuth={requiresAuth}>
         {headingText}
       </AnchorHeading>
