@@ -6,10 +6,8 @@ import {
   getCartResponse,
   getCurrentUserCartResponse,
   addProductToCurrentUserCartResponse,
-  createNewCartResponse,
 } from '../../../utils/content/doc-sample-responses.utils';
 import {
-  createNewCartBody,
   addProductToCurrentUserCartBody,
   removeProductFromCurrentUserCartBody,
 } from '../../../utils/content/doc-sample-bodies.utils';
