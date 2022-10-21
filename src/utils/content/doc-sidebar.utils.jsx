@@ -7,7 +7,7 @@ export const DocSidebarItems = [
       { label: 'CORS', anchor: 'cors-intro' },
       { label: 'Rate Limiting', anchor: 'rate-limiting-intro' },
       { label: 'Authorization', anchor: 'authorization' },
-      { label: 'Request Parameters', anchor: 'request-parameters' },
+      { label: 'Query Parameters', anchor: 'query-parameters' },
       { label: 'Filtering', anchor: 'filtering-intro' },
     ],
   },
@@ -40,7 +40,7 @@ export const DocSidebarItems = [
     label: 'Categories',
     subitems: [
       { label: 'Get All Categories', anchor: 'get-categories' },
-      { label: 'Get Category', anchor: 'get-category' },
+      { label: 'Create New Category', anchor: 'create-category' },
       { label: 'Update Category', anchor: 'update-category' },
       { label: 'Delete Category', anchor: 'delete-category' },
     ],

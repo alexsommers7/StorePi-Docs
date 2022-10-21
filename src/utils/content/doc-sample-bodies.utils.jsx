@@ -16,3 +16,7 @@ export const createOrUpdateReviewBody = `// all fields are required
 "review": "...",
 "rating": 5
 `;
+
+export const createOrUpdateCategoryBody = `// all fields are required
+"name": "..."
+`;

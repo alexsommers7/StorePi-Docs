@@ -70,7 +70,7 @@ const GettingStarted = () => {
         where it will be stored as an HttpOnly cookie.
       </Text>
 
-      <AnchorHeading anchorId="request-parameters">Request Parameters</AnchorHeading>
+      <AnchorHeading anchorId="query-parameters">Query Parameters</AnchorHeading>
       <Text mb={3}>The following query parameters can optionally be appended to all requests:</Text>
       <TableContainer className="scrollbar-x-thin" mb={10}>
         <Table variant="simple" mb={2}>

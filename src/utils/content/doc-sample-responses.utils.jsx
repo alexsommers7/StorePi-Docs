@@ -382,3 +382,37 @@ export const getAllBrandsResponse = `"status": "success",
 	...
 ]
 `;
+
+export const getAllCategoriesResponse = `"status": "success",
+"results": 6,
+"total": 6,
+"data": [
+	{
+		"item_count": 10,
+		"_id": "6213d49cb7f67e0d64774e92",
+		"name": "Electronics",
+		"slug": "electronics"
+	},
+	{
+		"item_count": 9,
+		"_id": "6213d49cb7f67e0d64774e93",
+		"name": "Men's Clothing",
+		"slug": "mens-clothing"
+	},
+	{
+		"item_count": 9,
+		"_id": "6213d49cb7f67e0d64774e94",
+		"name": "Women's Clothing",
+		"slug": "womens-clothing"
+	},
+	...
+]
+`;
+
+export const createOrUpdateCategoryResponse = `"status": "success",
+"data": {
+	"item_count": 0,
+	"_id": "63520d186ffa520016c6c08a",
+	"name": "..."
+}
+`;
