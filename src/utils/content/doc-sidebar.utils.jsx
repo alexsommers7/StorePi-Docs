@@ -27,7 +27,7 @@ export const DocSidebarItems = [
       { label: 'Get All Reviews', anchor: 'get-reviews' },
       { label: 'Get Review', anchor: 'get-review' },
       { label: `Get Product's Reviews`, anchor: 'get-product-reviews' },
-      { label: `Get Current User Reviews`, anchor: 'get-user-reviews' },
+      { label: 'Get Current User Reviews', anchor: 'get-user-reviews' },
       { label: 'Create New Review', anchor: 'create-review' },
       { label: 'Delete Review', anchor: 'delete-review' },
     ],
@@ -51,10 +51,9 @@ export const DocSidebarItems = [
     subitems: [
       { label: 'Get All Carts', anchor: 'get-carts' },
       { label: 'Get Cart', anchor: 'get-cart' },
-      { label: `Get Current User Cart`, anchor: 'get-user-cart' },
-      { label: `Add to Current User Cart`, anchor: 'add-to-user-cart' },
-      { label: 'Update Cart', anchor: 'update-cart' },
-      { label: `Remove From Current User Cart`, anchor: 'remove-from-user-cart' },
+      { label: 'Get Current User Cart', anchor: 'get-user-cart' },
+      { label: 'Add to Current User Cart', anchor: 'add-to-user-cart' },
+      { label: 'Remove From Current User Cart', anchor: 'remove-from-user-cart' },
       { label: 'Delete Cart', anchor: 'delete-cart' },
     ],
   },
@@ -63,16 +62,16 @@ export const DocSidebarItems = [
     subitems: [
       { label: 'Get All Purchases', anchor: 'get-purchases' },
       { label: 'Get Purchase', anchor: 'get-purchase' },
-      { label: `Get Current User Purchases`, anchor: 'get-user-purchases' },
+      { label: 'Get Current User Purchases', anchor: 'get-user-purchases' },
       { label: 'Create New Purchase', anchor: 'create-purchase' },
     ],
   },
   {
     label: 'Wishlists',
     subitems: [
-      { label: `Get Current User List`, anchor: 'get-user-list' },
-      { label: `Add to Current User List`, anchor: 'add-to-user-list' },
-      { label: `Remove From Current User List`, anchor: 'remove-from-user-list' },
+      { label: 'Get Current User List', anchor: 'get-user-list' },
+      { label: 'Add to Current User List', anchor: 'add-to-user-list' },
+      { label: 'Remove From Current User List', anchor: 'remove-from-user-list' },
     ],
   },
   {

@@ -20,3 +20,21 @@ export const createOrUpdateReviewBody = `// all fields are required
 export const createOrUpdateCategoryBody = `// all fields are required
 "name": "..."
 `;
+
+export const createNewCartBody = `// all fields are required
+"products": [
+	{
+		"item": "6213d55cf8b9765ec0fbbcaa",
+		"quantity": 1
+	}
+]
+`;
+
+export const addProductToCurrentUserCartBody = `// all fields are required
+"sku": 1,
+"quantity": 1
+`;
+
+export const removeProductFromCurrentUserCartBody = `// all fields are required
+"sku": 16
+`;

@@ -35,19 +35,19 @@ const Endpoint = ({
 
         {note && <Text mb={4}>{note}</Text>}
 
-        {isDelete && (
-          <Text>
-            Returns <Code>204 No Content</Code>
-          </Text>
-        )}
-
         {requestBody && (
-          <Box mb={7}>
+          <Box mb={5}>
             <Text mb={1}>Sample request body:</Text>
             <pre>
               <Code className="language-javascript">{requestBody}</Code>
             </pre>
           </Box>
+        )}
+
+        {isDelete && (
+          <Text>
+            Returns <Code>204 No Content</Code>
+          </Text>
         )}
 
         {response && <CollapsibleCode code={response} />}

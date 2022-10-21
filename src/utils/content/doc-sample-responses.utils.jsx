@@ -490,3 +490,175 @@ export const createOrUpdateCategoryResponse = `"status": "success",
 	"name": "..."
 }
 `;
+
+export const getAllCartsResponse = `"status": "success",
+"results": 3,
+"total": 19,
+"data": [
+	{
+		"user": {
+			"_id": "6213d79b3a57cb555079db70",
+			"name": "Candace Burns"
+		},
+		"products": [
+			{
+					"_id": "627b2e26fd536c0450cd95af",
+					"item": {
+							"_id": "625c50fcc1198f626cc4182f",
+							"sku": 16,
+							"name": "Flip 6 Water-Resistant Bluetooth Speaker",
+							"brand": "JBL",
+							"regular_price": 129.95,
+							"sale_price": 110.95,
+							"image_main": "https://storepi-media.s3.us-west-1.amazonaws.com/img/products/electronics/4a.jpg",
+							"slug": "flip-6-water-resistant-bluetooth-speaker",
+							"id": "625c50fcc1198f626cc4182f"
+					},
+					"quantity": 1
+			},
+			...
+		],
+		"created_at": "2022-04-20T12:43:20.791Z",
+		"total": 272.92,
+		"total_pretty": "$272.92",
+		"item_count": 4,
+		"id": "623641e496433b10a833b0bc"
+	},
+	{
+		"user": {
+			"_id": "6213d79b3a57cb555079db71",
+			"name": "Marco Lawrence"
+		},
+		"products": [],
+		"created_at": "2021-12-28T04:51:12.510Z",
+		"total": 0,
+		"total_pretty": "$0.00",
+		"item_count": 0,
+		"id": "623641e496433b10a833b0bf"
+	},
+	{
+		"user": {
+			"_id": "6213d79b3a57cb555079db7c",
+			"name": "Tracy Flores"
+		},
+		"products": [],
+		"created_at": "2021-11-06T14:40:35.524Z",
+		"total": 0,
+		"total_pretty": "$0.00",
+		"item_count": 0,
+		"id": "623641e496433b10a833b0e0"
+	}
+]
+`;
+
+export const getCartResponse = `"status": "success",
+"data": {
+	"user": {
+		"_id": "6213d79b3a57cb555079db72",
+		"name": "Dustin Fernandez"
+	},
+	"products": [
+		{
+			"item": {
+				"sku": 32,
+				"name": "Men's Bomber Jacket with Reflective Logo Detailing",
+				"brand": "Guess",
+				"regular_price": 125,
+				"sale_price": 79.95,
+				"image_main": "https://storepi-media.s3.us-west-1.amazonaws.com/img/products/mens_clothing/7a.jpg",
+				"slug": "men's-bomber-jacket-with-reflective-logo-detailing",
+				"id": "625c50fcc1198f626cc4183f"
+			},
+			"quantity": 1
+		}
+	],
+	"created_at": "2021-03-16T13:51:38.308Z",
+	"total": 79.95,
+	"total_pretty": "$79.95",
+	"item_count": 1,
+	"id": "623641e496433b10a833b0c2"
+}
+`;
+
+export const getCurrentUserCartResponse = `"status": "success",
+"results": 1,
+"data": [
+	{
+		"products": [
+			{
+				"item": {
+					"sku": 4,
+					"name": "Women's Tek Gear Microfleece Crewneck Top",
+					"brand": "Tek Gear",
+					"regular_price": 24.99,
+					"sale_price": 11.99,
+					"image_main": "https://storepi-media.s3.us-west-1.amazonaws.com/img/products/womens_clothing/1a.jpg",
+					"slug": "women's-tek-gear-microfleece-crewneck-top",
+					"id": "6213d55cf8b9765ec0fbbcb6"
+				},
+				"quantity": 1
+			},
+			...
+		],
+		"created_at": "2020-03-15T09:35:15.369Z",
+		"total": 80.17,
+		"total_pretty": "$80.17",
+		"item_count": 3,
+		"id": "623641e496433b10a833b0ad"
+	}
+]
+`;
+
+export const addProductToCurrentUserCartResponse = `"status": "success",
+"data": {
+	"user": {
+		"_id": "6213d79b3a57cb555079db6a",
+		"name": "Dorothy Jennings"
+	},
+	"products": [
+		{
+			"item": {
+				"sku": 1,
+				"name": "HP 24 in. LED Monitor IPS Micro-edge HDMI VGA 60Hz 5ms - 24m",
+				"brand": "HP",
+				"regular_price": 149.95,
+				"sale_price": 129.95,
+				"image_main": "https://storepi-media.s3.us-west-1.amazonaws.com/img/products/electronics/1a.jpg",
+				"slug": "hp-24-in.-led-monitor-ips-micro-edge-hdmi-vga-60hz-5ms-24m",
+				"id": "6213d55cf8b9765ec0fbbcaa"
+			},
+			"quantity": 1
+		}
+	],
+	"created_at": "2020-03-03T05:43:30.633Z",
+	"total": 129.95,
+	"total_pretty": "$129.95",
+	"item_count": 1,
+	"id": "623641e496433b10a833b0ac"
+}
+`;
+
+export const createNewCartResponse = `"status": "success",
+"data": {
+	"products": [
+		{
+			"item": {
+				"sku": 1,
+				"name": "HP 24 in. LED Monitor IPS Micro-edge HDMI VGA 60Hz 5ms - 24m",
+				"brand": "HP",
+				"regular_price": 149.95,
+				"sale_price": 129.95,
+				"image_main": "https://storepi-media.s3.us-west-1.amazonaws.com/img/products/electronics/1a.jpg",
+				"slug": "hp-24-in.-led-monitor-ips-micro-edge-hdmi-vga-60hz-5ms-24m",
+				"id": "6213d55cf8b9765ec0fbbcaa"
+			},
+			"quantity": 1
+		}
+	],
+	"created_at": "2022-01-30T07:33:51.796Z",
+	"total": 129.95,
+	"total_pretty": "$129.95",
+	"item_count": 1,
+	"id": "63521a2b02ec120016443848"
+}
+`;
