@@ -40,6 +40,7 @@ export const DocSidebarItems = [
     label: 'Categories',
     subitems: [
       { label: 'Get All Categories', anchor: 'get-categories' },
+      { label: 'Get All Products in Category', anchor: 'get-category-products' },
       { label: 'Create New Category', anchor: 'create-category' },
       { label: 'Update Category', anchor: 'update-category' },
       { label: 'Delete Category', anchor: 'delete-category' },

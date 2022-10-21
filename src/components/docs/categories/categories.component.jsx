@@ -4,6 +4,7 @@ import Endpoint from '../../endpoint/endpoint.component';
 import {
   getAllCategoriesResponse,
   createOrUpdateCategoryResponse,
+  getAllProductsInCategoryResponse,
 } from '../../../utils/content/doc-sample-responses.utils';
 import { createOrUpdateCategoryBody } from '../../../utils/content/doc-sample-bodies.utils';
 
@@ -17,6 +18,13 @@ const Categories = () => {
         headingText="Get All Categories"
         subdirectory="categories"
         response={getAllCategoriesResponse}
+      />
+
+      <Endpoint
+        anchorId="get-category-products"
+        headingText="Get All Products in Category"
+        subdirectory="categories/{id}/products"
+        response={getAllProductsInCategoryResponse}
       />
 
       <Endpoint

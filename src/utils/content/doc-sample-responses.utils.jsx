@@ -409,6 +409,80 @@ export const getAllCategoriesResponse = `"status": "success",
 ]
 `;
 
+export const getAllProductsInCategoryResponse = `"status": "success",
+"results": 10,
+"total": 10,
+"data": [
+	{
+		"reviews_average": 4.63,
+		"reviews_quantity": 8,
+		"best_seller": true,
+		"in_stock": true,
+		"features": [...],
+		"images": [...],
+		"sku": 1,
+		"name": "HP 24 in. LED Monitor IPS Micro-edge HDMI VGA 60Hz 5ms - 24m",
+		"category": {
+			"_id": "6213d49cb7f67e0d64774e92",
+			"name": "Electronics"
+		},
+		"brand": "HP",
+		"regular_price": 149.95,
+		"sale_price": 129.95,
+		"description": "Enjoy more desk space than you ever thought possible with this ultra-slim HP display. The attractive, micro-edge design adds stylish beauty to any environment, and provides for a seamless multi-monitor setup.",
+		"specs": [...],
+		"image_main": "https://storepi-media.s3.us-west-1.amazonaws.com/img/products/electronics/1a.jpg",
+		"slug": "hp-24-in.-led-monitor-ips-micro-edge-hdmi-vga-60hz-5ms-24m",
+		"id": "6213d55cf8b9765ec0fbbcaa"
+	},
+	{
+		"reviews_average": 4.5,
+		"reviews_quantity": 4,
+		"best_seller": false,
+		"in_stock": true,
+		"features": [...],
+		"images": [...],
+		"sku": 2,
+		"name": "Acer Predator XB3 - 27 in. Monitor Full HD",
+		"category": {
+			"_id": "6213d49cb7f67e0d64774e92",
+			"name": "Electronics"
+		},
+		"brand": "Acer",
+		"regular_price": 369.99,
+		"sale_price": 249.99,
+		"description": "Bring on the blitz. Turbo-charged refresh rates will fuel your need for gaming speed with this captivating 27 inch dislay.",
+		"specs": [...],
+		"image_main": "https://storepi-media.s3.us-west-1.amazonaws.com/img/products/electronics/2a.jpg",
+		"slug": "acer-predator-xb3-27-in.-monitor-full-hd",
+		"id": "6213d55cf8b9765ec0fbbcad"
+	},
+	{
+		"reviews_average": 4,
+		"reviews_quantity": 3,
+		"best_seller": true,
+		"in_stock": true,
+		"features": [...],
+		"images": [...],
+		"sku": 8,
+		"name": "Amazfit GTS 2 Mini Smart Watch",
+		"category": {
+			"_id": "6213d49cb7f67e0d64774e92",
+			"name": "Electronics"
+		},
+		"brand": "Amazfit",
+		"regular_price": 99.99,
+		"sale_price": 69.99,
+		"description": "Get an intelligent little pal to remind you of the incoming calls, text messages, apps, and calendars, alarm clock, weather forecast, and support control the music playback & camera on your smartphone.",
+		"specs": [...],
+		"image_main": "https://storepi-media.s3.us-west-1.amazonaws.com/img/products/electronics/3a.jpg",
+		"slug": "amazfit-gts-2-mini-smart-watch",
+		"id": "625c50fcc1198f626cc41827"
+	}
+	...
+]
+`;
+
 export const createOrUpdateCategoryResponse = `"status": "success",
 "data": {
 	"item_count": 0,
