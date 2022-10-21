@@ -41,15 +41,6 @@ const Carts = () => {
       />
 
       <Endpoint
-        anchorId="create-cart"
-        httpMethod="POST"
-        headingText="Create New Cart"
-        subdirectory="carts"
-        requestBody={createNewCartBody}
-        response={createNewCartResponse}
-      />
-
-      <Endpoint
         anchorId="add-to-user-cart"
         httpMethod="PATCH"
         headingText="Add to Current User Cart"

@@ -637,28 +637,3 @@ export const addProductToCurrentUserCartResponse = `"status": "success",
 	"id": "623641e496433b10a833b0ac"
 }
 `;
-
-export const createNewCartResponse = `"status": "success",
-"data": {
-	"products": [
-		{
-			"item": {
-				"sku": 1,
-				"name": "HP 24 in. LED Monitor IPS Micro-edge HDMI VGA 60Hz 5ms - 24m",
-				"brand": "HP",
-				"regular_price": 149.95,
-				"sale_price": 129.95,
-				"image_main": "https://storepi-media.s3.us-west-1.amazonaws.com/img/products/electronics/1a.jpg",
-				"slug": "hp-24-in.-led-monitor-ips-micro-edge-hdmi-vga-60hz-5ms-24m",
-				"id": "6213d55cf8b9765ec0fbbcaa"
-			},
-			"quantity": 1
-		}
-	],
-	"created_at": "2022-01-30T07:33:51.796Z",
-	"total": 129.95,
-	"total_pretty": "$129.95",
-	"item_count": 1,
-	"id": "63521a2b02ec120016443848"
-}
-`;
