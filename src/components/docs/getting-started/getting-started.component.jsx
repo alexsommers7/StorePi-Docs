@@ -31,7 +31,9 @@ const GettingStarted = () => {
       </Text>
       <Text mb={10}>
         It provides resources such as <Code>products</Code>, <Code>review</Code>, <Code>users</Code>
-        , <Code>carts</Code>, <Code>purchases</Code>, and more.
+        , <Code>carts</Code>, <Code>purchases</Code>, and more. Endpoints are provided to perform
+        CRUD operations on each of these resources - supporting both end user actions (e.g. adding
+        an item to cart) as well as administrator actions (e.g. creating a new product).
       </Text>
 
       <AnchorHeading anchorId="database-interaction-intro">Database Interaction</AnchorHeading>
