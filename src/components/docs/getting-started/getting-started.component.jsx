@@ -39,9 +39,8 @@ const GettingStarted = () => {
       <AnchorHeading anchorId="database-interaction-intro">Database Interaction</AnchorHeading>
       <Text mb={10}>
         All endpoints act as real-world endpoints, but without actually writing anything to the
-        database. In the event that you are creating or updating a resource, the response will
-        contain the updated data without persisting it. Deleting a data will simply return a success
-        boolean.
+        database. In the event that you are creating or updating a resource, the response will still
+        contain the updated data despite not persisting it.
       </Text>
 
       <AnchorHeading anchorId="cors-intro">CORS</AnchorHeading>
