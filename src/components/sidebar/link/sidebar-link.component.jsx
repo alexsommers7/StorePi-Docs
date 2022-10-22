@@ -26,7 +26,6 @@ const SidebarLink = ({ item }) => {
   };
 
   useEffect(() => {
-    console.log(`rendering sidebar-link component`);
     setIsActive(anchor === activeAnchor);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeAnchor]);
