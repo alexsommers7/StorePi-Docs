@@ -1,15 +1,17 @@
 import { useState, useContext, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { DocsContext } from '../../../contexts/docs.context';
+import { AnchorContext } from '../../../contexts/anchor.context';
+import { SidebarContext } from '../../../contexts/sidebar.context';
 import { ListItem, useMediaQuery } from '@chakra-ui/react';
 import { mobileMax } from '../../../utils/sizing/sizing.utils';
 import { scrollToAnchor } from '../../../utils/actions/actions.utils';
 
 const SidebarLink = ({ item }) => {
-  const [isHovered, setIsHovered] = useState(false);
   const { label, anchor } = item;
-  const { activeAnchor, setActiveAnchor, setIsSidebarOpen } = useContext(DocsContext);
-  const [isActive, setIsActive] = useState(anchor === activeAnchor);
+  const [isHovered, setIsHovered] = useState(false);
+  const [isActive, setIsActive] = useState(false);
+  const { activeAnchor, setActiveAnchor } = useContext(AnchorContext);
+  const { setIsSidebarOpen } = useContext(SidebarContext);
   const [isMobile] = useMediaQuery(`(max-width: ${mobileMax})`);
 
   const inactiveStyle = {
@@ -24,6 +26,7 @@ const SidebarLink = ({ item }) => {
   };
 
   useEffect(() => {
+    console.log(`rendering sidebar-link component`);
     setIsActive(anchor === activeAnchor);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeAnchor]);

@@ -1,5 +1,5 @@
-import { useContext } from 'react';
-import { DocsContext } from '../../contexts/docs.context';
+import { useContext, useEffect } from 'react';
+import { SidebarContext } from '../../contexts/sidebar.context';
 import { Flex, Text, Box, IconButton, useMediaQuery, Link } from '@chakra-ui/react';
 import { FaBars, FaTimes, FaGithub } from 'react-icons/fa';
 import { ColorModeSwitcher } from '../../ColorModeSwitcher';
@@ -8,7 +8,11 @@ import { contentMaxWidth, mobileMax } from '../../utils/sizing/sizing.utils';
 
 const Header = () => {
   const [isMobile] = useMediaQuery(`(max-width: ${mobileMax})`);
-  const { isSidebarOpen, setIsSidebarOpen } = useContext(DocsContext);
+  const { isSidebarOpen, setIsSidebarOpen } = useContext(SidebarContext);
+
+  useEffect(() => {
+    console.log('rendering header component');
+  });
 
   const handleSidebarToggle = () => setIsSidebarOpen(!isSidebarOpen);
 

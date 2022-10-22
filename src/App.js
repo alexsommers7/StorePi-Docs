@@ -5,18 +5,24 @@ import { navHeight } from './utils/sizing/sizing.utils';
 import Header from './routes/header/header.component';
 import Docs from './routes/docs/docs.component';
 import Footer from './routes/footer/footer.component';
+import { AnchorProvider } from './contexts/anchor.context';
+import { SidebarProvider } from './contexts/sidebar.context';
 
 function App() {
   return (
     <ChakraProvider theme={theme}>
-      <Header />
+      <SidebarProvider>
+        <Header />
 
-      <Box as="main" pt={navHeight.string}>
-        <Routes>
-          <Route path="docs" index element={<Docs />} />
-          <Route path="*" element={<Navigate to="docs" />} />
-        </Routes>
-      </Box>
+        <Box as="main" pt={navHeight.string}>
+          <AnchorProvider>
+            <Routes>
+              <Route path="docs" index element={<Docs />} />
+              <Route path="*" element={<Navigate to="docs" />} />
+            </Routes>
+          </AnchorProvider>
+        </Box>
+      </SidebarProvider>
 
       <Footer />
     </ChakraProvider>

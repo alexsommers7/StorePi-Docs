@@ -1,5 +1,6 @@
 import { useContext } from 'react';
-import { DocsContext } from '../../../contexts/docs.context';
+import { AnchorContext } from '../../../contexts/anchor.context';
+import { SidebarContext } from '../../../contexts/sidebar.context';
 import { NavLink } from 'react-router-dom';
 import { Box, Heading, useToast, Flex, Badge, useMediaQuery } from '@chakra-ui/react';
 import { FaAnchor, FaLock } from 'react-icons/fa';
@@ -7,7 +8,8 @@ import { scrollToAnchor } from '../../../utils/actions/actions.utils';
 import { mobileMax } from '../../../utils/sizing/sizing.utils';
 
 const AnchorHeading = ({ anchorId, httpMethod, requiresAuth = false, children }) => {
-  const { setActiveAnchor, setIsSidebarOpen } = useContext(DocsContext);
+  const { setActiveAnchor } = useContext(AnchorContext);
+  const { setIsSidebarOpen } = useContext(SidebarContext);
   const [isMobile] = useMediaQuery(`(max-width: ${mobileMax})`);
 
   const handleAnchorCopy = event => {

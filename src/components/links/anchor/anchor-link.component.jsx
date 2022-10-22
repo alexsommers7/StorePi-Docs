@@ -1,10 +1,10 @@
 import { NavLink } from 'react-router-dom';
 import { useContext } from 'react';
-import { DocsContext } from '../../../contexts/docs.context';
+import { AnchorContext } from '../../../contexts/anchor.context';
 import { scrollToAnchor } from '../../../utils/actions/actions.utils';
 
 const AnchorLink = ({ anchor, children }) => {
-  const { setActiveAnchor } = useContext(DocsContext);
+  const { setActiveAnchor } = useContext(AnchorContext);
 
   const handleLinkClick = event => {
     event.preventDefault();

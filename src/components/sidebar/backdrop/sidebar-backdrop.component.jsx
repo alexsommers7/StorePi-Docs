@@ -1,10 +1,10 @@
 import { useContext } from 'react';
-import { DocsContext } from '../../../contexts/docs.context';
+import { SidebarContext } from '../../../contexts/sidebar.context';
 import { useMediaQuery, Fade } from '@chakra-ui/react';
 import { mobileMax } from '../../../utils/sizing/sizing.utils';
 
 const SidebarBackdrop = () => {
-  const { isSidebarOpen, setIsSidebarOpen } = useContext(DocsContext);
+  const { isSidebarOpen, setIsSidebarOpen } = useContext(SidebarContext);
   const [isMobile] = useMediaQuery(`(max-width: ${mobileMax})`);
 
   const activeStyle = {

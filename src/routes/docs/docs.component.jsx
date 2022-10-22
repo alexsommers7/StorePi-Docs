@@ -1,6 +1,5 @@
 import { useEffect, useRef, useContext } from 'react';
-import { DocsProvider } from '../../contexts/docs.context';
-import { DocsContext } from '../../contexts/docs.context';
+import { AnchorContext } from '../../contexts/anchor.context';
 import { useLocation } from 'react-router-dom';
 import { Box } from '@chakra-ui/react';
 import Sidebar from '../../components/sidebar/sidebar.component';
@@ -12,7 +11,7 @@ import './docs.styles.scss';
 import '../../utils/external-styles/prism.scss';
 
 const Docs = () => {
-  const { setActiveAnchor } = useContext(DocsContext);
+  const { setActiveAnchor } = useContext(AnchorContext);
   const scrolledRef = useRef(false);
   const { hash } = useLocation();
 
@@ -32,11 +31,9 @@ const Docs = () => {
 
   return (
     <Box maxWidth={contentMaxWidth.string} m="auto" zIndex="base">
-      <DocsProvider>
-        <Sidebar />
-        <SidebarBackdrop />
-        <DocContent />
-      </DocsProvider>
+      <Sidebar />
+      <SidebarBackdrop />
+      <DocContent />
     </Box>
   );
 };
