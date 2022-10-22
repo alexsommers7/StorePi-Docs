@@ -1,21 +1,35 @@
-import { Box, Heading, useToast, Flex, Badge } from '@chakra-ui/react';
+import { useContext } from 'react';
+import { DocsContext } from '../../../contexts/docs.context';
+import { NavLink } from 'react-router-dom';
+import { Box, Heading, useToast, Flex, Badge, useMediaQuery } from '@chakra-ui/react';
 import { FaAnchor, FaLock } from 'react-icons/fa';
-import { HashLink } from 'react-router-hash-link';
-import { scrollWithOffset } from '../../../utils/anchor/anchor.utils';
+import { scrollToAnchor } from '../../../utils/actions/actions.utils';
+import { mobileMax } from '../../../utils/sizing/sizing.utils';
 
 const AnchorHeading = ({ anchorId, httpMethod, requiresAuth = false, children }) => {
-  const handleAnchorCopy = () => {
+  const { setActiveAnchor, setIsSidebarOpen } = useContext(DocsContext);
+  const [isMobile] = useMediaQuery(`(max-width: ${mobileMax})`);
+
+  const handleAnchorCopy = event => {
+    event.preventDefault();
+
+    scrollToAnchor(anchorId);
+    setActiveAnchor(anchorId);
+    if (isMobile) setIsSidebarOpen(false);
+
     navigator.clipboard.writeText(`${window.location.href.split('#')[0]}#${anchorId}`);
 
     const toastId = 'anchor-copy-toast';
     if (!toast.isActive(toastId)) {
-      toast({
-        title: 'Link Copied to Clipboard',
-        status: 'success',
-        duration: 5000,
-        isClosable: true,
-        id: toastId,
-      });
+      setTimeout(() => {
+        toast({
+          title: 'Link Copied to Clipboard',
+          status: 'success',
+          duration: 5000,
+          isClosable: true,
+          id: toastId,
+        });
+      }, 300);
     }
   };
 
@@ -30,7 +44,7 @@ const AnchorHeading = ({ anchorId, httpMethod, requiresAuth = false, children })
           </Badge>
         )}
 
-        <Heading id={anchorId} size="md" mb={0} mr={2}>
+        <Heading id={anchorId} size="md" mb={0} mr={2} style={{ scrollMargin: '85px' }}>
           {children}
         </Heading>
 
@@ -45,17 +59,15 @@ const AnchorHeading = ({ anchorId, httpMethod, requiresAuth = false, children })
         )}
       </Flex>
 
-      <HashLink
+      <NavLink
         className="anchor-copy"
         aria-label="Copy skip link"
         title="Copy skip link"
         onClick={handleAnchorCopy}
-        to={`#${anchorId}`}
-        scroll={el => scrollWithOffset(el)}
-        smooth
+        data-href={`#${anchorId}`}
       >
         <FaAnchor />
-      </HashLink>
+      </NavLink>
     </Box>
   );
 };

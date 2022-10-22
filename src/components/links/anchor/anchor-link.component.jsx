@@ -1,23 +1,27 @@
+import { NavLink } from 'react-router-dom';
 import { useContext } from 'react';
 import { DocsContext } from '../../../contexts/docs.context';
-import { HashLink } from 'react-router-hash-link';
-
-import { scrollWithOffset } from '../../../utils/anchor/anchor.utils';
+import { scrollToAnchor } from '../../../utils/actions/actions.utils';
 
 const AnchorLink = ({ anchor, children }) => {
   const { setActiveAnchor } = useContext(DocsContext);
-  const handleLinkClick = () => setActiveAnchor(anchor);
+
+  const handleLinkClick = event => {
+    event.preventDefault();
+    scrollToAnchor(anchor);
+    setActiveAnchor(anchor);
+  };
 
   return (
-    <HashLink
+    <NavLink
       className="link"
-      to={`#${anchor}`}
+      aria-label="Copy skip link"
+      title="Copy skip link"
       onClick={handleLinkClick}
-      scroll={el => scrollWithOffset(el)}
-      smooth
+      data-href={`#${anchor}`}
     >
       {children}
-    </HashLink>
+    </NavLink>
   );
 };
 

@@ -1,9 +1,9 @@
 import { useState, useContext, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 import { DocsContext } from '../../../contexts/docs.context';
 import { ListItem, useMediaQuery } from '@chakra-ui/react';
-import { HashLink } from 'react-router-hash-link';
-import { scrollWithOffset } from '../../../utils/anchor/anchor.utils';
 import { mobileMax } from '../../../utils/sizing/sizing.utils';
+import { scrollToAnchor } from '../../../utils/actions/actions.utils';
 
 const SidebarLink = ({ item }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -25,32 +25,31 @@ const SidebarLink = ({ item }) => {
 
   useEffect(() => {
     setIsActive(anchor === activeAnchor);
-  }, [anchor, activeAnchor]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeAnchor]);
 
   const handleMouseEnter = () => setIsHovered(true);
 
   const handleMouseLeave = () => setIsHovered(false);
 
   const handleLinkClick = event => {
-    const { href } = event.target;
-    const anchor = href.split('#')[1] || '';
+    event.preventDefault();
+    scrollToAnchor(anchor);
     setActiveAnchor(anchor);
     if (isMobile) setIsSidebarOpen(false);
   };
 
   return (
     <ListItem mb={2}>
-      <HashLink
-        to={`#${anchor}`}
-        style={isActive ? activeStyle : inactiveStyle}
-        scroll={el => scrollWithOffset(el)}
+      <NavLink
+        data-href={`#${anchor}`}
+        style={() => (isActive ? activeStyle : inactiveStyle)}
         onClick={handleLinkClick}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        smooth
       >
         {label}
-      </HashLink>
+      </NavLink>
     </ListItem>
   );
 };
