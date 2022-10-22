@@ -15,7 +15,6 @@ const Sidebar = () => {
   const { isSidebarOpen } = useContext(SidebarContext);
 
   const openStyle = {
-    width: 'min(80%, 250px)',
     transform: 'translateY(-1.25rem)',
   };
 

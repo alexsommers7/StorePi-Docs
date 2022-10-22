@@ -141,8 +141,9 @@ const GettingStarted = () => {
 
       <Text mb={3}>
         If you're filtering by a brand with multiple words, you'll need to separate the words with a{' '}
-        <Code>-</Code> e.g. <Code>?brand=brand-name-here</Code>. Supports gte, lte, gt, and lt
-        operators e.g. <Code>?sale_price[lte]=100</Code>.
+        <Code>-</Code> e.g. <Code>?brand=brand-name-here</Code>. Supports <Code>gte</Code>,{' '}
+        <Code>lte</Code>, <Code>gt</Code>, and <Code>lt</Code> operators e.g.{' '}
+        <Code>?sale_price[lte]=100</Code>.
       </Text>
 
       <Text mb={0}>The following parameters are whitelisted for duplication:</Text>
