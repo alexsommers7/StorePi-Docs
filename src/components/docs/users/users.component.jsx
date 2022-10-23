@@ -1,20 +1,64 @@
-import { Text } from '@chakra-ui/react';
 import SectionWrapper from '../../sections/wrapper/section-wrapper.component';
 import SectionHeading from '../../sections/heading/section-heading.component';
-import AnchorHeading from '../../links/anchor/anchor-heading.component';
+import Endpoint from '../../endpoint/endpoint.component';
+import {
+  getAllUsersResponse,
+  getUserResponse,
+  updateCurrentUserResponse,
+} from '../../../utils/content/doc-sample-responses.utils';
+import { updateCurrentUserBody } from '../../../utils/content/doc-sample-bodies.utils';
 
 const Users = () => {
   return (
     <SectionWrapper>
       <SectionHeading>Users</SectionHeading>
 
-      <Text mb={5}>
-        Retrieve all users, get a specific user, edit, and delete users. You can also retrieve data
-        on, update, or delete the currently-authenticated user.
-      </Text>
+      <Endpoint
+        anchorId="get-users"
+        headingText="Get All Users"
+        subdirectory="users"
+        response={getAllUsersResponse}
+      />
 
-      <AnchorHeading anchorId="get-users">Get All Users</AnchorHeading>
-      <AnchorHeading anchorId="get-user">Get User</AnchorHeading>
+      <Endpoint
+        anchorId="get-user"
+        headingText="Get User"
+        subdirectory="users/{id}"
+        response={getUserResponse}
+      />
+
+      <Endpoint
+        anchorId="get-current-user"
+        headingText="Get Current User"
+        subdirectory="users/current"
+        response={getUserResponse}
+        requiresAuth={true}
+      />
+
+      <Endpoint
+        anchorId="update-current-user"
+        httpMethod="PATCH"
+        headingText="Update Current User"
+        subdirectory="users/current"
+        requestBody={updateCurrentUserBody}
+        response={updateCurrentUserResponse}
+        requiresAuth={true}
+      />
+
+      <Endpoint
+        anchorId="delete-user"
+        httpMethod="DELETE"
+        headingText="Delete User"
+        subdirectory="users/{id}"
+      />
+
+      <Endpoint
+        anchorId="delete-current-user"
+        httpMethod="DELETE"
+        headingText="Delete Current User"
+        subdirectory="users/current"
+        requiresAuth={true}
+      />
     </SectionWrapper>
   );
 };

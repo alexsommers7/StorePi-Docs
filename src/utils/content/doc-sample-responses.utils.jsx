@@ -1020,3 +1020,79 @@ export const addProductToCurrentUserWishlistResponse = `"status": "success",
 	}
 ]
 `;
+
+export const getAllUsersResponse = `"status": "success",
+"results": 20,
+"total": 20,
+"data": [
+	{
+		"photo": "https://storepi-media.s3.us-west-1.amazonaws.com/img/users/user-2.jpg",
+		"role": "user",
+		"wishlist": [
+			"625c50fcc1198f626cc4183c",
+			"625c50fcc1198f626cc41839",
+			"625c50fcc1198f626cc41842"
+		],
+		"_id": "6213d79b3a57cb555079db6a",
+		"name": "Dorothy Jennings",
+		"email": "dorothy@example.com"
+	},
+	{
+		"photo": "https://storepi-media.s3.us-west-1.amazonaws.com/img/users/user-4.jpg",
+		"role": "user",
+		"wishlist": [],
+		"_id": "6213d79b3a57cb555079db6c",
+		"name": "Shari Castro",
+		"email": "shari@example.com"
+	},
+	{
+		"photo": "https://storepi-media.s3.us-west-1.amazonaws.com/img/users/user-3.jpg",
+		"role": "user",
+		"wishlist": [
+			"625c50fcc1198f626cc41854",
+			"625c50fcc1198f626cc41853",
+			"625c50fcc1198f626cc41851",
+			"625c50fcc1198f626cc4184f",
+			"625c50fcc1198f626cc4184c",
+			"625c50fcc1198f626cc41849",
+			"625c50fcc1198f626cc41845"
+		],
+		"_id": "6213d79b3a57cb555079db6b",
+		"name": "Jodi Warner",
+		"email": "jodi@example.com"
+	},
+	...
+]
+`;
+
+export const getUserResponse = `"status": "success",
+"data": {
+	"photo": "https://storepi-media.s3.us-west-1.amazonaws.com/img/users/user-2.jpg",
+	"role": "user",
+	"wishlist": [
+		"625c50fcc1198f626cc4183c",
+		"625c50fcc1198f626cc41839",
+		"625c50fcc1198f626cc41842"
+	],
+	"_id": "6213d79b3a57cb555079db6a",
+	"name": "Dorothy Jennings",
+	"email": "dorothy@example.com",
+}
+`;
+
+export const updateCurrentUserResponse = `"status": "success",
+"data": {
+	"user": {
+		"photo": "https://storepi-media.s3.us-west-1.amazonaws.com/img/users/user-2.jpg",
+		"role": "user",
+		"wishlist": [
+			"625c50fcc1198f626cc4183c",
+			"625c50fcc1198f626cc41839",
+			"625c50fcc1198f626cc41842"
+		],
+		"_id": "6213d79b3a57cb555079db6a",
+		"name": "...",
+		"email": "dorothy@example.com",
+	}
+}
+`;

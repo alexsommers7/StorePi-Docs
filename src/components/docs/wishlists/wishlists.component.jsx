@@ -16,7 +16,7 @@ const Wishlists = () => {
       <SectionHeading>Wishlists</SectionHeading>
 
       <Endpoint
-        anchorId="get-user-wishlist"
+        anchorId="get-current-user-wishlist"
         headingText="Get Current User Wishlist"
         subdirectory="users/current/wishlist"
         requiresAuth={true}
@@ -24,7 +24,7 @@ const Wishlists = () => {
       />
 
       <Endpoint
-        anchorId="add-to-user-wishlist"
+        anchorId="add-to-current-user-wishlist"
         httpMethod="PATCH"
         headingText="Add to Current User Wishlist"
         subdirectory="users/current/wishlist"
@@ -34,7 +34,7 @@ const Wishlists = () => {
       />
 
       <Endpoint
-        anchorId="remove-from-user-wishlist"
+        anchorId="remove-from-current-user-wishlist"
         httpMethod="DELETE"
         headingText="Remove From Current User Wishlist"
         subdirectory="users/current/wishlist"

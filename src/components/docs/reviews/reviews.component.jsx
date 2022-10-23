@@ -42,7 +42,7 @@ const Reviews = () => {
       />
 
       <Endpoint
-        anchorId="get-user-reviews"
+        anchorId="get-current-user-reviews"
         headingText="Get Current User Reviews"
         subdirectory="users/current/reviews"
         response={getCurrentUserReviewsResponse}

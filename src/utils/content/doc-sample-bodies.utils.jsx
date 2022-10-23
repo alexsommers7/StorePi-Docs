@@ -46,3 +46,5 @@ export const addProductToCurrentUserWishlistBody = `// all fields are required
 export const removeProductFromCurrentUserWishlistBody = `// all fields are required
 "sku": 1
 `;
+
+export const updateCurrentUserBody = `"name": "..."`;

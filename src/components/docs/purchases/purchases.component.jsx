@@ -29,7 +29,7 @@ const Purchases = () => {
       />
 
       <Endpoint
-        anchorId="get-user-purchases"
+        anchorId="get-current-user-purchases"
         headingText="Get Current User Purchases"
         subdirectory="users/current/purchases"
         requiresAuth={true}
@@ -39,7 +39,7 @@ const Purchases = () => {
       <Endpoint
         anchorId="create-purchase"
         httpMethod="POST"
-        headingText="Create New Purchases"
+        headingText="Create New Purchase"
         subdirectory="purchases"
         requestBody={createPurchaseBody}
         response={createPurchaseResponse}

@@ -32,7 +32,7 @@ const Carts = () => {
       />
 
       <Endpoint
-        anchorId="get-user-cart"
+        anchorId="get-current-user-cart"
         headingText="Get Current User Cart"
         subdirectory="users/current/cart"
         requiresAuth={true}
@@ -40,7 +40,7 @@ const Carts = () => {
       />
 
       <Endpoint
-        anchorId="add-to-user-cart"
+        anchorId="add-to-current-user-cart"
         httpMethod="PATCH"
         headingText="Add to Current User Cart"
         subdirectory="users/current/cart"
@@ -50,7 +50,7 @@ const Carts = () => {
       />
 
       <Endpoint
-        anchorId="remove-from-user-cart"
+        anchorId="remove-from-current-user-cart"
         httpMethod="DELETE"
         headingText="Remove From Current User Cart"
         subdirectory="users/current/cart"
