@@ -12,6 +12,14 @@ export const DocSidebarItems = [
     ],
   },
   {
+    label: 'Authentication',
+    subitems: [
+      { label: 'Sign Up', anchor: 'sign-up' },
+      { label: 'Log In', anchor: 'log-in' },
+      { label: 'Log Out', anchor: 'log-out' },
+    ],
+  },
+  {
     label: 'Products',
     subitems: [
       { label: 'Get All Products', anchor: 'get-products' },
@@ -82,14 +90,6 @@ export const DocSidebarItems = [
       { label: 'Get Current User', anchor: 'get-current-user' },
       { label: 'Update Current User', anchor: 'update-current-user' },
       { label: 'Delete Current User', anchor: 'delete-current-user' },
-    ],
-  },
-  {
-    label: 'Authentication',
-    subitems: [
-      { label: 'Sign Up', anchor: 'sign-up' },
-      { label: 'Log In', anchor: 'log-in' },
-      { label: 'Log Out', anchor: 'log-out' },
     ],
   },
 ];
