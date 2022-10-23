@@ -38,3 +38,11 @@ export const createPurchaseBody = `// all fields are required
 	}
 ]
 `;
+
+export const addProductToCurrentUserWishlistBody = `// all fields are required
+"sku": 3
+`;
+
+export const removeProductFromCurrentUserWishlistBody = `// all fields are required
+"sku": 1
+`;

@@ -8,6 +8,7 @@ import Brands from './brands/brands.component';
 import Categories from './categories/categories.component';
 import Carts from './carts/carts.component';
 import Purchases from './purchases/purchases.component';
+import Wishlists from './wishlists/wishlists.component';
 import Users from './users/users.component';
 import Authentication from './authentication/authentication.component';
 
@@ -25,6 +26,7 @@ const Docs = () => {
       <Categories />
       <Carts />
       <Purchases />
+      <Wishlists />
       <Users />
       <Authentication />
     </Box>

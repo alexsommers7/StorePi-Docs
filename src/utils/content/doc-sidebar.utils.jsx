@@ -69,9 +69,9 @@ export const DocSidebarItems = [
   {
     label: 'Wishlists',
     subitems: [
-      { label: 'Get Current User List', anchor: 'get-user-list' },
-      { label: 'Add to Current User List', anchor: 'add-to-user-list' },
-      { label: 'Remove From Current User List', anchor: 'remove-from-user-list' },
+      { label: 'Get Current User Wishlist', anchor: 'get-user-wishlist' },
+      { label: 'Add to Current User Wishlist', anchor: 'add-to-user-wishlist' },
+      { label: 'Remove From Current User Wishlist', anchor: 'remove-from-user-wishlist' },
     ],
   },
   {

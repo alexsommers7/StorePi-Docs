@@ -492,7 +492,7 @@ export const createOrUpdateCategoryResponse = `"status": "success",
 `;
 
 export const getAllCartsResponse = `"status": "success",
-"results": 3,
+"results": 19,
 "total": 19,
 "data": [
 	{
@@ -502,19 +502,17 @@ export const getAllCartsResponse = `"status": "success",
 		},
 		"products": [
 			{
-					"_id": "627b2e26fd536c0450cd95af",
-					"item": {
-							"_id": "625c50fcc1198f626cc4182f",
-							"sku": 16,
-							"name": "Flip 6 Water-Resistant Bluetooth Speaker",
-							"brand": "JBL",
-							"regular_price": 129.95,
-							"sale_price": 110.95,
-							"image_main": "https://storepi-media.s3.us-west-1.amazonaws.com/img/products/electronics/4a.jpg",
-							"slug": "flip-6-water-resistant-bluetooth-speaker",
-							"id": "625c50fcc1198f626cc4182f"
-					},
-					"quantity": 1
+				"item": {
+					"sku": 16,
+					"name": "Flip 6 Water-Resistant Bluetooth Speaker",
+					"brand": "JBL",
+					"regular_price": 129.95,
+					"sale_price": 110.95,
+					"image_main": "https://storepi-media.s3.us-west-1.amazonaws.com/img/products/electronics/4a.jpg",
+					"slug": "flip-6-water-resistant-bluetooth-speaker",
+					"id": "625c50fcc1198f626cc4182f"
+				},
+				"quantity": 1
 			},
 			...
 		],
@@ -547,7 +545,8 @@ export const getAllCartsResponse = `"status": "success",
 		"total_pretty": "$0.00",
 		"item_count": 0,
 		"id": "623641e496433b10a833b0e0"
-	}
+	},
+	...
 ]
 `;
 
@@ -639,7 +638,7 @@ export const addProductToCurrentUserCartResponse = `"status": "success",
 `;
 
 export const getAllPurchasesResponse = `"status": "success",
-"results": 3,
+"results": 53,
 "total": 53,
 "data": [
 	{
@@ -760,7 +759,8 @@ export const getAllPurchasesResponse = `"status": "success",
 	"total": 111.29,
 	"total_pretty": "$111.29",
 	"id": "627816ed796f4e5ca4288d0b"
-	}
+	},
+	...
 ]
 `;
 
@@ -888,4 +888,135 @@ export const createPurchaseResponse = `"status": "success",
 	"total_pretty": "$129.95",
 	"id": "6354cb9490eabd001600a26c"
 }
+`;
+
+export const getCurrentUserWishlistResponse = `"status": "success",
+"data": {
+	"wishlist": [
+		{
+			"sku": 29,
+			"name": "FlashPatch Rejuvenating Eye Gels",
+			"category": {
+				"_id": "6213d49cb7f67e0d64774e96",
+				"name": "Health & Beauty"
+			},
+			"image_main": "https://storepi-media.s3.us-west-1.amazonaws.com/img/products/health_and_beauty/4a.jpg",
+			"id": "625c50fcc1198f626cc4183c"
+		},
+		{
+			"sku": 26,
+			"name": "Atmosphere Nonstick Aluminum 12-Pc. Cookware Set",
+			"category": {
+				"_id": "6213d49cb7f67e0d64774e97",
+				"name": "Home"
+			},
+			"image_main": "https://storepi-media.s3.us-west-1.amazonaws.com/img/products/home/4a.jpg",
+			"id": "625c50fcc1198f626cc41839"
+		},
+		{
+			"sku": 35,
+			"name": "Women's Plaid Single-Breasted Walker Coat",
+			"category": {
+				"_id": "6213d49cb7f67e0d64774e94",
+				"name": "Women's Clothing"
+			},
+			"image_main": "https://storepi-media.s3.us-west-1.amazonaws.com/img/products/womens_clothing/6a.jpg",
+			"id": "625c50fcc1198f626cc41842"
+		}
+	],
+	"_id": "6213d79b3a57cb555079db6a"
+}
+`;
+
+export const addProductToCurrentUserWishlistResponse = `"status": "success",
+"data": [
+	{
+		"reviews_average": 3.33,
+		"reviews_quantity": 3,
+		"best_seller": false,
+		"in_stock": true,
+		"features": [...],
+		"images": [...],
+		"sku": 29,
+		"name": "FlashPatch Rejuvenating Eye Gels",
+		"category": {
+			"_id": "6213d49cb7f67e0d64774e96",
+			"name": "Health & Beauty"
+		},
+		"brand": "Patchology",
+		"regular_price": 50,
+		"sale_price": 42.5,
+		"description": "Puffiness? Fatigue? Dryness? Enter the fast fix for tired eyes, featuring caffeine and hydrolyzed collagen. Look like you got your full 8 hours all day, every day.",
+		"specs": [...],
+		"image_main": "https://storepi-media.s3.us-west-1.amazonaws.com/img/products/health_and_beauty/4a.jpg",
+		"slug": "flashpatch-rejuvenating-eye-gels",
+		"id": "625c50fcc1198f626cc4183c"
+	},
+	{
+		"reviews_average": 2,
+		"reviews_quantity": 1,
+		"best_seller": true,
+		"in_stock": true,
+		"features": [...],
+		"images": [...],
+		"sku": 26,
+		"name": "Atmosphere Nonstick Aluminum 12-Pc. Cookware Set",
+		"category": {
+			"_id": "6213d49cb7f67e0d64774e97",
+			"name": "Home"
+		},
+		"brand": "Brooklyn Steel Co",
+		"regular_price": 399.99,
+		"sale_price": 299.99,
+		"description": "Bring cooking to a higher level with this striking 12-piece set from Brooklyn Steel Co.'s Atmosphere collection. Aluminum combines with multi-layer ceramic nonstick interiors for superior performance and looks, as well as easy cleanup.",
+		"specs": [...],
+		"image_main": "https://storepi-media.s3.us-west-1.amazonaws.com/img/products/home/4a.jpg",
+		"slug": "atmosphere-nonstick-aluminum-12-pc.-cookware-set",
+		"id": "625c50fcc1198f626cc41839"
+	},
+	{
+		"reviews_average": 4.67,
+		"reviews_quantity": 3,
+		"best_seller": false,
+		"in_stock": false,
+		"features": [...],
+		"images": [...],
+		"sku": 35,
+		"name": "Women's Plaid Single-Breasted Walker Coat",
+		"category": {
+			"_id": "6213d49cb7f67e0d64774e94",
+			"name": "Women's Clothing"
+		},
+		"brand": "Calvin Klein",
+		"regular_price": 400,
+		"sale_price": 239.99,
+		"description": "Classic plaid defines this single-breasted reefer coat from Calvin Klein, fashioned with two flap pockets and an elongated silhouette.",
+		"specs": [...],
+		"image_main": "https://storepi-media.s3.us-west-1.amazonaws.com/img/products/womens_clothing/6a.jpg",
+		"slug": "women's-plaid-single-breasted-walker-coat",
+		"id": "625c50fcc1198f626cc41842"
+	},
+	{
+		"reviews_average": 4.67,
+		"reviews_quantity": 6,
+		"best_seller": false,
+		"in_stock": false,
+		"features": [...],
+		"images": [...],
+		"sku": 3,
+		"name": "Susulv-MCL Men Shirt Men's Large Size Long Sleeve Lapel Zipper Shirt",
+		"category": {
+			"_id": "6213d49cb7f67e0d64774e93",
+			"name": "Men's Clothing"
+		},
+		"brand": "Susulv MCL",
+		"regular_price": 119.99,
+		"sale_price": 119.99,
+		"description": "Cool, slim fit, top quality casual style shirt, perfect and comfortable for daily wear or relaxing weekends.",
+		"specs": [...],
+		"image_main": "https://storepi-media.s3.us-west-1.amazonaws.com/img/products/mens_clothing/1a.jpg",
+		"slug": "susulv-mcl-men-shirt-men's-large-size-long-sleeve-lapel-zipper-shirt",
+		"id": "6213d55cf8b9765ec0fbbcb0"
+	}
+]
 `;
