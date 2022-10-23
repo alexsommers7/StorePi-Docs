@@ -36,7 +36,13 @@ const AnchorHeading = ({ anchorId, httpMethod, requiresAuth = false, children })
   const toast = useToast();
 
   return (
-    <Box className="anchor-heading" position="relative" mt={8} mb={2}>
+    <Box
+      className="anchor-heading"
+      position="relative"
+      mt={8}
+      mb={2}
+      width={['auto', 'max-content', 'max-content']}
+    >
       <Flex alignItems="baseline" flexWrap="wrap">
         {httpMethod && (
           <Badge variant={httpMethod} mr={1.5} transform="translateY(-1px)">
@@ -45,7 +51,7 @@ const AnchorHeading = ({ anchorId, httpMethod, requiresAuth = false, children })
         )}
 
         <Flex alignItems="baseline">
-          <Heading id={anchorId} size="md" mb={0} mr={2} style={{ scrollMargin: '85px' }}>
+          <Heading id={anchorId} size="md" mb={0} mr={2} scrollMargin="85px">
             {children}
           </Heading>
 
