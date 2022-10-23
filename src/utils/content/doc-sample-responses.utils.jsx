@@ -143,7 +143,7 @@ export const updateProductResponse = `"status": "success",
 `;
 
 export const getAllReviewsResponse = `"status": "success",
-"results": 3,
+"results": 100,
 "total": 188,
 "data": [
 	{

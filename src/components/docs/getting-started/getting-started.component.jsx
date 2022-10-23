@@ -30,10 +30,11 @@ const GettingStarted = () => {
         <Code>Express</Code>.
       </Text>
       <Text mb={10}>
-        It provides resources such as <Code>products</Code>, <Code>review</Code>, <Code>users</Code>
-        , <Code>carts</Code>, <Code>purchases</Code>, and more. Endpoints are provided to perform
-        CRUD operations on each of these resources - supporting both end user actions (e.g. adding
-        an item to cart) as well as administrator actions (e.g. creating a new product).
+        It provides resources such as <Code>products</Code>, <Code>reviews</Code>,{' '}
+        <Code>users</Code>, <Code>carts</Code>, <Code>purchases</Code>, and more. Endpoints are
+        provided to perform CRUD operations on each of these resources - supporting both end user
+        actions (e.g. adding an item to cart) as well as administrator actions (e.g. creating a new
+        product).
       </Text>
 
       <AnchorHeading anchorId="database-interaction-intro">Database Interaction</AnchorHeading>
@@ -89,6 +90,10 @@ const GettingStarted = () => {
               </Td>
               <Td>
                 <Text mb={2}>Sort the query results by one or more fields (comma-delimited).</Text>{' '}
+                <Text mb={2}>
+                  Sorting defaults to <Code>sku</Code> (ascending) then <Code>created_at</Code>{' '}
+                  (descending).
+                </Text>
                 Use <Code>-</Code> to indicate descending order.
               </Td>
               <Td>
@@ -114,7 +119,9 @@ const GettingStarted = () => {
                 <Code>limit</Code>
               </Td>
               <Td>
-                <Text>Limit the query results.</Text>
+                <Text>
+                  Limit the query results. Defaults to <Code>100</Code>.
+                </Text>
               </Td>
               <Td>
                 <Code>?limit=10</Code>
@@ -126,7 +133,9 @@ const GettingStarted = () => {
                 <Code>page</Code>
               </Td>
               <Td>
-                <Text>Paginate the query results.</Text>
+                <Text>
+                  Paginate the query results. Defaults to <Code>1</Code>.
+                </Text>
               </Td>
               <Td>
                 <Code>?page=2</Code>

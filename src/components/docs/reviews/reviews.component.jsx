@@ -16,8 +16,8 @@ const Reviews = () => {
     <SectionWrapper>
       <SectionHeading>Reviews</SectionHeading>
       <Text>
-        A total of 54 reviews exist in the database. Each review contains properties such as
-        pricing, review data, specs, and more.
+        A total of 188 reviews exist in the database. Each review contains properties such as
+        rating, incentivization, verification, and more.
       </Text>
 
       <Endpoint

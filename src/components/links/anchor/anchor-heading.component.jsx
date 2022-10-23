@@ -36,27 +36,29 @@ const AnchorHeading = ({ anchorId, httpMethod, requiresAuth = false, children })
   const toast = useToast();
 
   return (
-    <Box className="anchor-heading" position="relative" mt={8} mb={2} width="max-content">
-      <Flex alignItems="center">
+    <Box className="anchor-heading" position="relative" mt={8} mb={2}>
+      <Flex alignItems="baseline" flexWrap="wrap">
         {httpMethod && (
-          <Badge variant={httpMethod} mr={1.5}>
+          <Badge variant={httpMethod} mr={1.5} transform="translateY(-1px)">
             {httpMethod}
           </Badge>
         )}
 
-        <Heading id={anchorId} size="md" mb={0} mr={2} style={{ scrollMargin: '85px' }}>
-          {children}
-        </Heading>
+        <Flex alignItems="baseline">
+          <Heading id={anchorId} size="md" mb={0} mr={2} style={{ scrollMargin: '85px' }}>
+            {children}
+          </Heading>
 
-        {requiresAuth && (
-          <FaLock
-            color="rgb(141, 141, 141)"
-            style={{ display: 'inline-block', transform: 'translateY(1px)' }}
-            title="Requires authorization"
-            aria-label="Requires authorization"
-            size="14"
-          />
-        )}
+          {requiresAuth && (
+            <FaLock
+              color="rgb(141, 141, 141)"
+              display="inline-block"
+              title="Requires authorization"
+              aria-label="Requires authorization"
+              size="14"
+            />
+          )}
+        </Flex>
       </Flex>
 
       <NavLink

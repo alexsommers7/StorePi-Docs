@@ -39,7 +39,7 @@ const Header = () => {
         <Text mb={0}>StorePi</Text>
         <Flex alignItems="center">
           <Link
-            href="https://github.com/alexsommers7/StorePi-Docs"
+            href="https://github.com/alexsommers7/StorePI"
             aria-label="View project repository on GitHub"
             isExternal
           >
