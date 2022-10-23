@@ -35,6 +35,7 @@ const Carts = () => {
         anchorId="get-user-cart"
         headingText="Get Current User Cart"
         subdirectory="users/current/cart"
+        requiresAuth={true}
         response={getCurrentUserCartResponse}
       />
 
@@ -43,6 +44,7 @@ const Carts = () => {
         httpMethod="PATCH"
         headingText="Add to Current User Cart"
         subdirectory="users/current/cart"
+        requiresAuth={true}
         requestBody={addProductToCurrentUserCartBody}
         response={addProductToCurrentUserCartResponse}
       />
@@ -52,6 +54,7 @@ const Carts = () => {
         httpMethod="DELETE"
         headingText="Remove From Current User Cart"
         subdirectory="users/current/cart"
+        requiresAuth={true}
         requestBody={removeProductFromCurrentUserCartBody}
       />
 
