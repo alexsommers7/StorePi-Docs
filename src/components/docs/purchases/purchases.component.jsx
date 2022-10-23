@@ -1,14 +1,49 @@
 import SectionWrapper from '../../sections/wrapper/section-wrapper.component';
 import SectionHeading from '../../sections/heading/section-heading.component';
-import AnchorHeading from '../../links/anchor/anchor-heading.component';
+import Endpoint from '../../endpoint/endpoint.component';
+import {
+  getAllPurchasesResponse,
+  getPurchaseResponse,
+  getCurrentUserPurchasesResponse,
+  createPurchaseResponse,
+} from '../../../utils/content/doc-sample-responses.utils';
+import { createPurchaseBody } from '../../../utils/content/doc-sample-bodies.utils';
 
 const Purchases = () => {
   return (
     <SectionWrapper>
       <SectionHeading>Purchases</SectionHeading>
 
-      <AnchorHeading anchorId="get-purchases">Get All Purchases</AnchorHeading>
-      <AnchorHeading anchorId="get-purchase">Get Purchase</AnchorHeading>
+      <Endpoint
+        anchorId="get-purchases"
+        headingText="Get All Purchases"
+        subdirectory="purchases"
+        response={getAllPurchasesResponse}
+      />
+
+      <Endpoint
+        anchorId="get-purchase"
+        headingText="Get Purchase"
+        subdirectory="purchases"
+        response={getPurchaseResponse}
+      />
+
+      <Endpoint
+        anchorId="get-user-purchases"
+        headingText="Get Current User Purchases"
+        subdirectory="users/current/purchases"
+        requiresAuth={true}
+        response={getCurrentUserPurchasesResponse}
+      />
+
+      <Endpoint
+        anchorId="create-purchase"
+        httpMethod="POST"
+        headingText="Create New Purchases"
+        subdirectory="purchases"
+        requestBody={createPurchaseBody}
+        response={createPurchaseResponse}
+      />
     </SectionWrapper>
   );
 };

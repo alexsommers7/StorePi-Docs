@@ -637,3 +637,255 @@ export const addProductToCurrentUserCartResponse = `"status": "success",
 	"id": "623641e496433b10a833b0ac"
 }
 `;
+
+export const getAllPurchasesResponse = `"status": "success",
+"results": 3,
+"total": 53,
+"data": [
+	{
+		"paid": true,
+		"user": {
+			"_id": "6213d79b3a57cb555079db6e",
+			"name": "Daisy Gregory"
+		},
+		"products": [
+			{
+				"item": {
+						"sku": 28,
+						"name": "Good Genes All-In-One Lactic Acid Treatment",
+						"brand": "Sunday Riley",
+						"regular_price": 142,
+						"sale_price": 122,
+						"image_main": "https://storepi-media.s3.us-west-1.amazonaws.com/img/products/health_and_beauty/3a.jpg",
+						"slug": "good-genes-all-in-one-lactic-acid-treatment",
+						"id": "625c50fcc1198f626cc4183b"
+				},
+				"quantity": 1
+			},
+			{
+				"item": {
+					"sku": 36,
+					"name": "Women's Double-Brested Trench Coat",
+					"brand": "Lauren Ralph Lauren",
+					"regular_price": 190,
+					"sale_price": 93.1,
+					"image_main": "https://storepi-media.s3.us-west-1.amazonaws.com/img/products/womens_clothing/7a.jpg",
+					"slug": "women's-double-brested-trench-coat",
+					"id": "625c50fcc1198f626cc41843"
+				},
+				"quantity": 1
+			}
+		],
+		"date": "2021-09-08T19:38:16.496Z",
+		"total": 215.1,
+		"total_pretty": "$215.10",
+		"id": "627816ed796f4e5ca4288d08"
+},
+{
+	"paid": true,
+	"_id": "627816ed796f4e5ca4288d13",
+	"user": {
+		"_id": "6213d79b3a57cb555079db71",
+		"name": "Marco Lawrence"
+	},
+	"products": [
+		{
+			"item": {
+					"sku": 2,
+					"name": "Acer Predator XB3 - 27 in. Monitor Full HD",
+					"brand": "Acer",
+					"regular_price": 369.99,
+					"sale_price": 249.99,
+					"image_main": "https://storepi-media.s3.us-west-1.amazonaws.com/img/products/electronics/2a.jpg",
+					"slug": "acer-predator-xb3-27-in.-monitor-full-hd",
+					"id": "6213d55cf8b9765ec0fbbcad"
+			},
+			"quantity": 3
+		},
+		{
+			"item": {
+					"sku": 18,
+					"name": "Men's Mixed Media Motorcycle Jacket",
+					"brand": "DKNY",
+					"regular_price": 224.99,
+					"sale_price": 135.99,
+					"image_main": "https://storepi-media.s3.us-west-1.amazonaws.com/img/products/mens_clothing/5a.jpg",
+					"slug": "men's-mixed-media-motorcycle-jacket",
+					"id": "625c50fcc1198f626cc41831"
+			},
+			"quantity": 1
+		}
+	],
+	"date": "2021-08-20T01:30:06.383Z",
+	"total": 885.96,
+	"total_pretty": "$885.96",
+	"id": "627816ed796f4e5ca4288d13"
+},
+{
+	"paid": true,
+	"_id": "627816ed796f4e5ca4288d0b",
+	"user": {
+		"_id": "6213d79b3a57cb555079db6e",
+		"name": "Daisy Gregory"
+	},
+	"products": [
+		{
+			"item": {
+				"sku": 31,
+				"name": "Flex Men's 505 Regular Fit Jeans",
+				"brand": "Levi's",
+				"regular_price": 69.5,
+				"sale_price": 48.65,
+				"image_main": "https://storepi-media.s3.us-west-1.amazonaws.com/img/products/mens_clothing/6a.jpg",
+				"slug": "flex-men's-505-regular-fit-jeans",
+				"id": "625c50fcc1198f626cc4183e"
+			},
+			"quantity": 2
+		},
+		{
+			"item": {
+				"sku": 39,
+				"name": "Toy RC Robotic Robotosaur Mini",
+				"brand": "Sharper Image",
+				"regular_price": 35.99,
+				"sale_price": 13.99,
+				"image_main": "https://storepi-media.s3.us-west-1.amazonaws.com/img/products/kids_and_baby/6a.jpg",
+				"slug": "toy-rc-robotic-robotosaur-mini",
+				"id": "625c50fcc1198f626cc41846"
+			},
+			"quantity": 1
+		}	
+	],
+	"date": "2021-10-08T08:32:50.487Z",
+	"total": 111.29,
+	"total_pretty": "$111.29",
+	"id": "627816ed796f4e5ca4288d0b"
+	}
+]
+`;
+
+export const getPurchaseResponse = `"status": "success",
+"data": {
+	"paid": true,
+	"_id": "627816ed796f4e5ca4288d08",
+	"user": {
+		"_id": "6213d79b3a57cb555079db6e",
+		"name": "Daisy Gregory"
+	},
+	"products": [
+		{
+			"item": {
+				"sku": 28,
+				"name": "Good Genes All-In-One Lactic Acid Treatment",
+				"brand": "Sunday Riley",
+				"regular_price": 142,
+				"sale_price": 122,
+				"image_main": "https://storepi-media.s3.us-west-1.amazonaws.com/img/products/health_and_beauty/3a.jpg",
+				"slug": "good-genes-all-in-one-lactic-acid-treatment",
+				"id": "625c50fcc1198f626cc4183b"
+			},
+			"quantity": 1
+		},
+		{
+			"item": {
+				"sku": 36,
+				"name": "Women's Double-Brested Trench Coat",
+				"brand": "Lauren Ralph Lauren",
+				"regular_price": 190,
+				"sale_price": 93.1,
+				"image_main": "https://storepi-media.s3.us-west-1.amazonaws.com/img/products/womens_clothing/7a.jpg",
+				"slug": "women's-double-brested-trench-coat",
+				"id": "625c50fcc1198f626cc41843"
+			},
+			"quantity": 1
+		}
+	],
+	"date": "2021-09-08T19:38:16.496Z",
+	"total": 215.1,
+	"total_pretty": "$215.10",
+	"id": "627816ed796f4e5ca4288d08"
+}
+`;
+
+export const getCurrentUserPurchasesResponse = `"status": "success",
+"results": 1,
+"data": [
+	{
+		"paid": true,
+		"user": {
+			"_id": "6213d79b3a57cb555079db6a",
+			"name": "Dorothy Jennings"
+		},
+		"products": [
+			{
+				"item": {
+					"sku": 3,
+					"name": "Susulv-MCL Men Shirt Men's Large Size Long Sleeve Lapel Zipper Shirt",
+					"brand": "Susulv MCL",
+					"regular_price": 119.99,
+					"sale_price": 119.99,
+					"image_main": "https://storepi-media.s3.us-west-1.amazonaws.com/img/products/mens_clothing/1a.jpg",
+					"slug": "susulv-mcl-men-shirt-men's-large-size-long-sleeve-lapel-zipper-shirt",
+					"id": "6213d55cf8b9765ec0fbbcb0"
+				},
+				"quantity": 1
+			},
+			{
+				"item": {
+					"sku": 11,
+					"name": "Red Kap Men's Long Sleeve",
+					"brand": "Red Kap",
+					"regular_price": 48.3,
+					"sale_price": 30.49,
+					"image_main": "https://storepi-media.s3.us-west-1.amazonaws.com/img/products/mens_clothing/2a.jpg",
+					"slug": "red-kap-men's-long-sleeve",
+					"id": "625c50fcc1198f626cc4182a"
+				},
+				"quantity": 1
+			},
+			{
+				"item": {
+					"sku": 2,
+					"name": "Acer Predator XB3 - 27 in. Monitor Full HD",
+					"brand": "Acer",
+					"regular_price": 369.99,
+					"sale_price": 249.99,
+					"image_main": "https://storepi-media.s3.us-west-1.amazonaws.com/img/products/electronics/2a.jpg",
+					"slug": "acer-predator-xb3-27-in.-monitor-full-hd",
+					"id": "6213d55cf8b9765ec0fbbcad"
+				},
+				"quantity": 1
+			}
+		],
+		"date": "2022-02-06T20:09:05.660Z",
+		"total": 400.47,
+		"total_pretty": "$400.47",
+		"id": "627816ed796f4e5ca4288d04"
+	}
+]
+`;
+
+export const createPurchaseResponse = `"status": "success",
+"data": {
+	"paid": true,
+	"products": [
+		{
+			"item": {
+				"sku": 1,
+				"name": "HP 24 in. LED Monitor IPS Micro-edge HDMI VGA 60Hz 5ms - 24m",
+				"brand": "HP",
+				"regular_price": 149.95,
+				"sale_price": 129.95,
+				"image_main": "https://storepi-media.s3.us-west-1.amazonaws.com/img/products/electronics/1a.jpg",
+				"slug": "hp-24-in.-led-monitor-ips-micro-edge-hdmi-vga-60hz-5ms-24m",
+				"id": "6213d55cf8b9765ec0fbbcaa"
+			},
+			"quantity": 1
+		}
+	],
+	"date": "2021-02-24T04:57:12.443Z",
+	"total": 129.95,
+	"total_pretty": "$129.95",
+	"id": "6354cb9490eabd001600a26c"
+}
+`;

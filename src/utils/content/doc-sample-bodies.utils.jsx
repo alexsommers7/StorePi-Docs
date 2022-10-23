@@ -29,3 +29,12 @@ export const addProductToCurrentUserCartBody = `// all fields are required
 export const removeProductFromCurrentUserCartBody = `// all fields are required
 "sku": 16
 `;
+
+export const createPurchaseBody = `// all fields are required
+"products": [
+	{
+		"item": "6213d55cf8b9765ec0fbbcaa",
+		"quantity": 1
+	}
+]
+`;
