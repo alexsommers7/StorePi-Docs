@@ -1,5 +1,6 @@
-import { useEffect, useRef, useContext } from 'react';
-import { AnchorContext } from '../../contexts/anchor.context';
+import { useEffect, useRef } from 'react';
+import { useDispatch } from 'react-redux';
+import { setActiveAnchor } from '../../store/docs/docs.action';
 import { useLocation } from 'react-router-dom';
 import { Box } from '@chakra-ui/react';
 import Sidebar from '../../components/sidebar/sidebar.component';
@@ -11,7 +12,8 @@ import './docs.styles.scss';
 import '../../utils/external-styles/prism.scss';
 
 const Docs = () => {
-  const { setActiveAnchor } = useContext(AnchorContext);
+  const dispatch = useDispatch();
+
   const scrolledRef = useRef(false);
   const { hash } = useLocation();
 
@@ -25,7 +27,7 @@ const Docs = () => {
       scrollToAnchor(id);
 
       scrolledRef.current = true;
-      setActiveAnchor(id);
+      dispatch(setActiveAnchor(id));
     }
   });
 

@@ -1,23 +1,21 @@
-import { useContext } from 'react';
-import { AnchorContext } from '../../../contexts/anchor.context';
-import { SidebarContext } from '../../../contexts/sidebar.context';
 import { NavLink } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setActiveAnchor, setIsSidebarOpen } from '../../../store/docs/docs.action';
 import { Box, Heading, useToast, Flex, Badge, useMediaQuery } from '@chakra-ui/react';
 import { FaAnchor, FaLock } from 'react-icons/fa';
 import { scrollToAnchor } from '../../../utils/actions/actions.utils';
 import { mobileMax } from '../../../utils/sizing/sizing.utils';
 
 const AnchorHeading = ({ anchorId, httpMethod, requiresAuth = false, children }) => {
-  const { setActiveAnchor } = useContext(AnchorContext);
-  const { setIsSidebarOpen } = useContext(SidebarContext);
+  const dispatch = useDispatch();
   const [isMobile] = useMediaQuery(`(max-width: ${mobileMax})`);
 
   const handleAnchorCopy = event => {
     event.preventDefault();
 
     scrollToAnchor(anchorId);
-    setActiveAnchor(anchorId);
-    if (isMobile) setIsSidebarOpen(false);
+    dispatch(setActiveAnchor(anchorId));
+    if (isMobile) dispatch(setIsSidebarOpen(false));
 
     navigator.clipboard.writeText(`${window.location.href.split('#')[0]}#${anchorId}`);
 

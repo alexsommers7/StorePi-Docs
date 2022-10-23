@@ -1,5 +1,5 @@
-import { useContext } from 'react';
-import { SidebarContext } from '../../contexts/sidebar.context';
+import { useSelector } from 'react-redux';
+import { selectIsSidebarOpen } from '../../store/docs/docs.selector';
 import { Flex, UnorderedList, Box, useMediaQuery } from '@chakra-ui/react';
 
 import { BorderColor } from '../../utils/color/colorModeValues.utils';
@@ -12,7 +12,7 @@ import { contentMaxWidth } from '../../utils/sizing/sizing.utils';
 
 const Sidebar = () => {
   const [isLargerThanMaxContent] = useMediaQuery(`(min-width: ${contentMaxWidth.num + 55}px)`);
-  const { isSidebarOpen } = useContext(SidebarContext);
+  const isSidebarOpen = useSelector(selectIsSidebarOpen);
 
   const openStyle = {
     transform: 'translateY(-1.25rem)',

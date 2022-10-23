@@ -1,15 +1,15 @@
 import { NavLink } from 'react-router-dom';
-import { useContext } from 'react';
-import { AnchorContext } from '../../../contexts/anchor.context';
+import { useDispatch } from 'react-redux';
+import { setActiveAnchor } from '../../../store/docs/docs.action';
 import { scrollToAnchor } from '../../../utils/actions/actions.utils';
 
 const AnchorLink = ({ anchor, children }) => {
-  const { setActiveAnchor } = useContext(AnchorContext);
+  const dispatch = useDispatch();
 
   const handleLinkClick = event => {
     event.preventDefault();
     scrollToAnchor(anchor);
-    setActiveAnchor(anchor);
+    dispatch(setActiveAnchor(anchor));
   };
 
   return (

@@ -1,5 +1,6 @@
-import { useContext } from 'react';
-import { SidebarContext } from '../../contexts/sidebar.context';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectIsSidebarOpen } from '../../store/docs/docs.selector';
+import { setIsSidebarOpen } from '../../store/docs/docs.action';
 import { Flex, Text, Box, IconButton, useMediaQuery, Link } from '@chakra-ui/react';
 import { FaBars, FaTimes, FaGithub } from 'react-icons/fa';
 import { ColorModeSwitcher } from '../../ColorModeSwitcher';
@@ -7,10 +8,12 @@ import { BorderColor } from '../../utils/color/colorModeValues.utils';
 import { contentMaxWidth, mobileMax } from '../../utils/sizing/sizing.utils';
 
 const Header = () => {
-  const [isMobile] = useMediaQuery(`(max-width: ${mobileMax})`);
-  const { isSidebarOpen, setIsSidebarOpen } = useContext(SidebarContext);
+  const dispatch = useDispatch();
 
-  const handleSidebarToggle = () => setIsSidebarOpen(!isSidebarOpen);
+  const [isMobile] = useMediaQuery(`(max-width: ${mobileMax})`);
+  const isSidebarOpen = useSelector(selectIsSidebarOpen);
+
+  const handleSidebarToggle = () => dispatch(setIsSidebarOpen(!isSidebarOpen));
 
   return (
     <Box

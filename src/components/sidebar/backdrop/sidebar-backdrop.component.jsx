@@ -1,10 +1,13 @@
-import { useContext } from 'react';
-import { SidebarContext } from '../../../contexts/sidebar.context';
+import { useSelector, useDispatch } from 'react-redux';
+import { selectIsSidebarOpen } from '../../../store/docs/docs.selector';
+import { setIsSidebarOpen } from '../../../store/docs/docs.action';
 import { useMediaQuery, Fade } from '@chakra-ui/react';
 import { mobileMax } from '../../../utils/sizing/sizing.utils';
 
 const SidebarBackdrop = () => {
-  const { isSidebarOpen, setIsSidebarOpen } = useContext(SidebarContext);
+  const dispatch = useDispatch();
+
+  const isSidebarOpen = useSelector(selectIsSidebarOpen);
   const [isMobile] = useMediaQuery(`(max-width: ${mobileMax})`);
 
   const activeStyle = {
@@ -18,7 +21,7 @@ const SidebarBackdrop = () => {
     zIndex: '10',
   };
 
-  const handleBackdropClick = () => setIsSidebarOpen(false);
+  const handleBackdropClick = () => dispatch(setIsSidebarOpen(false));
 
   return (
     <Fade

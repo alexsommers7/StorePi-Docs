@@ -1,17 +1,19 @@
-import { useState, useContext, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setIsSidebarOpen, setActiveAnchor } from '../../../store/docs/docs.action';
+import { selectActiveAnchor } from '../../../store/docs/docs.selector';
 import { NavLink } from 'react-router-dom';
-import { AnchorContext } from '../../../contexts/anchor.context';
-import { SidebarContext } from '../../../contexts/sidebar.context';
 import { ListItem, useMediaQuery } from '@chakra-ui/react';
 import { mobileMax } from '../../../utils/sizing/sizing.utils';
 import { scrollToAnchor } from '../../../utils/actions/actions.utils';
 
 const SidebarLink = ({ item }) => {
+  const dispatch = useDispatch();
+
   const { label, anchor } = item;
   const [isHovered, setIsHovered] = useState(false);
   const [isActive, setIsActive] = useState(false);
-  const { activeAnchor, setActiveAnchor } = useContext(AnchorContext);
-  const { setIsSidebarOpen } = useContext(SidebarContext);
+  const activeAnchor = useSelector(selectActiveAnchor);
   const [isMobile] = useMediaQuery(`(max-width: ${mobileMax})`);
 
   const inactiveStyle = {
@@ -37,8 +39,8 @@ const SidebarLink = ({ item }) => {
   const handleLinkClick = event => {
     event.preventDefault();
     scrollToAnchor(anchor);
-    setActiveAnchor(anchor);
-    if (isMobile) setIsSidebarOpen(false);
+    dispatch(setActiveAnchor(anchor));
+    if (isMobile) dispatch(setIsSidebarOpen(false));
   };
 
   return (
