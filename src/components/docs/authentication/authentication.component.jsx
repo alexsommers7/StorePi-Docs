@@ -1,7 +1,13 @@
 import { Text, Code } from '@chakra-ui/react';
 import SectionWrapper from '../../sections/wrapper/section-wrapper.component';
 import SectionHeading from '../../sections/heading/section-heading.component';
-import AnchorHeading from '../../links/anchor/anchor-heading.component';
+import Endpoint from '../../endpoint/endpoint.component';
+import {
+  signupResponse,
+  loginResponse,
+  logoutResponse,
+} from '../../../utils/content/doc-sample-responses.utils';
+import { loginBody, signupBody } from '../../../utils/content/doc-sample-bodies.utils';
 
 const Authentication = () => {
   return (
@@ -16,9 +22,31 @@ const Authentication = () => {
         <Code>Daisy</Code>.
       </Text>
 
-      <AnchorHeading anchorId="sign-up">Sign Up</AnchorHeading>
-      <AnchorHeading anchorId="log-in">Log In</AnchorHeading>
-      <AnchorHeading anchorId="log-out">Log Out</AnchorHeading>
+      <Endpoint
+        anchorId="sign-up"
+        httpMethod="POST"
+        headingText="Sign Up"
+        subdirectory="users/signup"
+        response={signupResponse}
+        requestBody={signupBody}
+      />
+
+      <Endpoint
+        anchorId="log-in"
+        httpMethod="POST"
+        headingText="Log In"
+        subdirectory="users/login"
+        response={loginResponse}
+        requestBody={loginBody}
+      />
+
+      <Endpoint
+        anchorId="log-out"
+        headingText="Log Out"
+        subdirectory="users/logout"
+        requiresAuth={true}
+        response={logoutResponse}
+      />
     </SectionWrapper>
   );
 };

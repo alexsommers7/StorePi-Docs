@@ -48,3 +48,15 @@ export const removeProductFromCurrentUserWishlistBody = `// all fields are requi
 `;
 
 export const updateCurrentUserBody = `"name": "..."`;
+
+export const signupBody = `// all fields are required
+"name": "...",
+"email": "...",
+"password": "...",
+"passwordConfirm": "..."
+`;
+
+export const loginBody = `// all fields are required	
+"email": "dorothy@example.com",
+"password": "password"
+`;

@@ -1096,3 +1096,37 @@ export const updateCurrentUserResponse = `"status": "success",
 	}
 }
 `;
+
+export const signupResponse = `"status": "success",
+"data": {
+	"user": {
+		"photo": "default.jpg",
+		"role": "user",
+		"active": true,
+		"wishlist": [],
+		"_id": "6355c3239a33470016d4a7b0",
+		"name": "...",
+		"email": "..."
+	}
+}
+`;
+
+export const loginResponse = `"status": "success",
+"token": "...",
+"data": {
+	"user": {
+		"photo": "https://storepi-media.s3.us-west-1.amazonaws.com/img/users/user-2.jpg",
+		"role": "user",
+		"wishlist": [
+			"625c50fcc1198f626cc4183c",
+			"625c50fcc1198f626cc41839",
+			"625c50fcc1198f626cc41842"
+		],
+		"_id": "6213d79b3a57cb555079db6a",
+		"name": "Dorothy Jennings",
+		"email": "dorothy@example.com",
+	}
+}
+`;
+
+export const logoutResponse = `"status": "success"`;
