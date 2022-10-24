@@ -1,3 +1,4 @@
+import { Text, UnorderedList, ListItem, List } from '@chakra-ui/react';
 import SectionWrapper from '../../sections/wrapper/section-wrapper.component';
 import SectionHeading from '../../sections/heading/section-heading.component';
 import Endpoint from '../../endpoint/endpoint.component';
@@ -12,6 +13,16 @@ const Categories = () => {
   return (
     <SectionWrapper>
       <SectionHeading>Categories</SectionHeading>
+      <Text>There are 6 different categories available: </Text>
+
+      <UnorderedList pl={5} pt={4}>
+        <ListItem>Electronics</ListItem>
+        <ListItem>Men's Clothing</ListItem>
+        <ListItem>Women's Clothing</ListItem>
+        <ListItem>Kids & Baby</ListItem>
+        <ListItem>Health & Beauty</ListItem>
+        <ListItem>Home</ListItem>
+      </UnorderedList>
 
       <Endpoint
         anchorId="get-categories"
@@ -19,14 +30,12 @@ const Categories = () => {
         subdirectory="categories"
         response={getAllCategoriesResponse}
       />
-
       <Endpoint
         anchorId="get-category-products"
         headingText="Get All Products in Category"
         subdirectory="categories/{id}/products"
         response={getAllProductsInCategoryResponse}
       />
-
       <Endpoint
         anchorId="create-category"
         httpMethod="POST"
@@ -35,7 +44,6 @@ const Categories = () => {
         requestBody={createOrUpdateCategoryBody}
         response={createOrUpdateCategoryResponse}
       />
-
       <Endpoint
         anchorId="update-category"
         httpMethod="PATCH"
@@ -44,7 +52,6 @@ const Categories = () => {
         requestBody={createOrUpdateCategoryBody}
         response={createOrUpdateCategoryResponse}
       />
-
       <Endpoint
         anchorId="delete-category"
         httpMethod="DELETE"
