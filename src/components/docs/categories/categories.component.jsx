@@ -1,4 +1,4 @@
-import { Text, UnorderedList, ListItem, List } from '@chakra-ui/react';
+import { Text, UnorderedList, ListItem } from '@chakra-ui/react';
 import SectionWrapper from '../../sections/wrapper/section-wrapper.component';
 import SectionHeading from '../../sections/heading/section-heading.component';
 import Endpoint from '../../endpoint/endpoint.component';
