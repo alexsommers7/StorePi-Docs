@@ -42,7 +42,7 @@ const AnchorHeading = ({ anchorId, httpMethod, requiresAuth = false, children })
       mt={8}
       mb={2}
       width="max-content"
-      maxWidth="100%"
+      maxWidth="90%"
     >
       <Flex alignItems="baseline" flexWrap="wrap">
         {httpMethod && (
