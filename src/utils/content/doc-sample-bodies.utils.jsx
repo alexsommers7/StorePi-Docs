@@ -57,6 +57,6 @@ export const signupBody = `// all fields are required
 `;
 
 export const loginBody = `// all fields are required	
-"email": "dorothy@example.com",
+"email": "amy@example.com",
 "password": "password"
 `;

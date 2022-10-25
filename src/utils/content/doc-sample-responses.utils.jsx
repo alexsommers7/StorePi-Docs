@@ -1098,6 +1098,7 @@ export const updateCurrentUserResponse = `"status": "success",
 `;
 
 export const signupResponse = `"status": "success",
+"token": "JWT would be here in the real world",
 "data": {
 	"user": {
 		"photo": "default.jpg",

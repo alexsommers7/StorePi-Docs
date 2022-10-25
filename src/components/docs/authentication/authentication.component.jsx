@@ -1,4 +1,3 @@
-import { Text, Code } from '@chakra-ui/react';
 import SectionWrapper from '../../sections/wrapper/section-wrapper.component';
 import SectionHeading from '../../sections/heading/section-heading.component';
 import Endpoint from '../../endpoint/endpoint.component';
@@ -14,14 +13,6 @@ const Authentication = () => {
     <SectionWrapper>
       <SectionHeading>Authentication</SectionHeading>
 
-      <Text>
-        In order to provide a variety in the data, there are multiple user accounts available. The
-        structure of each user's email address is <Code>[firstName]@example.com</Code>, and each
-        user's password is simply <Code>password</Code>. You may log in as any of the following
-        users: <Code>Jodi</Code>, <Code>Amy</Code>, <Code>Jean</Code>, <Code>Cody</Code>, or{' '}
-        <Code>Daisy</Code>.
-      </Text>
-
       <Endpoint
         anchorId="sign-up"
         httpMethod="POST"
@@ -29,6 +20,7 @@ const Authentication = () => {
         subdirectory="users/signup"
         response={signupResponse}
         requestBody={signupBody}
+        note="This endpoint will not include a valid JWT to be used for subsequent requests as it would in a real-world application. This is because the new user is not actually persisted to the database. If you need a token to access protected endpoints, use the log in endpoint as described below."
       />
 
       <Endpoint
@@ -38,6 +30,7 @@ const Authentication = () => {
         subdirectory="users/login"
         response={loginResponse}
         requestBody={loginBody}
+        note="In order to provide a variety in the data, there are multiple user accounts available. The structure of each user's email address is [firstName]@example.com, and each user's password is simply 'password'. You may log in as any of the following users: Jodi, Amy, Jean, Cody, or Daisy."
       />
 
       <Endpoint
