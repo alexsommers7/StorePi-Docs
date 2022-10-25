@@ -69,7 +69,11 @@ const GettingStarted = () => {
       <Text mb={10}>
         {' '}
         A token can be obtained via the <AnchorLink anchor="log-in">log in</AnchorLink> endpoint,
-        where it will be stored as an HttpOnly cookie.
+        where it will be returned in the response and stored as an HttpOnly cookie. Then, to make
+        any subsequent requests that require auth, you will either need to store the returned token
+        in the browser (while considering the security risk in a real-world application), or use a
+        proxy between the api and your application to extract the token and include in an
+        authorization header.
       </Text>
 
       <AnchorHeading anchorId="query-parameters">Query Parameters</AnchorHeading>
