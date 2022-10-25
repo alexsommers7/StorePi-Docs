@@ -26,15 +26,14 @@ const GettingStarted = () => {
       <Text mb={3}>
         StorePI is a free, open-source REST API that was created for use in e-commerce prototyping,
         Front-End Developer talent evaluations, and anything else you can think of. The API was
-        built with <Code>MongoDB</Code>, <Code>Mongoose</Code>, <Code>Node</Code>, and{' '}
+        built with <Code>MongoDB</Code> <Code>Mongoose</Code> <Code>Node</Code> and{' '}
         <Code>Express</Code>.
       </Text>
       <Text mb={10}>
-        It provides resources such as <Code>products</Code>, <Code>reviews</Code>,{' '}
-        <Code>users</Code>, <Code>carts</Code>, <Code>purchases</Code>, and more. Endpoints are
-        provided to perform CRUD operations on each of these resources - supporting both end user
-        actions (e.g. adding an item to cart) as well as administrator actions (e.g. creating a new
-        product).
+        It provides resources such as <Code>products</Code> <Code>reviews</Code> <Code>users</Code>{' '}
+        <Code>carts</Code> <Code>purchases</Code> and more. Endpoints are provided to perform CRUD
+        operations on each of these resources - supporting both end user actions (e.g. adding an
+        item to cart) as well as administrator actions (e.g. creating a new product).
       </Text>
 
       <AnchorHeading anchorId="database-interaction-intro">Database Interaction</AnchorHeading>
@@ -154,8 +153,8 @@ const GettingStarted = () => {
 
       <Text mb={3}>
         If you're filtering by a brand with multiple words, you'll need to separate the words with a{' '}
-        <Code>-</Code> e.g. <Code>?brand=brand-name-here</Code>. Supports <Code>gte</Code>,{' '}
-        <Code>lte</Code>, <Code>gt</Code>, and <Code>lt</Code> operators e.g.{' '}
+        <Code>-</Code> e.g. <Code>?brand=brand-name-here</Code>. Supports <Code>gte</Code>{' '}
+        <Code>lte</Code> <Code>gt</Code> and <Code>lt</Code> operators e.g.{' '}
         <Code>?sale_price[lte]=100</Code>.
       </Text>
 
