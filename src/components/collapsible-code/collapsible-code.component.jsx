@@ -8,13 +8,10 @@ import {
   AccordionButton,
   AccordionPanel,
 } from '@chakra-ui/react';
+import LazyLoad from 'react-lazy-load';
 import Prism from 'prismjs';
 
 const CollapsibleCode = ({ label = 'View sample response', code, isOpen = false }) => {
-  useEffect(() => {
-    Prism.highlightAll();
-  });
-
   return (
     <Accordion allowToggle defaultIndex={isOpen ? 0 : null}>
       <AccordionItem>
@@ -26,11 +23,14 @@ const CollapsibleCode = ({ label = 'View sample response', code, isOpen = false 
             <AccordionIcon />
           </AccordionButton>
         </h2>
-        <AccordionPanel pb={4}>
-          <pre>
-            <Code className="language-javascript">{code}</Code>
-          </pre>
-        </AccordionPanel>
+
+        <LazyLoad onContentVisible={() => Prism.highlightAll()}>
+          <AccordionPanel pb={4}>
+            <pre>
+              <Code className="language-javascript">{code}</Code>
+            </pre>
+          </AccordionPanel>
+        </LazyLoad>
       </AccordionItem>
     </Accordion>
   );
