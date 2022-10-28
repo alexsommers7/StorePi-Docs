@@ -24,7 +24,7 @@ const GettingStarted = () => {
 
       <AnchorHeading anchorId="introduction">Introduction</AnchorHeading>
       <Text mb={3}>
-        StorePI is a free, open-source REST API that was created for use in e-commerce prototyping,
+        StorePI is a free, open-source API that was created for use in e-commerce prototyping,
         Front-End Developer talent evaluations, and anything else you can think of. The API was
         built with <Code>MongoDB</Code> <Code>Mongoose</Code> <Code>Node</Code> and{' '}
         <Code>Express</Code>.
