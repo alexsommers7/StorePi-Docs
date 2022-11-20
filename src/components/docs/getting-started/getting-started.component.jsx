@@ -65,14 +65,18 @@ const GettingStarted = () => {
         />{' '}
         icon.
       </Text>
-      <Text mb={10}>
+      <Text mb={3}>
         {' '}
         A token can be obtained via the <AnchorLink anchor="log-in">log in</AnchorLink> endpoint,
-        where it will be returned in the response and stored as an HttpOnly cookie. Then, to make
-        any subsequent requests that require auth, you will need to either store the returned token
-        in the browser (while considering the security risk in a real-world application), or use a
-        proxy between the api and your application to extract the token and include in an
-        authorization header.
+        where it will be returned in the response and stored as an HttpOnly cookie. If using the
+        native Fetch API, be sure to set <Code>credentials</Code> to <Code>'include'</Code> in the
+        config options to include the auth header in subsequent requests.
+      </Text>
+      <Text mb={10}>
+        Alternatively, the JWT will be included in the response body, allowing you to store the
+        returned token via the Web Storage API (while considering the security risk in a real-world
+        application). Lastly, you could also use a proxy between the API and your application to
+        extract the token and include in an authorization header.
       </Text>
 
       <AnchorHeading anchorId="query-parameters">Query Parameters</AnchorHeading>

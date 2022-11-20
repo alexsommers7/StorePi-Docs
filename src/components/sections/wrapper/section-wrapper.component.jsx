@@ -2,7 +2,7 @@ import { Box } from '@chakra-ui/react';
 
 const SectionWrapper = ({ children, useBottomMargin = true }) => {
   return (
-    <Box as="section" mb={useBottomMargin && 32}>
+    <Box as="section" mb={useBottomMargin && 24}>
       {children}
     </Box>
   );
