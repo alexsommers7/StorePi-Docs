@@ -37,6 +37,7 @@ export const DocSidebarItems = [
       { label: `Get Product's Reviews`, anchor: 'get-product-reviews' },
       { label: 'Get Current User Reviews', anchor: 'get-current-user-reviews' },
       { label: 'Create New Review', anchor: 'create-review' },
+      { label: 'Update Review', anchor: 'update-review' },
       { label: 'Delete Review', anchor: 'delete-review' },
     ],
   },
