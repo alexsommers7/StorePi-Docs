@@ -28,6 +28,10 @@ const Docs = () => {
 
       scrolledRef.current = true;
       dispatch(setActiveAnchor(id));
+    } else {
+      setTimeout(() => {
+        // dispatch(setActiveAnchor('introduction'));
+      }, 3000);
     }
   });
 

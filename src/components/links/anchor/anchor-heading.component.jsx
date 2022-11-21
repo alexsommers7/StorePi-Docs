@@ -1,3 +1,4 @@
+import { useRef, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setActiveAnchor, setIsSidebarOpen } from '../../../store/docs/docs.action';
@@ -8,7 +9,9 @@ import { mobileMax } from '../../../utils/sizing/sizing.utils';
 
 const AnchorHeading = ({ anchorId, httpMethod, requiresAuth = false, children }) => {
   const dispatch = useDispatch();
+  const toast = useToast();
   const [isMobile] = useMediaQuery(`(max-width: ${mobileMax})`);
+  const anchorRef = useRef(null);
 
   const handleAnchorCopy = event => {
     event.preventDefault();
@@ -33,7 +36,30 @@ const AnchorHeading = ({ anchorId, httpMethod, requiresAuth = false, children })
     }
   };
 
-  const toast = useToast();
+  useEffect(() => {
+    const intersectionCallback = entries => {
+      const [entry] = entries;
+
+      // prevent from setting anchor on initial render
+      if (entry && entry.isIntersecting && entry.intersectionRatio > 0) {
+        dispatch(setActiveAnchor(anchorId));
+      }
+    };
+
+    const observerOptions = {
+      root: null,
+      rootMargin: '-60px 0px -70% 0px',
+      threshold: 1.0,
+    };
+
+    const observer = new IntersectionObserver(intersectionCallback, observerOptions);
+    const current = anchorRef.current;
+    if (current) observer.observe(current);
+
+    return () => {
+      if (current) observer.unobserve(current);
+    };
+  });
 
   return (
     <Box
@@ -43,6 +69,7 @@ const AnchorHeading = ({ anchorId, httpMethod, requiresAuth = false, children })
       mb={2}
       width="max-content"
       maxWidth="90%"
+      ref={anchorRef}
     >
       <Flex alignItems="baseline" flexWrap="wrap">
         {httpMethod && (
