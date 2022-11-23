@@ -48,8 +48,8 @@ const AnchorHeading = ({ anchorId, httpMethod, requiresAuth = false, children })
 
     const observerOptions = {
       root: null,
-      rootMargin: '-60px 0px -70% 0px',
-      threshold: 1.0,
+      rootMargin: '0px 0px -90% 0px',
+      threshold: 0.1,
     };
 
     const observer = new IntersectionObserver(intersectionCallback, observerOptions);
