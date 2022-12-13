@@ -17,7 +17,7 @@ const Docs = () => {
   const scrolledRef = useRef(false);
   const { hash } = useLocation();
 
-  // handle anchor link existing on render
+  // handle anchor link existing on initial render
   useEffect(() => {
     if (hash && !scrolledRef.current) {
       const id = hash.replace('#', '');
@@ -28,12 +28,8 @@ const Docs = () => {
 
       scrolledRef.current = true;
       dispatch(setActiveAnchor(id));
-    } else {
-      setTimeout(() => {
-        // dispatch(setActiveAnchor('introduction'));
-      }, 3000);
     }
-  });
+  }, [dispatch, hash]);
 
   return (
     <Box maxWidth={contentMaxWidth.string} m="auto" zIndex="base">

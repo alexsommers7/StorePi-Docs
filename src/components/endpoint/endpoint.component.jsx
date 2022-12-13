@@ -17,7 +17,7 @@ const Endpoint = ({
 }) => {
   useEffect(() => {
     Prism.highlightAll();
-  });
+  }, []);
 
   const isDelete = httpMethod === 'DELETE';
 

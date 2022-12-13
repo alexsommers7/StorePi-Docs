@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setIsSidebarOpen, setActiveAnchor } from '../../../store/docs/docs.action';
 import { selectActiveAnchor } from '../../../store/docs/docs.selector';
@@ -12,7 +12,6 @@ const SidebarLink = ({ item }) => {
 
   const { label, anchor } = item;
   const [isHovered, setIsHovered] = useState(false);
-  const [isActive, setIsActive] = useState(false);
   const activeAnchor = useSelector(selectActiveAnchor);
   const [isMobile] = useMediaQuery(`(max-width: ${mobileMax})`);
 
@@ -26,11 +25,6 @@ const SidebarLink = ({ item }) => {
     textShadow: '.25px 0px .1px,-.25px 0px .1px',
     color: 'var(--chakra-colors-brand-200)',
   };
-
-  useEffect(() => {
-    setIsActive(anchor === activeAnchor);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeAnchor]);
 
   const handleMouseEnter = () => setIsHovered(true);
 
@@ -47,7 +41,7 @@ const SidebarLink = ({ item }) => {
     <ListItem mb={2}>
       <NavLink
         data-href={`#${anchor}`}
-        style={() => (isActive ? activeStyle : inactiveStyle)}
+        style={() => (anchor === activeAnchor ? activeStyle : inactiveStyle)}
         onClick={handleLinkClick}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
