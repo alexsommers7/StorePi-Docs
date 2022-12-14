@@ -1,9 +1,7 @@
-import { useEffect } from 'react';
 import { Box, Code, Text } from '@chakra-ui/react';
 import AnchorHeading from '../links/anchor/anchor-heading.component';
 import CollapsibleCode from '../collapsible-code/collapsible-code.component';
 import { apiOrigin } from '../../utils/content/doc-content.utils';
-import Prism from 'prismjs';
 
 const Endpoint = ({
   anchorId,
@@ -15,10 +13,6 @@ const Endpoint = ({
   requiresAuth = false,
   note,
 }) => {
-  useEffect(() => {
-    Prism.highlightAll();
-  }, []);
-
   const isDelete = httpMethod === 'DELETE';
 
   return (

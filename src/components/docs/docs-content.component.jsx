@@ -1,5 +1,5 @@
+import { useEffect } from 'react';
 import { Box } from '@chakra-ui/react';
-
 import { docsSidebarWidth } from '../../utils/sizing/sizing.utils';
 import GettingStarted from './getting-started/getting-started.component';
 import Products from './products/products.component';
@@ -11,8 +11,13 @@ import Purchases from './purchases/purchases.component';
 import Wishlists from './wishlists/wishlists.component';
 import Users from './users/users.component';
 import Authentication from './authentication/authentication.component';
+import Prism from 'prismjs';
 
 const Docs = () => {
+  useEffect(() => {
+    Prism.highlightAll();
+  }, []);
+
   return (
     <Box
       mt={5}
