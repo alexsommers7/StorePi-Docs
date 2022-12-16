@@ -7,6 +7,11 @@ import { ListItem, useMediaQuery } from '@chakra-ui/react';
 import { mobileMax } from '../../../utils/sizing/sizing.utils';
 import { scrollToAnchor } from '../../../utils/actions/actions.utils';
 
+const activeStyle = {
+  textShadow: '.25px 0px .1px,-.25px 0px .1px',
+  color: 'var(--chakra-colors-brand-200)',
+};
+
 const SidebarLink = ({ item }) => {
   const dispatch = useDispatch();
 
@@ -19,11 +24,6 @@ const SidebarLink = ({ item }) => {
     transition: 'all .2s ease',
     color: isHovered ? 'var(--chakra-colors-brand-200)' : 'inherit',
     textShadow: isHovered ? '.25px 0px .1px,-.25px 0px .1px' : 'none',
-  };
-
-  const activeStyle = {
-    textShadow: '.25px 0px .1px,-.25px 0px .1px',
-    color: 'var(--chakra-colors-brand-200)',
   };
 
   const handleMouseEnter = () => setIsHovered(true);

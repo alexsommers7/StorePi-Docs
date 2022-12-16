@@ -10,13 +10,13 @@ import { docsSidebarWidth } from '../../utils/sizing/sizing.utils';
 import { navHeight } from '../../utils/sizing/sizing.utils';
 import { contentMaxWidth } from '../../utils/sizing/sizing.utils';
 
+const openStyle = {
+	transform: 'translateY(-1.25rem)',
+};
+
 const Sidebar = () => {
   const [isLargerThanMaxContent] = useMediaQuery(`(min-width: ${contentMaxWidth.num + 55}px)`);
   const isSidebarOpen = useSelector(selectIsSidebarOpen);
-
-  const openStyle = {
-    transform: 'translateY(-1.25rem)',
-  };
 
   // using transform instead of top/left so it remains fixed to container, not viewport
   return (

@@ -7,6 +7,12 @@ import { FaAnchor, FaLock } from 'react-icons/fa';
 import { scrollToAnchor } from '../../../utils/actions/actions.utils';
 import { mobileMax } from '../../../utils/sizing/sizing.utils';
 
+const observerOptions = {
+  root: null,
+  rootMargin: '0px 0px -80% 0px',
+  threshold: 0,
+};
+
 const AnchorHeading = ({ anchorId, httpMethod, requiresAuth = false, children }) => {
   const dispatch = useDispatch();
   const toast = useToast();
@@ -44,12 +50,6 @@ const AnchorHeading = ({ anchorId, httpMethod, requiresAuth = false, children })
       if (entry && entry.isIntersecting && entry.intersectionRatio > 0) {
         dispatch(setActiveAnchor(anchorId));
       }
-    };
-
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px 0px -80% 0px',
-      threshold: 0,
     };
 
     const observer = new IntersectionObserver(intersectionCallback, observerOptions);
