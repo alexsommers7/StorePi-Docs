@@ -59,7 +59,7 @@ const AnchorHeading = ({ anchorId, httpMethod, requiresAuth = false, children })
     return () => {
       if (current) observer.unobserve(current);
     };
-  });
+  }, [dispatch, anchorId]);
 
   return (
     <Box
