@@ -1,17 +1,12 @@
-import { useRef, useEffect } from 'react';
+import { useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { useIntersectionObserver } from '../../../hooks/useIntersectionObserver';
 import { setActiveAnchor, setIsSidebarOpen } from '../../../store/docs/docs.action';
 import { Box, Heading, useToast, Flex, Badge, useMediaQuery } from '@chakra-ui/react';
 import { FaAnchor, FaLock } from 'react-icons/fa';
 import { scrollToAnchor } from '../../../utils/actions/actions.utils';
 import { mobileMax } from '../../../utils/sizing/sizing.utils';
-
-const observerOptions = {
-  root: null,
-  rootMargin: '0px 0px -80% 0px',
-  threshold: 0,
-};
 
 const AnchorHeading = ({ anchorId, httpMethod, requiresAuth = false, children }) => {
   const dispatch = useDispatch();
@@ -42,24 +37,7 @@ const AnchorHeading = ({ anchorId, httpMethod, requiresAuth = false, children })
     }
   };
 
-  useEffect(() => {
-    const intersectionCallback = entries => {
-      const [entry] = entries;
-
-      // prevent from setting anchor on initial render
-      if (entry && entry.isIntersecting && entry.intersectionRatio > 0) {
-        dispatch(setActiveAnchor(anchorId));
-      }
-    };
-
-    const observer = new IntersectionObserver(intersectionCallback, observerOptions);
-    const current = anchorRef.current;
-    if (current) observer.observe(current);
-
-    return () => {
-      if (current) observer.unobserve(current);
-    };
-  }, [dispatch, anchorId]);
+  useIntersectionObserver(anchorRef.current, anchorId);
 
   return (
     <Box
