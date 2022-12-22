@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { useIntersectionObserver } from '../../../hooks/useIntersectionObserver';
+import { useActiveAnchorObserver } from '../../../hooks/useActiveAnchorObserver';
 import { setActiveAnchor, setIsSidebarOpen } from '../../../store/docs/docs.action';
 import { Box, Heading, useToast, Flex, Badge, useMediaQuery } from '@chakra-ui/react';
 import { FaAnchor, FaLock } from 'react-icons/fa';
@@ -37,7 +37,7 @@ const AnchorHeading = ({ anchorId, httpMethod, requiresAuth = false, children })
     }
   };
 
-  useIntersectionObserver(anchorRef.current, anchorId);
+  useActiveAnchorObserver(anchorRef.current, anchorId);
 
   return (
     <Box

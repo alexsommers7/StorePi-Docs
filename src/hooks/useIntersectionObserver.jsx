@@ -8,7 +8,7 @@ const observerOptions = {
   threshold: 0,
 };
 
-export function useIntersectionObserver(node, anchorId) {
+export function useActiveAnchorObserver(node, anchorId) {
   const dispatch = useDispatch();
 
   useEffect(() => {
