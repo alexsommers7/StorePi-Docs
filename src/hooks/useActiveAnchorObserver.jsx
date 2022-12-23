@@ -8,6 +8,8 @@ const observerOptions = {
   threshold: 0,
 };
 
+// TODO - pass event handler to make hook more generic once useEffectEvent is no longer experimental
+// https://beta.reactjs.org/learn/reusing-logic-with-custom-hooks#passing-event-handlers-to-custom-hooks
 export function useActiveAnchorObserver(node, anchorId) {
   const dispatch = useDispatch();
 
