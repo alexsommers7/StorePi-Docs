@@ -1,4 +1,12 @@
-export const scrollToAnchor = anchor => {
-  document.getElementById(anchor).scrollIntoView({ block: 'start' });
-  window.history.pushState({ page: anchor }, document.title, `/docs#${anchor}`);
+const setWindowHistory = anchor => {
+  window.history.pushState(
+    { page: anchor },
+    document.title,
+    `${window.location.pathname}#${anchor}`
+  );
+};
+
+export const scrollToAnchorById = anchor => {
+  document.getElementById(anchor)?.scrollIntoView({ block: 'start' });
+  setWindowHistory(anchor);
 };

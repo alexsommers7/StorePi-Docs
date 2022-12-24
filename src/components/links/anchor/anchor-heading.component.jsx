@@ -5,7 +5,7 @@ import { useActiveAnchorObserver } from '../../../hooks/useActiveAnchorObserver'
 import { setActiveAnchor, setIsSidebarOpen } from '../../../store/docs/docs.action';
 import { Box, Heading, useToast, Flex, Badge, useMediaQuery } from '@chakra-ui/react';
 import { FaAnchor, FaLock } from 'react-icons/fa';
-import { scrollToAnchor } from '../../../utils/actions/actions.utils';
+import { scrollToAnchorById } from '../../../utils/actions/actions.utils';
 import { mobileMax } from '../../../utils/sizing/sizing.utils';
 
 const AnchorHeading = ({ anchorId, httpMethod, requiresAuth = false, children }) => {
@@ -16,8 +16,7 @@ const AnchorHeading = ({ anchorId, httpMethod, requiresAuth = false, children })
 
   const handleAnchorCopy = event => {
     event.preventDefault();
-
-    scrollToAnchor(anchorId);
+    scrollToAnchorById(anchorId);
     dispatch(setActiveAnchor(anchorId));
     if (isMobile) dispatch(setIsSidebarOpen(false));
 

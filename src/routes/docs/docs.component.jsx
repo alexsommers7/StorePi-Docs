@@ -7,7 +7,7 @@ import Sidebar from '../../components/sidebar/sidebar.component';
 import SidebarBackdrop from '../../components/sidebar/backdrop/sidebar-backdrop.component';
 import DocContent from '../../components/docs/docs-content.component';
 import { contentMaxWidth } from '../../utils/sizing/sizing.utils';
-import { scrollToAnchor } from '../../utils/actions/actions.utils';
+import { scrollToAnchorById } from '../../utils/actions/actions.utils';
 import './docs.styles.scss';
 import '../../utils/external-styles/prism.scss';
 
@@ -24,7 +24,7 @@ const Docs = () => {
 
       if (!id) return;
 
-      scrollToAnchor(id);
+      scrollToAnchorById(id);
 
       scrolledRef.current = true;
       dispatch(setActiveAnchor(id));

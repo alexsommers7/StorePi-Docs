@@ -5,7 +5,7 @@ import { selectActiveAnchor } from '../../../store/docs/docs.selector';
 import { NavLink } from 'react-router-dom';
 import { ListItem, useMediaQuery } from '@chakra-ui/react';
 import { mobileMax } from '../../../utils/sizing/sizing.utils';
-import { scrollToAnchor } from '../../../utils/actions/actions.utils';
+import { scrollToAnchorById } from '../../../utils/actions/actions.utils';
 
 const activeStyle = {
   textShadow: '.25px 0px .1px,-.25px 0px .1px',
@@ -32,7 +32,7 @@ const SidebarLink = ({ item }) => {
 
   const handleLinkClick = event => {
     event.preventDefault();
-    scrollToAnchor(anchor);
+    scrollToAnchorById(anchor);
     dispatch(setActiveAnchor(anchor));
     if (isMobile) dispatch(setIsSidebarOpen(false));
   };
