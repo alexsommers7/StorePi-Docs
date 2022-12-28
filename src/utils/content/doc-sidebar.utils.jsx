@@ -12,14 +12,6 @@ export const DocSidebarItems = [
     ],
   },
   {
-    label: 'Authentication',
-    subitems: [
-      { label: 'Sign Up', anchor: 'sign-up' },
-      { label: 'Log In', anchor: 'log-in' },
-      { label: 'Log Out', anchor: 'log-out' },
-    ],
-  },
-  {
     label: 'Products',
     subitems: [
       { label: 'Get All Products', anchor: 'get-products' },
@@ -81,6 +73,14 @@ export const DocSidebarItems = [
       { label: 'Get Current User Wishlist', anchor: 'get-current-user-wishlist' },
       { label: 'Add to Current User Wishlist', anchor: 'add-to-current-user-wishlist' },
       { label: 'Remove From Current User Wishlist', anchor: 'remove-from-current-user-wishlist' },
+    ],
+  },
+	{
+    label: 'Authentication',
+    subitems: [
+      { label: 'Sign Up', anchor: 'sign-up' },
+      { label: 'Log In', anchor: 'log-in' },
+      { label: 'Log Out', anchor: 'log-out' },
     ],
   },
   {

@@ -25,7 +25,6 @@ const Docs = () => {
       padding={[6, 6, `2rem 4rem 0 calc(${docsSidebarWidth.string} + 3.125rem)`]}
     >
       <GettingStarted />
-      <Authentication />
       <Products />
       <Reviews />
       <Brands />
@@ -33,6 +32,7 @@ const Docs = () => {
       <Carts />
       <Purchases />
       <Wishlists />
+      <Authentication />
       <Users />
     </Box>
   );
