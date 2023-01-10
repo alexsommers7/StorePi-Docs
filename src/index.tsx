@@ -8,7 +8,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import * as serviceWorker from './serviceWorker';
 
-const container = document.getElementById('root');
+const container = document.getElementById('root') as Element;
 const root = ReactDOM.createRoot(container);
 
 root.render(

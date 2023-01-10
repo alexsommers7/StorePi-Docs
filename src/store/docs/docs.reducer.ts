@@ -1,12 +1,18 @@
+import { AnyAction } from 'redux';
 import { DOCS_ACTION_TYPES } from './docs.types';
 import { DocSidebarItems } from '../../utils/content/doc-sidebar.utils';
 
-const DOCS_INITIAL_STATE = {
+export interface DocsState {
+  isSidebarOpen: boolean;
+  activeAnchor: string;
+}
+
+const docsInitialState: DocsState = {
   isSidebarOpen: false,
   activeAnchor: DocSidebarItems.filter(item => item.subitems.length)[0].subitems[0].anchor,
 };
 
-export const docsReducer = (state = DOCS_INITIAL_STATE, action = {}) => {
+export const docsReducer = (state = docsInitialState, action: AnyAction): DocsState => {
   const { type, payload } = action;
 
   switch (type) {

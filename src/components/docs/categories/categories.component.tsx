@@ -13,7 +13,7 @@ const Categories = () => {
   return (
     <SectionWrapper>
       <SectionHeading>Categories</SectionHeading>
-      <Text>There are 6 different categories available: </Text>
+      <Text>There are 6 different categories available:</Text>
 
       <UnorderedList pl={5} pt={4}>
         <ListItem>Electronics</ListItem>

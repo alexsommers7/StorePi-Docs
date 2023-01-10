@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, MouseEvent } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useActiveAnchorObserver } from '../../../hooks/useActiveAnchorObserver';
@@ -7,14 +7,27 @@ import { Box, Heading, useToast, Flex, Badge, useMediaQuery } from '@chakra-ui/r
 import { FaAnchor, FaLock } from 'react-icons/fa';
 import { scrollToAnchorById } from '../../../utils/actions/actions.utils';
 import { mobileMax } from '../../../utils/sizing/sizing.utils';
+import { HTTPMethods } from '../../../utils/types/types.utils';
 
-const AnchorHeading = ({ anchorId, httpMethod, requiresAuth = false, children }) => {
+interface AnchorHeadingProps {
+  anchorId: string;
+  httpMethod?: keyof typeof HTTPMethods;
+  requiresAuth?: boolean;
+  children: JSX.Element | string;
+}
+
+const AnchorHeading = ({
+  anchorId,
+  httpMethod,
+  requiresAuth = false,
+  children,
+}: AnchorHeadingProps) => {
   const dispatch = useDispatch();
   const toast = useToast();
   const [isMobile] = useMediaQuery(`(max-width: ${mobileMax})`);
   const anchorRef = useRef(null);
 
-  const handleAnchorCopy = event => {
+  const handleAnchorCopy = (event: MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
     scrollToAnchorById(anchorId);
     dispatch(setActiveAnchor(anchorId));
@@ -73,6 +86,7 @@ const AnchorHeading = ({ anchorId, httpMethod, requiresAuth = false, children })
       </Flex>
 
       <NavLink
+        to="#"
         className="anchor-copy"
         aria-label="Copy skip link"
         title="Copy skip link"

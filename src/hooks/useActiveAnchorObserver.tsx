@@ -10,11 +10,11 @@ const observerOptions = {
 
 // TODO - pass event handler to make hook more generic once useEffectEvent is no longer experimental
 // https://beta.reactjs.org/learn/reusing-logic-with-custom-hooks#passing-event-handlers-to-custom-hooks
-export function useActiveAnchorObserver(node, anchorId) {
+export function useActiveAnchorObserver(node: HTMLElement | null, anchorId: string) {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const intersectionCallback = entries => {
+    const intersectionCallback = (entries: IntersectionObserverEntry[]) => {
       const [entry] = entries;
 
       // prevent from setting anchor on initial render
@@ -24,6 +24,7 @@ export function useActiveAnchorObserver(node, anchorId) {
     };
 
     const observer = new IntersectionObserver(intersectionCallback, observerOptions);
+
     if (node) observer.observe(node);
 
     return () => {

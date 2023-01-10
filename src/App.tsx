@@ -13,7 +13,7 @@ function App() {
 
       <Box as="main" pt={navHeight.string}>
         <Routes>
-          <Route path="docs" index element={<Docs />} />
+          <Route path="docs" element={<Docs />} />
           <Route path="*" element={<Navigate to="docs" />} />
         </Routes>
       </Box>

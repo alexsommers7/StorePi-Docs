@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { selectIsSidebarOpen } from '../../store/docs/docs.selector';
-import { Flex, UnorderedList, Box, useMediaQuery } from '@chakra-ui/react';
+import { Flex, UnorderedList, Box, useMediaQuery, useColorModeValue } from '@chakra-ui/react';
 import { selectActiveAnchor } from '../../store/docs/docs.selector';
-import { BorderColor } from '../../utils/color/colorModeValues.utils';
 import { DocSidebarItems } from '../../utils/content/doc-sidebar.utils';
 import SidebarLink from './link/sidebar-link.component';
 import SidebarHeading from './heading/sidebar-heading.component';
@@ -15,7 +14,7 @@ const openStyle = {
   transform: 'translateY(-1.25rem)',
 };
 
-const scrollToSidebarSection = hash =>
+const scrollToSidebarSection = (hash: string) =>
   document
     .querySelector(`[data-href="#${hash}"]`)
     ?.closest('ul')
@@ -42,7 +41,7 @@ const Sidebar = () => {
         px={6}
         pb={16}
         borderRight="1px solid transparent"
-        borderColor={BorderColor}
+        borderColor={useColorModeValue('blackAlpha.400', 'whiteAlpha.400')}
         backgroundColor="var(--chakra-colors-chakra-body-bg)"
         position="fixed"
         transform={[

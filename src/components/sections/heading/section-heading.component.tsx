@@ -1,6 +1,10 @@
 import { Heading } from '@chakra-ui/react';
 
-const SectionHeading = ({ children }) => {
+interface SectionHeadingProps {
+  children: JSX.Element | JSX.Element | string;
+}
+
+const SectionHeading = ({ children }: SectionHeadingProps) => {
   return (
     <Heading size="xl" mb={2}>
       {children}

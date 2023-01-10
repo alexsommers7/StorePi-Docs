@@ -1,10 +1,17 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { selectIsSidebarOpen } from '../../store/docs/docs.selector';
 import { setIsSidebarOpen } from '../../store/docs/docs.action';
-import { Flex, Text, Box, IconButton, useMediaQuery, Link } from '@chakra-ui/react';
+import {
+  Flex,
+  Text,
+  Box,
+  IconButton,
+  useMediaQuery,
+  Link,
+  useColorModeValue,
+} from '@chakra-ui/react';
 import { FaBars, FaTimes, FaGithub } from 'react-icons/fa';
 import { ColorModeSwitcher } from '../../ColorModeSwitcher';
-import { BorderColor } from '../../utils/color/colorModeValues.utils';
 import { contentMaxWidth, mobileMax } from '../../utils/sizing/sizing.utils';
 
 const Header = () => {
@@ -25,7 +32,7 @@ const Header = () => {
       left="0"
       width="100%"
       borderBottom="1px solid transparent"
-      borderColor={BorderColor}
+      borderColor={useColorModeValue('blackAlpha.400', 'whiteAlpha.400')}
       backgroundColor="var(--chakra-colors-chakra-body-bg)"
       px={6}
       py={2}
@@ -46,7 +53,7 @@ const Header = () => {
             <FaGithub fontSize={20} />
           </Link>
 
-          <ColorModeSwitcher ml={4} justifySelf="flex-end" />
+          <ColorModeSwitcher />
 
           {isMobile && (
             <IconButton

@@ -11,11 +11,17 @@ import {
 import LazyLoad from 'react-lazy-load';
 import Prism from 'prismjs';
 
-const CollapsibleCode = ({ label = 'View sample response', code, isOpen = false }) => {
-  const codeRef = useRef(null);
+interface CollapsibleCodeProps {
+  label?: string;
+  code: string;
+  isOpen?: boolean;
+}
+
+const CollapsibleCode = ({ label = 'View sample response', code }: CollapsibleCodeProps) => {
+  const codeRef = useRef<HTMLPreElement>(null);
 
   return (
-    <Accordion allowToggle defaultIndex={isOpen ? 0 : null}>
+    <Accordion allowToggle>
       <AccordionItem>
         <h2>
           <AccordionButton style={{ outline: 'none !important' }}>
@@ -26,7 +32,13 @@ const CollapsibleCode = ({ label = 'View sample response', code, isOpen = false 
           </AccordionButton>
         </h2>
 
-        <LazyLoad onContentVisible={() => Prism.highlightElement(codeRef.current)}>
+        <LazyLoad
+          onContentVisible={() => {
+            if (codeRef && codeRef.current) {
+              Prism.highlightElement(codeRef.current);
+            }
+          }}
+        >
           <AccordionPanel pb={4}>
             <pre>
               <Code ref={codeRef} className="language-javascript">

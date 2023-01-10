@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, MouseEvent } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setIsSidebarOpen, setActiveAnchor } from '../../../store/docs/docs.action';
 import { selectActiveAnchor } from '../../../store/docs/docs.selector';
@@ -12,12 +12,21 @@ const activeStyle = {
   color: 'var(--chakra-colors-brand-200)',
 };
 
-const SidebarLink = ({ item }) => {
+interface SidebarItem {
+  label: string;
+  anchor: string;
+}
+
+interface SidebarLinkProps {
+  item: SidebarItem;
+}
+
+const SidebarLink = ({ item }: SidebarLinkProps) => {
   const dispatch = useDispatch();
 
   const { label, anchor } = item;
   const [isHovered, setIsHovered] = useState(false);
-  const activeAnchor = useSelector(selectActiveAnchor);
+  const activeAnchor: string = useSelector(selectActiveAnchor);
   const [isMobile] = useMediaQuery(`(max-width: ${mobileMax})`);
 
   const inactiveStyle = {
@@ -30,7 +39,7 @@ const SidebarLink = ({ item }) => {
 
   const handleMouseLeave = () => setIsHovered(false);
 
-  const handleLinkClick = event => {
+  const handleLinkClick = (event: MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
     scrollToAnchorById(anchor);
     dispatch(setActiveAnchor(anchor));
@@ -40,6 +49,7 @@ const SidebarLink = ({ item }) => {
   return (
     <ListItem mb={2}>
       <NavLink
+        to="#"
         data-href={`#${anchor}`}
         style={() => (anchor === activeAnchor ? activeStyle : inactiveStyle)}
         onClick={handleLinkClick}

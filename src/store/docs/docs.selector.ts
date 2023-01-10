@@ -1,6 +1,8 @@
 import { createSelector } from 'reselect';
+import { DocsState } from './docs.reducer';
+import { RootState } from '../store';
 
-const selectDocsReducer = state => state.docs;
+const selectDocsReducer = (state: RootState): DocsState => state.docs;
 
 export const selectActiveAnchor = createSelector([selectDocsReducer], docs => docs.activeAnchor);
 

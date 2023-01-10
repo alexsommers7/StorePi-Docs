@@ -2,6 +2,18 @@ import { Box, Code, Text } from '@chakra-ui/react';
 import AnchorHeading from '../links/anchor/anchor-heading.component';
 import CollapsibleCode from '../collapsible-code/collapsible-code.component';
 import { apiOrigin } from '../../utils/content/doc-content.utils';
+import { HTTPMethods } from '../../utils/types/types.utils';
+
+interface EndpointProps {
+  anchorId: string;
+  httpMethod?: keyof typeof HTTPMethods;
+  headingText: string;
+  subdirectory: string;
+  requestBody?: string;
+  response?: string;
+  requiresAuth?: boolean;
+  note?: string;
+}
 
 const Endpoint = ({
   anchorId,
@@ -12,7 +24,7 @@ const Endpoint = ({
   response,
   requiresAuth = false,
   note,
-}) => {
+}: EndpointProps) => {
   const isDelete = httpMethod === 'DELETE';
 
   return (

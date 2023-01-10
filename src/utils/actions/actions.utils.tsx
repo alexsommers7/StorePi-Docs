@@ -1,4 +1,4 @@
-const setWindowHistory = anchor => {
+const setWindowHistory = (anchor: string): void => {
   window.history.pushState(
     { page: anchor },
     document.title,
@@ -6,7 +6,7 @@ const setWindowHistory = anchor => {
   );
 };
 
-export const scrollToAnchorById = anchor => {
+export const scrollToAnchorById = (anchor: string): void => {
   document.getElementById(anchor)?.scrollIntoView({ block: 'start' });
   setWindowHistory(anchor);
 };

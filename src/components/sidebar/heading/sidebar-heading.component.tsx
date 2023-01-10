@@ -1,6 +1,11 @@
 import { ListItem, Heading, useColorModeValue } from '@chakra-ui/react';
 
-const SidebarHeading = ({ label, isFirst }) => {
+interface SidebarHeadingProps {
+  label: string;
+  isFirst?: boolean;
+}
+
+const SidebarHeading = ({ label, isFirst = false }: SidebarHeadingProps) => {
   const style = {
     fontWeight: useColorModeValue('bold', 'regular'),
   };
